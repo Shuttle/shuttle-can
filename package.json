@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Shuttle/shuttle-can/issues"
   },
-  "homepage": "https://github.com/Shuttle/shuttle-can#readme"
+  "homepage": "https://github.com/Shuttle/shuttle-can#readme",
+  "dependencies": {
+    "can": "^3.11.0"
+  }
 }
