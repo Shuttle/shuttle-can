@@ -1,0 +1,4 @@
+﻿<shuttle-form-group {validation-message}="validationMessage" {element-class}="formGroupClass">
+	<shuttle-label {label}="label" {required}="required" />
+    <shuttle-input {focus}="focus" {(value)}="value" {type}="type" {element-class}="elementClass"/>
+</shuttle-form-group>

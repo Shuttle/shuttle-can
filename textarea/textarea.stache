@@ -1,0 +1,4 @@
+﻿<shuttle-form-group {validation-message}="validationMessage" {element-class}="formGroupClass">
+	<shuttle-label {label}="label" {required}="required" />
+	<textarea {($value)}="value" class="form-control {{elementClass}}" placeholder="{{placeholder}}" {$focused}="focus" rows="{{rows}}" cols="{[columns}}"/>
+</shuttle-form-group>
