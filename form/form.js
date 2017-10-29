@@ -4,7 +4,7 @@ import view from './form.stache!';
 import localisation from '~/localisation';
 
 export default Component.extend({
-    tag: 'shuttle-form',
+    tag: 'cs-form',
     view,
     viewModel: DefineMap.extend({
         title: {

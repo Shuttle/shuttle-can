@@ -19,10 +19,10 @@
           <td data-title="{{i18n columnTitle}}">
             {{#switch columnType}}
               {{#case 'button'}}
-                <shuttle-button {context}="getButtonContext(../., .)" {click}="buttonClick" {argument}="../." text="{{buttonTitle}}" element-class="btn-default btn-xs {{buttonClass}}" />
+                <cs-button {context}="getButtonContext(../., .)" {click}="buttonClick" {argument}="../." text="{{buttonTitle}}" element-class="btn-default btn-xs {{buttonClass}}" />
               {{/case}}
               {{#case 'remove-button'}}
-                <shuttle-remove-button {context}="getButtonContext(../., .)" {click}="buttonClick" {argument}="../." text="remove" element-class="btn-xs" />
+                <cs-remove-button {context}="getButtonContext(../., .)" {click}="buttonClick" {argument}="../." text="remove" element-class="btn-xs" />
               {{/case}}
               {{#case 'view'}}
               {{getView(../., .}}

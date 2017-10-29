@@ -12,7 +12,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-select',
+    tag: 'cs-select',
     ViewModel,
     view
 });

@@ -30,7 +30,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-button-remove',
+    tag: 'cs-button-remove',
     view,
     ViewModel
 });

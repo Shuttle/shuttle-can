@@ -12,7 +12,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-page-title',
+    tag: 'cs-page-title',
     view: view,
     viewModel: ViewModel
 });

@@ -18,7 +18,7 @@ export const ViewModel = InputViewModel.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-textarea',
+    tag: 'cs-textarea',
     ViewModel,
     view
 });

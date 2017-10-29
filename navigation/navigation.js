@@ -48,7 +48,7 @@ var ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-navigation',
+    tag: 'cs-navigation',
     view,
     ViewModel
 });

@@ -13,7 +13,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-label',
+    tag: 'cs-label',
     view,
     viewModel: ViewModel
 });

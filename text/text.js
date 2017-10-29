@@ -3,7 +3,7 @@ import InputViewModel from './input-view-model';
 import view from './text.stache!';
 
 export default Component.extend({
-    tag: 'shuttle-text',
+    tag: 'cs-text',
     ViewModel: InputViewModel,
     view
 });

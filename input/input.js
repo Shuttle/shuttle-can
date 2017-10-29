@@ -21,7 +21,7 @@ export const ViewModel = DefineMap.extend(
     });
 
 export default Component.extend({
-    tag: 'shuttle-input',
+    tag: 'cs-input',
     view,
     ViewModel
 });

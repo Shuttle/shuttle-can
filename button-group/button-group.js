@@ -2,7 +2,7 @@
 import view from './button-group.stache!';
 
 export default Component.extend({
-	tag: 'shuttle-button-group',
+	tag: 'cs-button-group',
     view
 });
 

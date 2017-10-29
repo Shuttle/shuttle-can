@@ -60,7 +60,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-button',
+    tag: 'cs-button',
     view,
     ViewModel
 });

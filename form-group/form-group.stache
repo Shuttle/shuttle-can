@@ -1,4 +1,4 @@
 ﻿<div class="form-group {{elementClass}}">
 	<content/>
-  <shuttle-validation {message}="validationMessage" />
+  <cs-validation {message}="validationMessage" />
 </div>

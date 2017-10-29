@@ -8,7 +8,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-form-group',
+    tag: 'cs-form-group',
     ViewModel,
     view
 });

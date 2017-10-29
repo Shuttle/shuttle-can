@@ -51,7 +51,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-modal',
+    tag: 'cs-modal',
     view,
     ViewModel
 });

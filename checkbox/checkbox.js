@@ -13,7 +13,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-checkbox',
+    tag: 'cs-checkbox',
     ViewModel,
     view
 });

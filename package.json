@@ -1,14 +1,14 @@
 {
-  "name": "shuttle-can",
+  "name": "shuttle-canstrap",
   "version": "1.0.2",
   "description": "CanJS components using Bootstrap v4",
-  "main": "shuttle-can.js",
+  "main": "shuttle-canstrap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shuttle/shuttle-can.git"
+    "url": "git+https://github.com/Shuttle/shuttle-canstrap.git"
   },
   "keywords": [
     "shuttle",
@@ -18,9 +18,9 @@
   "author": "Eben Roux",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Shuttle/shuttle-can/issues"
+    "url": "https://github.com/Shuttle/shuttle-canstrap/issues"
   },
-  "homepage": "https://github.com/Shuttle/shuttle-can#readme",
+  "homepage": "https://github.com/Shuttle/shuttle-canstrap#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
     "can": "^3.11.0",

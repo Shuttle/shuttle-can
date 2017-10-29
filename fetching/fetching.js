@@ -14,7 +14,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-fetching',
+    tag: 'cs-fetching',
     view,
     viewModel: ViewModel
 });

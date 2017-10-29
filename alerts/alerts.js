@@ -3,7 +3,7 @@ import view from './alerts.stache!';
 import alerts from '~/alerts';
 
 export default Component.extend({
-    tag: 'shuttle-alerts',
+    tag: 'cs-alerts',
     view,
     viewModel: function() {
         return alerts;

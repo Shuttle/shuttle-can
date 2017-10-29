@@ -9,7 +9,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-validation',
+    tag: 'cs-validation',
     ViewModel,
     view
 });

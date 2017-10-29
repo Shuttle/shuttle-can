@@ -15,7 +15,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-button-refresh',
+    tag: 'cs-button-refresh',
     ViewModel,
     view
 });

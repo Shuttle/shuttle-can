@@ -23,7 +23,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'shuttle-select-input',
+    tag: 'cs-select-input',
     ViewModel,
     view
 });

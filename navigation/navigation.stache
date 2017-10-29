@@ -3,19 +3,19 @@
     <div class="container-fluid">
       <div class="navbar-header">
         {{#if navigationItems}}
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#shuttle-navigation">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cs-navigation">
           <span class="sr-only">Toggle navigation</span>
           <span class="glyphicon glyphicon-menu-hamburger"></span>
         </button>
         {{/if}}
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#shuttle-navigation-user">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cs-navigation-user">
           <span class="sr-only">Toggle user</span>
           <span class="glyphicon glyphicon-user"></span>
         </button>
         <a class="navbar-brand" href="#">Shuttle.Sentinel</a>
       </div>
       {{#if navigationItems}}
-      <div class="navbar-header collapse navbar-collapse" id="shuttle-navigation">
+      <div class="navbar-header collapse navbar-collapse" id="cs-navigation">
         <ul class='nav navbar-nav'>
           {{#each navigationItems}}
           {{#if href}}
@@ -43,7 +43,7 @@
         </ul>
       </div>
       {{/if}}
-      <div class="navbar-header collapse navbar-collapse navbar-right" id="shuttle-navigation-user">
+      <div class="navbar-header collapse navbar-collapse navbar-right" id="cs-navigation-user">
         <ul class="nav navbar-nav">
           {{#switch security.loginStatus}}
           {{#case "user-required"}}
@@ -92,13 +92,13 @@
           {{#each controls}}
           {{#switch type}}
           {{#case 'button'}}
-          <shuttle-button {context}="context" {click}="click" text="{{title}}" element-class="navbar-btn {{elementClass}}" permission="{{permission}}" />
+          <cs-button {context}="context" {click}="click" text="{{title}}" element-class="navbar-btn {{elementClass}}" permission="{{permission}}" />
           {{/case}}
           {{#case 'refresh-button'}}
-          <shuttle-refresh-button {context}="context" {click}="click" element-class="navbar-btn {{elementClass}}" />
+          <cs-refresh-button {context}="context" {click}="click" element-class="navbar-btn {{elementClass}}" />
           {{/case}}
           {{#case 'back-button'}}
-          <shuttle-back-button element-class="navbar-btn {{elementClass}}" />
+          <cs-back-button element-class="navbar-btn {{elementClass}}" />
           {{/case}}
           {{/switch}}
           {{/each}}
