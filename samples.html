@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>shuttle-canstrap samples</title>
+    <meta name='viewport' content='minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+</head>
+<body>
+    <div id='application-container'>
+    </div>
+    <script 
+		src='./node_modules/steal/steal.js' 
+		config-path='samples-configuration.js'
+		main='samples'>
+	</script>
+
+	<script id='appplcation-template' type='text/stache'>
+	{{#switch sample}}
+		{{#case 'text'}}
+			<cs-text />
+		{{/case}}
+	{{/switch}}
+	</script>
+	  
+	<script id='navigation-template' type='text/stache'>
+	<h1>Home Page</h1>
+	<a href='{{routeUrl(page='away')}}'>
+	  Away
+	</a>
+	</script>
+</body>
+</html>
