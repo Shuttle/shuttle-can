@@ -1,0 +1,24 @@
+{
+  "name": "shuttle-canstrap-samples",
+  "version": "1.0.0",
+  "description": "shuttle-canstrap samples",
+  "steal": {
+    "main": "main.js",
+    "directories": {
+      "lib": "src"
+    },
+    "npmAlgorithm": "flat",
+    "plugins": [
+      "steal-stache",
+      "steal-css"
+    ]
+  },
+  "dependencies": {
+    "can": "^3.11.0",
+    "can-component": "^3.3.6",
+    "can-define": "^1.5.4",
+    "can-stache": "^3.13.1",
+    "jquery": "^3.2.1",
+    "shuttle-canstrap": "^1.0.4"
+  }
+}

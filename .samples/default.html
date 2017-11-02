@@ -8,12 +8,12 @@
     <div id='application-container'>
     </div>
     <script 
-		src='./node_modules/steal/steal.js' 
-		config-path='samples-configuration.js'
-		main='samples'>
+		src='node_modules/steal/steal.js'
+		config-main="package.json!npm"
+	>
 	</script>
 
-	<script id='appplcation-template' type='text/stache'>
+	<script id='sample-template' type='text/stache'>
 	{{#switch sample}}
 		{{#case 'text'}}
 			<cs-text />
@@ -22,10 +22,7 @@
 	</script>
 	  
 	<script id='navigation-template' type='text/stache'>
-	<h1>Home Page</h1>
-	<a href='{{routeUrl(page='away')}}'>
-	  Away
-	</a>
+		<cs-navigation />
 	</script>
 </body>
 </html>
