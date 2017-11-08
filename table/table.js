@@ -6,6 +6,15 @@ import view from './table.stache!';
 import localisation from '~/localisation';
 import click from '~/components/click';
 
+export const ColumnMap = DefineMap.extend({
+    columnTitle: 'string',
+    buttonContext: 'any'
+});
+
+export const ColumnList = DefineList.extend({
+    '#': ColumnMap
+});
+
 export const ViewModel = DefineMap.extend({
     emptyMessage: {
         get: function() {
@@ -26,7 +35,7 @@ export const ViewModel = DefineMap.extend({
     },
 
     columns: {
-        Value: DefineList
+        Value: ColumnList
     },
 
     rows: {
@@ -98,11 +107,3 @@ export default Component.extend({
     ViewModel
 });
 
-export const ColumnMap = DefineMap.extend({
-    columnTitle: 'string',
-    buttonContext: 'any'
-});
-
-export const ColumnList = DefineList.extend({
-    '#': ColumnMap
-});

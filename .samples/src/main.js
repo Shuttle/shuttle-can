@@ -1,9 +1,15 @@
 import $ from 'jquery';
+import 'popper.js';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css!';
+
 import DefineMap from 'can-define/map/';
 import Component from 'can-component/';
 import stache from 'can-stache/';
 import route from 'can-route/';
-import 'shuttle-canstrap/navigation/';
+import 'shuttle-canstrap';
+
+import '~/components/navigation';
 
 var ApplicationViewModel = DefineMap.extend({
   sample: 'string'

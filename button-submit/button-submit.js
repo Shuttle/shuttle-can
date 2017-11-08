@@ -40,7 +40,7 @@ export const ViewModel = DefineMap.extend({
 });
 
 export default Component.extend({
-    tag: 'cs-submit-button',
+    tag: 'cs-button-submit',
     view,
     ViewModel
 });
