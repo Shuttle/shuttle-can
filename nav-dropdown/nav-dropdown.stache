@@ -1,16 +1,16 @@
-{{#each navigationItems}}
-  {{#if href}}
+{{#each(items)}}
+  {{#if(href)}}
     <li class="nav-item">
       <a class="nav-link" href="#">{{text}}</a>
     </li>
   {{else}}
-    {{#if items}}
+    {{#if(items)}}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{text}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          {{#each items}}
+          {{#each(items)}}
             <a class="dropdown-item" href="{{href}}">{{text}}</a>
           {{/each}}
         </div>

@@ -1,62 +1,42 @@
 {
-  "name": "shuttle-canstrap-samples",
+  "name": "canjs-test",
   "version": "1.0.0",
-  "description": "shuttle-canstrap samples",
+  "description": "",
   "steal": {
     "main": "main.js",
     "directories": {
       "lib": "src"
     },
-    "npmAlgorithm": "flat",
     "plugins": [
       "steal-stache",
       "steal-css"
     ],
     "meta": {
-      "bootstrap/js/dropdown": {
+      "popper.js": {
+        "format": "global",
         "deps": [
-          "jquery",
-          "tether",
-          "popper.js"
+          "jquery"
         ]
       },
       "bootstrap": {
         "deps": [
           "jquery",
-          "tether",
           "popper.js"
-        ]
-      },
-      "bootstrap/dist/js/bootstrap": {
-        "deps": [
-          "jquery",
-          "tether",
-          "popper.js"
-        ]
-      },
-      "tether/dist/js/tether": {
-        "format": "global",
-        "deps": [
-          "jquery"
-        ]
-      },
-      "popper.js/dist/umd/popper": {
-        "format": "global",
-        "exports": "Popper",
-        "deps": [
-          "jquery"
         ]
       }
     },
     "map": {
       "popper.js": "popper.js/dist/umd/popper",
-      "tether": "tether/dist/js/tether",
       "bootstrap": "bootstrap/dist/js/bootstrap"
     }
   },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
-    "can": "^3.11.0",
     "can-component": "^3.3.6",
     "can-compute": "^3.3.9",
     "can-connect": "^1.5.10",
@@ -64,14 +44,12 @@
     "can-route": "^3.2.4",
     "can-route-pushstate": "^3.2.0",
     "can-set": "^1.3.3",
-    "can-stache": "^3.13.1",
-    "can-stache-bindings": "^3.11.0",
-    "jquery": "^3.2.1",
+    "can-stache": "^3.13.4",
+    "can-stache-bindings": "^3.11.1",
     "popper.js": "^1.12.6",
     "shuttle-canstrap": "^1.0.4",
-    "steal": "^1.5.15",
+    "steal": "^1.5.17",
     "steal-css": "^1.3.1",
-    "steal-stache": "^3.1.2",
-    "tether": "^1.4.0"
+    "steal-stache": "^3.1.3"
   }
 }

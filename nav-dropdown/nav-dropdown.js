@@ -1,21 +1,21 @@
 import DefineMap from 'can-define/map/';
 import DefineList from 'can-define/list/';
 import Component from 'can-component';
-import view from './navigation.stache';
+import view from './nav-dropdown.stache';
 import each from 'can-util/js/each/';
 
-export const NavigationItem = DefineMap.extend({
+export const DropdownItem = DefineMap.extend({
     href: 'string',
     text: 'string',
-	items: { Value: NavigationItemList }
+    items: { Value: DropdownItemList }
 });
 
-export const NavigationItemList = DefineList.extend({
-    '#': NavigationItem
+export const DropdownItemList = DefineList.extend({
+    '#': DropdownItem
 });
 
 var ViewModel = DefineMap.extend({
-    items: { Value: NavigationItemList }
+    items: { Value: DropdownItemList }
 });
 
 export default Component.extend({
