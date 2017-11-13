@@ -1,3 +1,20 @@
 <sample-navigation />
-<div id='sample-container'>
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 csd-sidebar">
+      <nav class="csd-links">
+        <ul class="nav">
+          <li>
+            <a href="{{routeUrl(sample='cs-fetching')}}">cs-fetching</a>
+          </li>
+          <li>
+            <a href="{{routeUrl(sample='cs-input')}}">cs-input</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main id="application-content" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 csd-content" role="main">
+    </main>
+  </div>
 </div>

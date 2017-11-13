@@ -6,14 +6,40 @@ import each from 'can-util/js/each/';
 import {DropdownItemList, DropdownItem} from 'shuttle-canstrap/nav-dropdown/';
 
 var ViewModel = DefineMap.extend({
-    someValue: { value: 'test' },
     items: {
         get: function() {
             var result = new DropdownItemList();
 
             result.push(new DropdownItem({
-              text: 'yay!',
-              items: [{ href: '#', text: 'sub' }]
+              text: 'cs-nav-dropdown',
+              items: [
+                { 
+                  href: '#', 
+                  text: 'item-1' 
+                },                { 
+                  href: '#', 
+                  text: 'item-2' 
+                },                { 
+                  href: '#', 
+                  text: 'item-3' 
+                }
+              ]
+            }));
+
+            result.push(new DropdownItem({
+              text: 'cs-nav-dropdown-second',
+              items: [
+                { 
+                  href: '#', 
+                  text: 'item-1' 
+                },                { 
+                  href: '#', 
+                  text: 'item-2' 
+                },                { 
+                  href: '#', 
+                  text: 'item-3' 
+                }
+              ]
             }));
 
             return result;

@@ -1,0 +1,65 @@
+.csd-navbar {
+    min-height: 4rem;
+    background-color: #563d7c;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+}
+
+.csd-navbar .navbar-nav-svg {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: text-top;
+}
+
+.csd-sidebar {
+  order: 0;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+
+  @include media-breakpoint-up(md) {
+    @supports (position: sticky) {
+      position: sticky;
+      top: 4rem;
+      z-index: 1000;
+      max-height: calc(100vh - 4rem);
+    }
+    border-right: 1px solid rgba(0,0,0,.1);
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: 320px;
+  }
+}
+
+.csd-links {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-right: -15px;
+  margin-left: -15px;
+
+  @include media-breakpoint-up(md) {
+    @supports (position: sticky) {
+      max-height: calc(100vh - 9rem);
+      overflow-y: auto;
+    }
+  }
+
+  // Override collapse behaviors
+  @include media-breakpoint-up(md) {
+    display: block !important;
+  }
+}
+
+.csd-links li {
+  width: 100%;
+}
+
+.csd-links a {
+  display: block;
+  padding: .25rem 1.5rem;
+  font-weight: 500;
+}
+
+.csd-content {
+    -ms-flex-order: 1;
+    order: 1;
+}
