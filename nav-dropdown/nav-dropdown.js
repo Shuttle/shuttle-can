@@ -3,6 +3,7 @@ import DefineList from 'can-define/list/';
 import Component from 'can-component';
 import view from './nav-dropdown.stache';
 import each from 'can-util/js/each/';
+import './nav-dropdown.css';
 
 export const DropdownItem = DefineMap.extend({
     href: 'string',

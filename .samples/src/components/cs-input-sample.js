@@ -5,6 +5,7 @@ import view from './cs-input-sample.stache!';
 import each from 'can-util/js/each/';
 
 var ViewModel = DefineMap.extend({
+  value: 'string'
 });
 
 export default Component.extend({

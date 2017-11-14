@@ -3,7 +3,7 @@ import DefineMap from 'can-define/map/';
 import view from './input.stache!';
 
 export const ViewModel = DefineMap.extend(
-    'shuttle-input-model',
+    'cs-input-model',
     {
         type: {
             type: 'string',
@@ -16,7 +16,6 @@ export const ViewModel = DefineMap.extend(
         placeholder: { type: 'string', value: '' },
         elementClass: { type: 'string', value: '' },
         focus: { type: 'boolean', value: true },
-
         value: { type: 'string', value: '' }
     });
 

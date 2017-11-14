@@ -10,7 +10,7 @@
 //require('./fetching/fetching.js');
 //require('./form/form.js');
 //require('./form-group/form-group.js');
-//require('./input/input.js');
+require('./input/input.js');
 //require('./label/label.js');
 //require('./modal/modal.js');
 require('./nav-dropdown/nav-dropdown.js');
