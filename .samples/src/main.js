@@ -39,11 +39,8 @@ var applicationViewModel = new ApplicationViewModel({
   }
 });
 
+$('#application-container').html(template(applicationViewModel));
+
 route.data = routeViewModel;
 route('{sample}');
 route.ready();
-
-var renderer = stache("<h1>Hello {{subject}} - {{routeUrl(sample='cs-fetching')}}</h1>");
-var fragment = renderer({subject: "World"})
-
-$('#application-container').html(template(applicationViewModel));

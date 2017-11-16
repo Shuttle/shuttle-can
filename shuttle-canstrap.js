@@ -7,7 +7,7 @@
 //require('./button-submit/button-submit.js');
 //require('./checkbox/checkbox.js');
 //require('./click/click.js');
-//require('./fetching/fetching.js');
+require('./fetching/fetching.js');
 //require('./form/form.js');
 //require('./form-group/form-group.js');
 require('./input/input.js');
