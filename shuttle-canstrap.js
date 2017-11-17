@@ -1,3 +1,4 @@
+require('./localisation/localisation.js');
 //require('./alerts/alerts.js');
 //require('./button/button.js');
 //require('./button-back/button-back.js');
@@ -11,7 +12,7 @@ require('./fetching/fetching.js');
 //require('./form/form.js');
 //require('./form-group/form-group.js');
 require('./input/input.js');
-//require('./label/label.js');
+require('./label/label.js');
 //require('./modal/modal.js');
 require('./nav-dropdown/nav-dropdown.js');
 //require('./page-title/page-title.js');

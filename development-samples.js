@@ -1,5 +1,6 @@
 var chokidar = require('chokidar');
 var fs = require('fs');
+var pathio = require('path');    
 
 var options = {
   ignoreInitial: true,
@@ -36,5 +37,5 @@ chokidar
     log('change', path);
   })
   .on('unlink', path => fs.unlinkSync(destination(path)))
-  .on('unlinkDir', path => fs.unlinkSync(destination(path)))
+  .on('unlinkDir', path => fs.unlinkSync(destination(path.substr(__dirname.length - 1))))
   .on('error', error => logger(`Watcher error: ${error}`));
