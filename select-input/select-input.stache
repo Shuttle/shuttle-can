@@ -1,4 +1,4 @@
-﻿<select {($value)}="value" class="form-control">
+﻿<select value:bind="value" class="form-control {{elementClass}}}">
 	{{#each options}}
         <option value='{{value}}'>{{label}}</option>
 	{{/each}}

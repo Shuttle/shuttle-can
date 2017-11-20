@@ -3,22 +3,18 @@ import DefineMap from 'can-define/map/';
 import DefineList from 'can-define/list/';
 import view from './select-input.stache!';
 
-const Option = DefineMap.extend({
+const OptionItem = DefineMap.extend({
+    elementClass: 'string',
     value: { type: 'string', value: '' },
     label: { type: 'string', value: '' }
 });
 
-const Options = DefineList.extend({
-    '#': Option
+const OptionItemList = DefineList.extend({
+    '#': OptionItem
 });
 
 export const ViewModel = DefineMap.extend({
-    options: { Value: Options },
-
-    elementClass: {
-        value: ''
-    },
-
+    options: { Value: OptionItemList },
     value: { type: 'string', value: '' }
 });
 

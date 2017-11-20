@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d12ef800-3a51-44c1-b422-b3809e030760" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/development-samples.cmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/development-samples.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/localisation/localisation.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/button-remove/button-remove.js" afterPath="$PROJECT_DIR$/button-remove/button-remove.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkbox/checkbox.js" afterPath="$PROJECT_DIR$/checkbox/checkbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkbox/checkbox.stache" afterPath="$PROJECT_DIR$/checkbox/checkbox.stache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fetching/fetching.js" afterPath="$PROJECT_DIR$/fetching/fetching.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/label/label.js" afterPath="$PROJECT_DIR$/label/label.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/label/label.stache" afterPath="$PROJECT_DIR$/label/label.stache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-title/page-title.js" afterPath="$PROJECT_DIR$/page-title/page-title.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/select-input/select-input.js" afterPath="$PROJECT_DIR$/select-input/select-input.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/select-input/select-input.stache" afterPath="$PROJECT_DIR$/select-input/select-input.stache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shuttle-canstrap.js" afterPath="$PROJECT_DIR$/shuttle-canstrap.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="select-input.stache" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/select-input/select-input.stache">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+            <state relative-caret-position="0">
+              <caret line="0" column="64" lean-forward="false" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -44,38 +34,18 @@
       <file leaf-file-name="shuttle-canstrap.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shuttle-canstrap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="303">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="i18n.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/i18n/i18n.js">
+      <file leaf-file-name="select-input.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/select-input/select-input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="label.stache" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/label/label.stache">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checkbox.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/checkbox/checkbox.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="126">
+              <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -83,33 +53,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkbox.stache" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/checkbox/checkbox.stache">
+      <file leaf-file-name="nav-dropdown.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nav-dropdown/nav-dropdown.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-title.stache" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page-title/page-title.stache">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-title.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/page-title/page-title.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="294">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,6 +91,9 @@
         <option value="$PROJECT_DIR$/checkbox/checkbox.stache" />
         <option value="$PROJECT_DIR$/page-title/page-title.js" />
         <option value="$PROJECT_DIR$/shuttle-canstrap.js" />
+        <option value="$PROJECT_DIR$/nav-dropdown/nav-dropdown.js" />
+        <option value="$PROJECT_DIR$/select-input/select-input.stache" />
+        <option value="$PROJECT_DIR$/select-input/select-input.js" />
       </list>
     </option>
   </component>
@@ -209,7 +162,22 @@
             <path>
               <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
               <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="page-title" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="nav-dropdown" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="select" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="select-input" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -276,12 +244,12 @@
       <workItem from="1510984862789" duration="5279000" />
       <workItem from="1511072557339" duration="3292000" />
       <workItem from="1511151438537" duration="5573000" />
-      <workItem from="1511200865204" duration="305000" />
+      <workItem from="1511200865204" duration="2160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15323000" />
+    <option name="totallyTimeSpent" value="17178000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,12 +264,12 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18244316" sideWeight="0.4842975" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18244316" sideWeight="0.47731093" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.50185084" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18244316" sideWeight="0.5157025" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.49814913" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18244316" sideWeight="0.5226891" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32692307" sideWeight="0.49814913" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960339" sideWeight="0.4954751" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18244316" sideWeight="0.5090498" order="2" side_tool="true" content_ui="tabs" />
@@ -360,7 +328,7 @@
         <state relative-caret-position="378">
           <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -386,7 +354,7 @@
         <state relative-caret-position="252">
           <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -477,7 +445,7 @@
         <state relative-caret-position="378">
           <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -505,14 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shuttle-canstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page-title/page-title.stache">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -525,6 +485,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/select/select.stache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nav-dropdown/nav-dropdown.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shuttle-canstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/select-input/select-input.stache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="64" lean-forward="false" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/select-input/select-input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

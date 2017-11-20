@@ -17,7 +17,7 @@ require('./label/label.js');
 require('./nav-dropdown/nav-dropdown.js');
 require('./page-title/page-title.js');
 //require('./select/select.js');
-//require('./select-input/select-input.js');
+require('./select-input/select-input.js');
 //require('./table/table.js');
 //require('./text/text.js');
 //require('./textarea/textarea.js');
