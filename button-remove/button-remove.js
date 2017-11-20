@@ -2,7 +2,7 @@
 import DefineMap from 'can-define/map/';
 import view from './button-remove.stache!';
 import modals from '~/modals';
-import localisation from '~/localisation';
+import localisation from '~/i18n';
 import click from '~/components/click';
 
 export const ViewModel = DefineMap.extend({

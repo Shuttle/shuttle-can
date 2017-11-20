@@ -1,20 +1,20 @@
 ﻿import Component from 'can-component';
 import DefineMap from 'can-define/map/';
 import view from './page-title.stache!';
-import localisation from '~/localisation';
+import i18n from '../i18n/';
 
 export const ViewModel = DefineMap.extend({
     title: {
         get: function(value) {
-            return localisation.value(value);
+            return i18n.value(value);
         }
     }
 });
 
 export default Component.extend({
     tag: 'cs-page-title',
-    view: view,
-    viewModel: ViewModel
+    view,
+    ViewModel
 });
 
 

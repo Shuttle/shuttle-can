@@ -1,1 +1,2 @@
-﻿<span {($click)}="click(%event)" class="glyphicon {{#if checked}}glyphicon-check{{else}}glyphicon-unchecked{{/if}}" />
+﻿<i on:click="click(scope.event)" class="fa {{#if checked}}{{checkedClass}}{{else}}{{uncheckedClass}}{{/if}}" aria-hidden="true"></i>
+

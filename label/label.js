@@ -1,13 +1,14 @@
 ﻿import Component from 'can-component';
 import DefineMap from 'can-define/map/';
 import view from './label.stache!';
-import localisation from '~/localisation';
+import i18n from '../i18n/';
 
 export const ViewModel = DefineMap.extend({
+    required: 'boolean',
     label: {
         type: 'string',
         get: function(value) {
-            return localisation.value(value);
+            return i18n.value(value);
         }
     }
 });
@@ -15,7 +16,7 @@ export const ViewModel = DefineMap.extend({
 export default Component.extend({
     tag: 'cs-label',
     view,
-    viewModel: ViewModel
+    ViewModel
 });
 
 

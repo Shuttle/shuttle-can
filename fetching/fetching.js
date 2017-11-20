@@ -1,14 +1,14 @@
 ﻿import Component from 'can-component';
 import DefineMap from 'can-define/map/';
 import view from './fetching.stache!';
-import localisation from '../localisation/';
+import i18n from '../i18n/';
 
 export const ViewModel = DefineMap.extend({
   title: {
       type: 'string',
       value: '',
       get: function(value) {
-          return localisation.value('fetching', { name: localisation.value(value)});
+          return i18n.value('fetching', { name: i18n.value(value)});
       }
   }
 });

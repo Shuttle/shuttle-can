@@ -3,12 +3,12 @@
   "version": "1.0.4",
   "description": "CanJS components using Bootstrap v4",
   "main": "shuttle-canstrap.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shuttle/shuttle-canstrap.git"
+  },
+  "scripts": {
+    "sync-samples": "node .\\node_modules\\sync-glob\\bin\\sync-glob.js --watch \"**/*\" \"!node_modules/**/*\" ..\\shuttle-canstrap-samples\\node_modules\\shuttle-canstrap\\"
   },
   "keywords": [
     "shuttle",
@@ -22,22 +22,23 @@
   },
   "homepage": "https://github.com/Shuttle/shuttle-canstrap#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0-beta.2",
     "can-component": "^3.3.6",
     "can-compute": "^3.3.9",
-    "can-connect": "^1.5.10",
+    "can-connect": "^1.5.12",
     "can-define": "^1.5.4",
     "can-route": "^3.2.4",
     "can-route-pushstate": "^3.2.0",
     "can-set": "^1.3.3",
     "can-stache": "^3.13.4",
     "can-stache-bindings": "^3.11.1",
-    "popper.js": "^1.12.5",
+    "font-awesome": "^4.7.0",
+    "popper.js": "^1.12.9",
     "steal": "^1.6.0",
     "steal-css": "^1.3.1",
-    "tether": "^1.4.0"
+    "tether": "^1.4.1"
   },
   "devDependencies": {
-    "chokidar": "^1.7.0"
+    "sync-glob": "^1.3.7"
   }
 }
