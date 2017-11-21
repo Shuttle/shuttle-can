@@ -1,8 +1,27 @@
 ﻿import Component from 'can-component';
 import DefineMap from 'can-define/map/';
+import DefineList from 'can-define/list/';
 import view from './button.stache!';
-import security from '~/security';
-import click from '~/components/click';
+import access from '../infrastructure/access';
+import click from '../infrastructure/click';
+import i18n from '../infrastructure/i18n';
+
+const ActionItem = DefineMap.extend({
+    isSeparator: {
+        type: 'boolean',
+        value: false
+    },
+    text: {
+        type: 'string',
+        get: function(value) {
+            return i18n.value(value);
+        }
+    },
+});
+
+const ActionItemList = DefineList.extend({
+    '#': ActionItem
+});
 
 export const ViewModel = DefineMap.extend({
     context: {
@@ -38,12 +57,18 @@ export const ViewModel = DefineMap.extend({
             return value || '';
         }
     },
+    text: {
+        type: 'string',
+        get: function(value) {
+            return i18n.value(value);
+        }
+    },
     disabled: {
         get: function(value) {
             var disabled = value || false;
 
             if (this.permission && !disabled) {
-                disabled = !security.hasPermission(this.permission);
+                disabled = !access.hasPermission(this.permission);
             }
 
             return disabled;

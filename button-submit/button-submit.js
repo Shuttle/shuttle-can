@@ -1,7 +1,7 @@
 ﻿import Component from 'can-component';
 import DefineMap from 'can-define/map/';
 import view from './submit-button.stache!';
-import security from '~/security';
+import security from '~/access';
 import click from '~/components/click';
 
 export const ViewModel = DefineMap.extend({

@@ -1,4 +1,4 @@
-﻿import guard from '~/guard';
+﻿import guard from '../infrastructure/guard';
 
 var click = {
     on: function(viewModel, ev) {

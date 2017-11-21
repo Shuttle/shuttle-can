@@ -1,7 +1,7 @@
 ﻿import Component from 'can-component';
 import DefineMap from 'can-define/map/';
 import view from './page-title.stache!';
-import i18n from '../i18n/';
+import i18n from '../infrastructure/i18n';
 
 export const ViewModel = DefineMap.extend({
     title: {
