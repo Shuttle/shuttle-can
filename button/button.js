@@ -17,6 +17,7 @@ const ActionItem = DefineMap.extend({
             return i18n.value(value);
         }
     },
+    click: { type: '*' }
 });
 
 const ActionItemList = DefineList.extend({
@@ -26,6 +27,9 @@ const ActionItemList = DefineList.extend({
 export const ViewModel = DefineMap.extend({
     context: {
         value: null
+    },
+    click: {
+        type: '*'
     },
     buttonType: {
         get: function() {

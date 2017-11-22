@@ -1,23 +1,26 @@
 ﻿{{#switch buttonType}}
-	{{#case "dropdown"}}
+    {{#case "dropdown"}}
         <div class="btn-group" xmlns:disabled="http://www.w3.org/1999/xhtml">
-		  <button type="button" class="btn {{elementClass}} {{classVisibility}} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:bind="disabled">
-			<span class="glyphicon {{iconName}}" />&nbsp;{{text}}&nbsp;<span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu">
-			{{#each actions}}
-				{{#if isSeparator}}
-					<li role="separator" class="divider"></li>
-				{{else}}
-					<li><a href="#" on:click="click()">{{text}}</a></li>
-				{{/if}}
-			{{/each}}
-		  </ul>
-		</div>
-	{{/case}}
-	{{#default}}
-		<button type:from="type" class="btn {{elementClass}} {{classVisibility}}" on:$click="_click(scope.event)" disabled:bind="disabled">
-        {{#if iconName}}<i class="fa {{iconName}}" aria-hidden="true"></i>{{/if}}{{text}}
-		</button>
-	{{/default}}
+            <button type="button" class="btn {{elementClass}} {{classVisibility}} dropdown-toggle"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:bind="disabled">
+                {{#if iconName}}<i class="pr-2 fa {{iconName}}" aria-hidden="true"></i>{{/if}}{{text}}<span
+                    class="caret"></span>
+            </button>
+            <div class="dropdown-menu">
+                {{#each actions}}
+                    {{#if isSeparator}}
+                        <div class="dropdown-divider"></div>
+                    {{else}}
+                        <a  class="dropdown-item" href="#" on:click="click()">{{text}}</a>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    {{/case}}
+    {{#default}}
+        <button type:from="type" class="btn {{elementClass}} {{classVisibility}}" on:click="_click(scope.event)"
+                disabled:bind="disabled">
+            {{#if iconName}}<i class="pr-2 fa {{iconName}}" aria-hidden="true"></i>{{/if}}{{text}}
+        </button>
+    {{/default}}
 {{/switch}}
