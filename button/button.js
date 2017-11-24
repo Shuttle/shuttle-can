@@ -16,8 +16,7 @@ const ActionItem = DefineMap.extend({
         get: function(value) {
             return i18n.value(value);
         }
-    },
-    click: { type: '*' }
+    }
 });
 
 const ActionItemList = DefineList.extend({

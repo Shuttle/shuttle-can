@@ -1,14 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      {{#each messages}}
-      <div class="alert alert-{{type}}" role="alert">
-        <button type="button" class="close" aria-label="Close" ($click)="destroy()">
-          <span aria-hidden="true">&times;</span>
+{{#each messages}}
+    <div class="alert alert-{{type}} alert-dismissible" role="alert">
+        <button type="button" class="close" aria-label="Close" data-dismiss="alert" aria-label="Close"
+                on:click="destroy()">
+            <span aria-hidden="true">&times;</span>
         </button>
         {{message}}
-      </div>
-      {{/each}}
     </div>
-  </div>
-</div>
+{{/each}}

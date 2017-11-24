@@ -1,15 +1,23 @@
 ﻿import Component from 'can-component';
 import view from './button-back.stache!';
 import DefineMap from 'can-define/map/';
+import i18n from '../infrastructure/i18n';
 
 export const ViewModel = DefineMap.extend({
     elementClass: {
         type: 'string',
-        get: function(type) {
+        get: function (type) {
             return type || '';
         }
     },
-    back: function() {
+    text: {
+        type: 'string',
+        value: 'back',
+        get: function (value) {
+            return i18n.value(value);
+        }
+    },
+    back: function () {
         window.history.back();
     }
 });
