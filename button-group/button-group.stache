@@ -1,3 +1,8 @@
-﻿<div class="cs-button-group">
-	<content/>
+﻿<div class="btn-group" role="group">
+    {{#each buttons}}
+        <button type:from="type" class="btn {{elementClass}} {{classVisibility}}" on:click="_click(scope.event)"
+                disabled:bind="disabled">
+            {{#if iconName}}<i class="fa {{iconName}}{{#if text}} pr-2{{/if}}" aria-hidden="true"></i>{{/if}}{{text}}
+        </button>
+    {{/each}}
 </div>

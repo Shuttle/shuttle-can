@@ -27,9 +27,6 @@ export const ViewModel = DefineMap.extend({
     context: {
         value: null
     },
-    click: {
-        type: '*'
-    },
     buttonType: {
         get: function() {
             return (this.actions && this.actions.length > 0)
@@ -80,6 +77,7 @@ export const ViewModel = DefineMap.extend({
     permission: {
         value: ''
     },
+    actions: {Type: ActionItemList},
     _click: function(ev) {
         ev.stopPropagation();
 

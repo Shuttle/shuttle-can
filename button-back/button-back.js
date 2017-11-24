@@ -12,7 +12,7 @@ export const ViewModel = DefineMap.extend({
     },
     text: {
         type: 'string',
-        value: 'back',
+        value: '',
         get: function (value) {
             return i18n.value(value);
         }

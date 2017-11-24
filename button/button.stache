@@ -1,9 +1,9 @@
 ﻿{{#switch buttonType}}
     {{#case "dropdown"}}
-        <div class="btn-group" xmlns:disabled="http://www.w3.org/1999/xhtml">
+        <div class="btn-group" disabled:from="disabled">
             <button type="button" class="btn {{elementClass}} {{classVisibility}} dropdown-toggle"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:bind="disabled">
-                {{#if iconName}}<i class="pr-2 fa {{iconName}}" aria-hidden="true"></i>{{/if}}{{text}}<span
+                {{#if iconName}}<i class="fa {{iconName}}{{#if text}} pr-2{{/if}}" aria-hidden="true"></i>{{/if}}{{text}}<span
                     class="caret"></span>
             </button>
             <div class="dropdown-menu">
@@ -20,7 +20,7 @@
     {{#default}}
         <button type:from="type" class="btn {{elementClass}} {{classVisibility}}" on:click="_click(scope.event)"
                 disabled:bind="disabled">
-            {{#if iconName}}<i class="pr-2 fa {{iconName}}" aria-hidden="true"></i>{{/if}}{{text}}
+            {{#if iconName}}<i class="fa {{iconName}}{{#if text}} pr-2{{/if}}" aria-hidden="true"></i>{{/if}}{{text}}
         </button>
     {{/default}}
 {{/switch}}
