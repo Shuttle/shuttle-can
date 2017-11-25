@@ -4,7 +4,7 @@
   }
 };
 
-let localisation = {
+let i18n = {
     _adapter: _default,
     wire: function(adapter) {
       if (!adapter) {
@@ -20,4 +20,4 @@ let localisation = {
     }
 };
 
-export default localisation;
+export default i18n;

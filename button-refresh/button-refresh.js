@@ -1,25 +1,14 @@
 ﻿import Component from 'can-component';
-import DefineMap from 'can-define/map/';
 import view from './button-refresh.stache!';
-import click from '../infrastructure/click';
-import i18n from '../infrastructure/i18n';
+import ComponentViewModel from '../infrastructure/component-view-model';
+import options from '../infrastructure/options';
 
-export const ViewModel = DefineMap.extend({
-    disabled: 'boolean',
-    context: {
-        value: null
-    },
-    text: {
+export const ViewModel = ComponentViewModel.extend({
+    iconNameClass: {
         type: 'string',
-        value: '',
-        get: function (value) {
-            return i18n.value(value);
+        get: function(value){
+            return value || options.button.refreshIconNameClass;
         }
-    },
-    _click: function(ev) {
-        ev.stopPropagation();
-
-        return click.on(this);
     }
 });
 

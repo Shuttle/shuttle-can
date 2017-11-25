@@ -3,7 +3,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+            <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+            <i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}" aria-hidden="true"></i>
         </button>
         <h4 class="modal-title text-{{textType}}" id="{{modalId}}-title">{{i18n title}}</h4>
       </div>

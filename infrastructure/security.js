@@ -4,7 +4,7 @@ const _default = {
     }
 };
 
-let access = {
+let security = {
     _adapter: _default,
     wire: function(adapter) {
         if (!adapter) {
@@ -20,4 +20,4 @@ let access = {
     }
 };
 
-export default access;
+export default security;

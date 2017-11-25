@@ -2,44 +2,17 @@
 import DefineList from 'can-define/list/';
 import Component from 'can-component';
 import view from './button-group.stache!';
-import access from '../infrastructure/access';
-import click from '../infrastructure/click';
-import i18n from '../infrastructure/i18n';
+import ComponentViewModel from '../infrastructure/component-view-model';
 
-const ButtonItem = DefineMap.extend({
-    disabled: {
-        get: function(value) {
-            var disabled = value || false;
-
-            if (this.permission && !disabled) {
-                disabled = !access.hasPermission(this.permission);
-            }
-
-            return disabled;
-        }
-    },
-    permission: {
-        value: ''
-    },
-    text: {
-        type: 'string',
-        get: function(value) {
-            return i18n.value(value);
-        }
-    },
+export const ButtonItem = ComponentViewModel.extend({
     type: {
         get: function(type) {
             return type || 'button';
         }
-    },
-    _click: function(ev) {
-        ev.stopPropagation();
-
-        return click.on(this);
     }
 });
 
-const ButtonItemList = DefineList.extend({
+export const ButtonItemList = DefineList.extend({
     '#': ButtonItem
 });
 

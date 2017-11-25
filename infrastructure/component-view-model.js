@@ -1,10 +1,13 @@
 import DefineMap from 'can-define/map/';
-import options from '../infrastructure/options';
-import access from '../infrastructure/access';
-import click from '../infrastructure/click';
-import i18n from '../infrastructure/i18n';
+import options from './options';
+import security from './security';
+import click from './click';
+import i18n from './i18n';
 
-export const ComponentViewModel = DefineMap.extend({
+export default DefineMap.extend({
+    context: {
+        type: '*'
+    },
     elementClass: {
         type: 'string'
     },
@@ -21,9 +24,15 @@ export const ComponentViewModel = DefineMap.extend({
             return value || options.iconClass || 'fa';
         }
     },
-    iconName: {
+    iconNameClass: {
         get: function(value) {
             return value || '';
+        }
+    },
+    iconSpacingClass: {
+        type: 'string',
+        get: function(value){
+            return value || options.iconSpacingClass;
         }
     },
     text: {
@@ -37,7 +46,7 @@ export const ComponentViewModel = DefineMap.extend({
             var disabled = value || false;
 
             if (this.permission && !disabled) {
-                disabled = !access.hasPermission(this.permission);
+                disabled = !security.hasPermission(this.permission);
             }
 
             return disabled;

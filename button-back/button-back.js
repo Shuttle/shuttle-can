@@ -1,24 +1,17 @@
 ﻿import Component from 'can-component';
+import ComponentViewModel from '../infrastructure/component-view-model';
+import options from '../infrastructure/options';
 import view from './button-back.stache!';
-import DefineMap from 'can-define/map/';
-import i18n from '../infrastructure/i18n';
 
-export const ViewModel = DefineMap.extend({
-    elementClass: {
-        type: 'string',
-        get: function (type) {
-            return type || '';
-        }
-    },
-    text: {
-        type: 'string',
-        value: '',
-        get: function (value) {
-            return i18n.value(value);
-        }
-    },
+export const ViewModel = ComponentViewModel.extend({
     back: function () {
         window.history.back();
+    },
+    iconNameClass: {
+        type: 'string',
+        get: function(value){
+            return value || options.button.backIconNameClass;
+        }
     }
 });
 
