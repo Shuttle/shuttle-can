@@ -1,10 +1,11 @@
 ﻿import Component from 'can-component';
-import DefineMap from 'can-define/map/';
+import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './validation.stache!';
 
-export const ViewModel = DefineMap.extend({
-    define: {
-        message: { type: 'string', value: '' }
+export const ViewModel = ComponentViewModel.extend({
+    message: {
+        type: 'string',
+        value: ''
     }
 });
 

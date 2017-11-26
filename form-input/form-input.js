@@ -1,9 +1,9 @@
 ﻿import Component from 'can-component';
 import InputViewModel from './input-view-model';
-import view from './text.stache!';
+import view from './form-input.stache!';
 
 export default Component.extend({
-    tag: 'cs-text',
+    tag: 'cs-form-input',
     ViewModel: InputViewModel,
     view
 });

@@ -1,8 +1,8 @@
 ﻿import Component from 'can-component';
-import DefineMap from 'can-define/map/';
+import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './checkbox.stache!';
 
-export const ViewModel = DefineMap.extend({
+export const ViewModel = ComponentViewModel.extend({
     checkedClass: {
       type: 'string',
       value: 'fa-check-square-o'

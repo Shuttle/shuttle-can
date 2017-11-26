@@ -1,0 +1,4 @@
+﻿<cs-form-group {validation-message}="validationMessage" {element-class}="formGroupClass">
+  <cs-label {label}="label" {required}="required" />
+  <cs-select-input {focus}="focus" {(value)}="value" {options}="options" {element-class}="inputClass"/>
+</cs-form-group>

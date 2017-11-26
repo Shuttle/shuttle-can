@@ -1,9 +1,9 @@
 ﻿import Component from 'can-component';
-import DefineMap from 'can-define/map/';
+import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './fetching.stache!';
 import i18n from '../infrastructure/i18n';
 
-export const ViewModel = DefineMap.extend({
+export const ViewModel = ComponentViewModel.extend({
   title: {
       type: 'string',
       value: '',

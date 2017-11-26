@@ -1,10 +1,12 @@
 ﻿import Component from 'can-component';
-import DefineMap from 'can-define/map/';
+import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './form-group.stache!';
 
-export const ViewModel = DefineMap.extend({
-    validationMessage: { type: 'string', value: '' },
-    elementClass: { type: 'string', value: '' }
+export const ViewModel = ComponentViewModel.extend({
+    validationMessage: {
+        type: 'string',
+        value: ''
+    }
 });
 
 export default Component.extend({
