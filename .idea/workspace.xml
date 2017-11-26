@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d12ef800-3a51-44c1-b422-b3809e030760" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/button-remove/button-remove.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/button-remove/button-remove.stache" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/button-submit/button-submit.js" afterPath="$PROJECT_DIR$/button-submit/button-submit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/button-submit/button-submit.stache" afterPath="$PROJECT_DIR$/button-submit/button-submit.stache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/button/button.stache" afterPath="$PROJECT_DIR$/button/button.stache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infrastructure/component-view-model.js" afterPath="$PROJECT_DIR$/infrastructure/component-view-model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/infrastructure/options.js" afterPath="$PROJECT_DIR$/infrastructure/options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modal/modal.js" afterPath="$PROJECT_DIR$/modal/modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shuttle-canstrap.js" afterPath="$PROJECT_DIR$/shuttle-canstrap.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,8 +34,8 @@
       <file leaf-file-name="button-refresh.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/button-refresh/button-refresh.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -52,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="button-submit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="button-submit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/button-submit/button-submit.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="63">
@@ -62,11 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="options.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="button-refresh.stache" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/button-refresh/button-refresh.stache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="options.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/infrastructure/options.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="399">
+              <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -159,8 +160,8 @@
         <option value="$PROJECT_DIR$/button/button.stache" />
         <option value="$PROJECT_DIR$/button-submit/button-submit.stache" />
         <option value="$PROJECT_DIR$/infrastructure/component-view-model.js" />
-        <option value="$PROJECT_DIR$/infrastructure/options.js" />
         <option value="$PROJECT_DIR$/button-submit/button-submit.js" />
+        <option value="$PROJECT_DIR$/infrastructure/options.js" />
       </list>
     </option>
   </component>
@@ -228,37 +229,22 @@
             <path>
               <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
               <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="button" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
               <item name="button-refresh" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
               <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="button-submit" type="462c0819:PsiDirectoryNode" />
+              <item name="select" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
               <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
+              <item name="text" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
               <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="select-input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shuttle-canstrap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shuttle-canstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="table" type="462c0819:PsiDirectoryNode" />
+              <item name="validation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -342,12 +328,12 @@
       <workItem from="1511508964624" duration="4454000" />
       <workItem from="1511541037121" duration="3577000" />
       <workItem from="1511587758217" duration="7717000" />
-      <workItem from="1511673342840" duration="1480000" />
+      <workItem from="1511673342840" duration="3156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47688000" />
+    <option name="totallyTimeSpent" value="49364000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,14 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/button-refresh/button-refresh.stache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/button-back/button-back.stache">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -715,24 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/button-refresh/button-refresh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/options.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/button-submit/button-submit.stache">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -755,6 +715,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/button-refresh/button-refresh.stache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/button-refresh/button-refresh.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
           <folding />
         </state>
       </provider>

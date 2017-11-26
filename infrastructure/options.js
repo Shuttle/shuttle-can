@@ -17,7 +17,7 @@ let options = options = new Options({
     iconSpacingClass: 'pr-2',
     button: {
         backIconNameClass: 'fa-chevron-left',
-        refreshIconNameClass: 'fa-chevron-left',
+        refreshIconNameClass: 'fa-refresh',
         submitIconNameClass: 'fa-play '
     }
 });
