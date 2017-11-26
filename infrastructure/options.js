@@ -2,7 +2,8 @@ import DefineMap from 'can-define/map/';
 
 export const ButtonOptions = DefineMap.extend({
     backIconNameClass: 'string',
-    refreshIconNameClass: 'string'
+    refreshIconNameClass: 'string',
+    submitIconNameClass: 'string'
 });
 
 export const Options = DefineMap.extend({
@@ -16,7 +17,8 @@ let options = options = new Options({
     iconSpacingClass: 'pr-2',
     button: {
         backIconNameClass: 'fa-chevron-left',
-        refreshIconNameClass: 'fa-chevron-left'
+        refreshIconNameClass: 'fa-chevron-left',
+        submitIconNameClass: 'fa-play '
     }
 });
 

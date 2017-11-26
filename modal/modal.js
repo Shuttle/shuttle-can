@@ -40,7 +40,7 @@ export const ViewModel = DefineMap.extend({
         if (!!this.primaryClick) {
             this.primaryClick(arguments);
         } else {
-            alerts.show({ message: i18n.value('modals.no-primary-click'), type: 'danger' });
+            throw new Error('No primary click function has been assigned.');
         }
     }
 });

@@ -5,6 +5,13 @@ import click from './click';
 import i18n from './i18n';
 
 export default DefineMap.extend({
+    working: {
+        type: 'boolean'
+    },
+    permission: {
+        type: 'string',
+        value: ''
+    },
     context: {
         type: '*'
     },
@@ -12,7 +19,7 @@ export default DefineMap.extend({
         type: 'string'
     },
     visibilityClass: {
-        get: function() {
+        get: function () {
             var visible = this.visible;
 
             return visible != undefined && !visible ? 'invisible' : '';
@@ -20,30 +27,30 @@ export default DefineMap.extend({
     },
     iconClass: {
         type: 'string',
-        get: function(value){
+        get: function (value) {
             return value || options.iconClass || 'fa';
         }
     },
     iconNameClass: {
-        get: function(value) {
+        get: function (value) {
             return value || '';
         }
     },
     iconSpacingClass: {
         type: 'string',
-        get: function(value){
+        get: function (value) {
             return value || options.iconSpacingClass;
         }
     },
     text: {
         type: 'string',
-        get: function(value) {
+        get: function (value) {
             return i18n.value(value);
         }
     },
     disabled: {
-        get: function(value) {
-            var disabled = value || false;
+        get: function (value) {
+            var disabled = value || false || this.working;
 
             if (this.permission && !disabled) {
                 disabled = !security.hasPermission(this.permission);
@@ -52,11 +59,7 @@ export default DefineMap.extend({
             return disabled;
         }
     },
-    permission: {
-        type: 'string',
-        value: ''
-    },
-    _click: function(ev) {
+    _click: function (ev) {
         ev.stopPropagation();
 
         return click.on(this);

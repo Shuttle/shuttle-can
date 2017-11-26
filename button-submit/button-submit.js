@@ -1,9 +1,15 @@
 ﻿import Component from 'can-component';
 import ComponentViewModel from '../infrastructure/component-view-model';
-import view from './submit-button.stache!';
+import options from '../infrastructure/options';
+import view from './button-submit.stache!';
 
 export const ViewModel = ComponentViewModel.extend({
-    working: { type: 'boolean' }
+    iconNameClass: {
+        type: 'string',
+        get: function(value){
+            return value || options.button.submitIconNameClass;
+        }
+    }
 });
 
 export default Component.extend({
