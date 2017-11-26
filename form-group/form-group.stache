@@ -1,4 +1,4 @@
 ﻿<div class="form-group {{elementClass}}">
     <content/>
-    <cs-validation message:from="validationMessage"/>
+    <cs-validation message:from="validationMessage" />
 </div>

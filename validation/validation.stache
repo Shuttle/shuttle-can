@@ -1,1 +1,3 @@
-﻿<span class="text-warning">{{message}}</span>
+﻿{{#if message}}
+    <span class="text-warning">{{message}}</span>
+{{/if}}
