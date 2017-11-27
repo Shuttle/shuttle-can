@@ -18,10 +18,10 @@ import './label/label.js';
 import './modal/modal.js';
 import './nav-dropdown/nav-dropdown.js';
 import './page-title/page-title.js';
-//import './form-select/form-form-select.js';
+import './form-select/form-select.js';
 import './select/select.js';
 //import './table/table.js';
-//import './form-input/form-input.js';
+import './form-input/form-input.js';
 //import './textarea/textarea.js';
 import './validation/validation.js';
 

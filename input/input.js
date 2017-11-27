@@ -9,7 +9,6 @@ export const ViewModel = ComponentViewModel.extend({
             return type || 'text';
         }
     },
-
     checked: {
         type: 'boolean'
     },

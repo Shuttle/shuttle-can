@@ -5,6 +5,10 @@ import click from './click';
 import i18n from './i18n';
 
 export default DefineMap.extend({
+    validationMessage: {
+        type: 'string',
+        value: ''
+    },
     working: {
         type: 'boolean'
     },
@@ -37,6 +41,12 @@ export default DefineMap.extend({
         }
     },
     iconSpacingClass: {
+        type: 'string',
+        get: function (value) {
+            return value || options.iconSpacingClass;
+        }
+    },
+    formGroupClass: {
         type: 'string',
         get: function (value) {
             return value || options.iconSpacingClass;
