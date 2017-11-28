@@ -5,6 +5,17 @@ import click from './click';
 import i18n from './i18n';
 
 export default DefineMap.extend({
+    checked: {
+        type: 'boolean'
+    },
+    value: {
+        type: '*',
+        value: ''
+    },
+    label: {
+        type: 'string',
+        value: ''
+    },
     validationMessage: {
         type: 'string',
         value: ''
@@ -68,6 +79,10 @@ export default DefineMap.extend({
 
             return disabled;
         }
+    },
+    required: {
+        type: 'boolean',
+        value: false
     },
     _click: function (ev) {
         ev.stopPropagation();

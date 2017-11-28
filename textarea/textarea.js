@@ -1,8 +1,8 @@
 ﻿import Component from 'can-component';
-import InputViewModel from './input-view-model';
+import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './textarea.stache!';
 
-export const ViewModel = InputViewModel.extend({
+export const ViewModel = ComponentViewModel.extend({
     rows: {
         type: 'number',
         value: 3

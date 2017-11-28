@@ -1,4 +1,2 @@
-﻿<cs-form-group {validation-message}="validationMessage" {element-class}="formGroupClass">
-	<cs-label {label}="label" {required}="required" />
-	<textarea {($value)}="value" class="form-control {{elementClass}}" placeholder="{{placeholder}}" {$focused}="focus" rows="{{rows}}" cols="{[columns}}"/>
-</shuttle-form-group>
+﻿<textarea value:bind="value" class="form-control {{elementClass}} {{visibilityClass}}" placeholder="{{placeholder}}"
+          focused:from="focus" rows:from="rows" cols:from="columns"/>
