@@ -3,15 +3,15 @@ import DefineList from 'can-define/list/';
 import view from './button.stache!';
 import ComponentViewModel from '../infrastructure/component-view-model';
 
-export const ActionItem = ComponentViewModel.extend({
+export const ActionMap = ComponentViewModel.extend({
     isSeparator: {
         type: 'boolean',
         value: false
     }
 });
 
-export const ActionItemList = DefineList.extend({
-    '#': ActionItem
+export const ActionList = DefineList.extend({
+    '#': ActionMap
 });
 
 export const ViewModel = ComponentViewModel.extend({
@@ -27,7 +27,7 @@ export const ViewModel = ComponentViewModel.extend({
             return type || 'button';
         }
     },
-    actions: {Type: ActionItemList},
+    actions: {Type: ActionList},
 });
 
 export default Component.extend({

@@ -22,7 +22,7 @@ import './modal/modal.js';
 import './nav-dropdown/nav-dropdown.js';
 import './page-title/page-title.js';
 import './select/select.js';
-//import './table/table.js';
+import './table/table.js';
 import './textarea/textarea.js';
 import './validation/validation.js';
 

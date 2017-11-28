@@ -4,18 +4,28 @@ import Component from 'can-component';
 import view from './nav-dropdown.stache';
 import './nav-dropdown.css';
 
-export const DropdownItem = DefineMap.extend({
-    href: 'string',
-    text: 'string',
-    items: { Value: DropdownItemList }
+export const DropdownMap = DefineMap.extend({
+    href: {
+        type: 'string',
+        value: ''
+    },
+    text: {
+        type: 'string',
+        value: ''
+    },
+    items: {
+        Value: DropdownList
+    }
 });
 
-export const DropdownItemList = DefineList.extend({
-    '#': DropdownItem
+export const DropdownList = DefineList.extend({
+    '#': DropdownMap
 });
 
 var ViewModel = DefineMap.extend({
-    items: { Value: DropdownItemList }
+    items: {
+        Value: DropdownList
+    }
 });
 
 export default Component.extend({

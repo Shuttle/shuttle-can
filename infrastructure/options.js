@@ -6,6 +6,12 @@ export const ButtonOptions = DefineMap.extend({
     submitIconNameClass: 'string'
 });
 
+export const TableOptions = DefineMap.extend({
+    containerClass: 'string',
+    tableClass: 'string',
+    buttonClass: 'string'
+});
+
 export const FormOptions = DefineMap.extend({
     elementClass: 'string'
 });
@@ -24,6 +30,9 @@ let options = options = new Options({
         backIconNameClass: 'fa-chevron-left',
         refreshIconNameClass: 'fa-refresh',
         submitIconNameClass: 'fa-play '
+    },
+    table: {
+        tableClass: 'table-responsive table-sm table-dark'
     },
     form: {
         elementClass: 'form-group'

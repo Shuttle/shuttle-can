@@ -1,53 +1,65 @@
 import Component from 'can-component';
+import ComponentViewModel from '../infrastructure/component-view-model';
 import DefineMap from 'can-define/map/';
 import DefineList from 'can-define/list/';
 import stache from 'can-stache/';
 import view from './table.stache!';
-import localisation from '~/localisation';
-import click from '~/components/click';
+import i18n from '../infrastructure/i18n';
+import click from '../infrastructure/click';
+import options from '../infrastructure/options';
 
 export const ColumnMap = DefineMap.extend({
-    columnTitle: 'string',
-    buttonContext: 'any'
+    columnTitle: {
+        type: 'string',
+        value: ''
+    },
+    buttonContext: {
+        type: 'any'
+    },
+    textTemplate: {
+        type: 'any'
+    },
+    attributeName: {
+        type: 'string'
+    }
 });
 
 export const ColumnList = DefineList.extend({
     '#': ColumnMap
 });
 
-export const ViewModel = DefineMap.extend({
+export const ViewModel = ComponentViewModel.extend({
     emptyMessage: {
         get: function() {
-            return this.emptyMessage || 'table-empty-message';
+            return i18n.value(this.emptyMessage || 'table-empty-message');
         }
     },
-
+    tableClass: {
+        get: function(value) {
+            return value || options.table.tableClass;
+        }
+    },
     containerClass: {
         get: function(value) {
-            return value || '';
+            return value || options.table.containerClass;
         }
     },
-
     buttonClass: {
         get: function(value) {
-            return value || '';
+            return value || options.table.buttonClass;
         }
     },
-
     columns: {
         Value: ColumnList
     },
-
     rows: {
         Value: DefineList
     },
-
     shouldShowEmptyMessage: {
         get: function() {
             return this.rows.length === 0 && !!this.emptyMessage;
         }
     },
-
     _rowClick: function(row) {
         if (this.rowClick) {
             this.rowClick(row);
@@ -55,23 +67,19 @@ export const ViewModel = DefineMap.extend({
             click.on(row);
         }
     },
-
-    getButtonContext(row, column) {
-        return column.buttonContext || row;
+    getContext(row, column) {
+        return column.context || row;
     },
-
-    getColumnTitle(column) {
-        if (!!column.columnTitleTemplate) {
+    getText(column) {
+        if (!!column.textTemplate) {
             return stache(column.columnTitleTemplate)(column);
         } else {
-            return localisation.value(column.columnTitle || '');
+            return i18n.value(column.columnTitle || '');
         }
     },
-
     getColumnClass(column) {
         return column.columnClass || '';
     },
-
     getColumnValue(row, column) {
         if (!column.attributeName) {
             if (!column.columnType) {
@@ -85,7 +93,6 @@ export const ViewModel = DefineMap.extend({
 
         return typeof(value) === 'function' ? value(column.attributeName) : value;
     },
-
     getView(row, column) {
         let stacheTemplate = column.view;
 
@@ -95,7 +102,6 @@ export const ViewModel = DefineMap.extend({
 
         return stache(stacheTemplate)(row);
     },
-
     getRowClass(row) {
         return row['rowClass'];
     }
