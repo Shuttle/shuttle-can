@@ -11,7 +11,7 @@ import './button-refresh/button-refresh.js';
 import './button-submit/button-submit.js';
 import './checkbox/checkbox.js';
 import './fetching/fetching.js';
-//import './form/form.js';
+import './form/form.js';
 import './form-group/form-group.js';
 import './form-input/form-input.js';
 import './form-select/form-select.js';
