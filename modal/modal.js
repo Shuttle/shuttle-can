@@ -10,18 +10,38 @@ export const ViewModel = DefineMap.extend({
         type: 'observable'
     },
     modalType: {
+        type: 'string',
+        value: 'fade',
         get: function(value) {
-            return value || 'fade';
+            return value;
+        }
+    },
+    title: {
+        type: 'string',
+        value: '',
+        get: function(value) {
+            return i18n.value(value);
+        }
+    },
+    primaryText: {
+        type: 'string',
+        value: '',
+        get: function(value) {
+            return i18n.value(value);
         }
     },
     dismissText: {
+        type: 'string',
+        value: '',
         get: function(value) {
             return i18n.value(value);
         }
     },
     textType: {
+        type: 'string',
+        value: 'primary',
         get: function(value) {
-            return value || 'primary';
+            return value;
         }
     },
     message: { type: 'string', value: '' },

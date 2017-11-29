@@ -6,7 +6,7 @@
             <i class="fa fa-times-circle-o" aria-hidden="true"></i>
             <i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}" aria-hidden="true"></i>
         </button>
-        <h4 class="modal-title text-{{textType}}" id="{{modalId}}-title">{{i18n title}}</h4>
+        <h4 class="modal-title text-{{textType}}" id="{{modalId}}-title">{{title}}</h4>
       </div>
       <div class="modal-body">
         {{#if hasMessage}}
@@ -16,9 +16,9 @@
         {{/if}}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">{{i18n dismissText}}</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{dismissText}}</button>
         {{#if hasPrimary}}
-        <button type="button" class="btn btn-primary" on:click="_primaryClick()">{{i18n primaryText}}</button>
+        <button type="button" class="btn btn-primary" on:click="_primaryClick()">{{primaryText}}</button>
         {{/if}}
       </div>
     </div>
