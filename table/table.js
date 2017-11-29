@@ -40,6 +40,8 @@ export const ViewModel = ComponentViewModel.extend({
         }
     },
     containerClass: {
+        type: 'string',
+        value: '',
         get: function(value) {
             return value || options.table.containerClass;
         }

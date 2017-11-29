@@ -15,7 +15,7 @@
     <tbody>
       {{#each rows}}
       <tr class="{{../getRowClass (.)}}" on:click="../_rowClick(.)">
-        {{#each columns}}
+        {{#each ../columns}}
           <td data-title="{{columnTitle}}">
             {{#switch columnType}}
               {{#case 'button'}}
