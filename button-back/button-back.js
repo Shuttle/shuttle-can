@@ -9,6 +9,7 @@ export const ViewModel = ComponentViewModel.extend({
     },
     iconNameClass: {
         type: 'string',
+        value: '',
         get: function(value){
             return value || options.button.backIconNameClass;
         }

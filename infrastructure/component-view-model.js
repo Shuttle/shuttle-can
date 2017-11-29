@@ -31,7 +31,8 @@ export default DefineMap.extend({
         type: '*'
     },
     elementClass: {
-        type: 'string'
+        type: 'string',
+        value: ''
     },
     visibilityClass: {
         get: function () {
@@ -42,11 +43,14 @@ export default DefineMap.extend({
     },
     iconClass: {
         type: 'string',
+        value: '',
         get: function (value) {
             return value || options.iconClass || 'fa';
         }
     },
     iconNameClass: {
+        type: 'string',
+        value: '',
         get: function (value) {
             return value || '';
         }

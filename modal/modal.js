@@ -1,11 +1,10 @@
 import $ from 'jquery';
 import Component from 'can-component';
-import DefineMap from 'can-define/map/';
+import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './modal.stache!';
-import alerts from '../alerts/';
 import i18n from '../infrastructure/i18n';
 
-export const ViewModel = DefineMap.extend({
+export const ViewModel = ComponentViewModel.extend({
     primaryClick: {
         type: 'observable'
     },
