@@ -30,24 +30,24 @@ export const ColumnList = DefineList.extend({
 
 export const ViewModel = ComponentViewModel.extend({
     emptyMessage: {
-        get: function() {
+        get: function () {
             return i18n.value(this.emptyMessage || 'table-empty-message');
         }
     },
     tableClass: {
-        get: function(value) {
+        get: function (value) {
             return value || options.table.tableClass;
         }
     },
     containerClass: {
         type: 'string',
         value: '',
-        get: function(value) {
+        get: function (value) {
             return value || options.table.containerClass;
         }
     },
     buttonClass: {
-        get: function(value) {
+        get: function (value) {
             return value || options.table.buttonClass;
         }
     },
@@ -58,11 +58,11 @@ export const ViewModel = ComponentViewModel.extend({
         Value: DefineList
     },
     shouldShowEmptyMessage: {
-        get: function() {
+        get: function () {
             return this.rows.length === 0 && !!this.emptyMessage;
         }
     },
-    _rowClick: function(row) {
+    _rowClick: function (row) {
         if (this.rowClick) {
             this.rowClick(row);
         } else {
@@ -72,7 +72,7 @@ export const ViewModel = ComponentViewModel.extend({
     getContext(row, column) {
         return column.context || row;
     },
-    getText(column) {
+    getColumnTitle(column) {
         if (!!column.textTemplate) {
             return stache(column.columnTitleTemplate)(column);
         } else {
