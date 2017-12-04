@@ -8,7 +8,7 @@ export const ViewModel = ComponentViewModel.extend({
         type: 'string',
         value: '',
         get: function(value){
-            return value || options.button.refreshIconNameClass;
+            return value || options.button.refresh.iconNameClass;
         }
     }
 });

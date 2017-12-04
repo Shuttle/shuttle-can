@@ -11,7 +11,7 @@ export const ViewModel = ComponentViewModel.extend({
         type: 'string',
         value: '',
         get: function(value){
-            return value || options.button.backIconNameClass;
+            return value || options.button.back.iconNameClass;
         }
     }
 });

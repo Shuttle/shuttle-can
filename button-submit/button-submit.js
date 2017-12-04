@@ -8,7 +8,7 @@ export const ViewModel = ComponentViewModel.extend({
         type: 'string',
         value: '',
         get: function(value){
-            return value || options.button.submitIconNameClass;
+            return value || options.button.submit.iconNameClass;
         }
     }
 });

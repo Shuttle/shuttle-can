@@ -1,9 +1,30 @@
 import DefineMap from 'can-define/map/';
 
+export const IconNameOption = DefineMap.extend({
+    iconNameClass: 'string'
+});
+
+export const RemoveButtonI18NOptions = DefineMap.extend({
+    removeItemConfirmation: {
+        type: 'string',
+        value: 'removeItemConfirmation'
+    },
+    removeItemConfirmationNamed: {
+        type: 'string',
+        value: 'removeItemConfirmationNamed'
+    }
+});
+
+export const RemoveButtonOptions = IconNameOption.extend({
+    confirmation: { type: '*' },
+    i18n: { Type: RemoveButtonI18NOptions }
+});
+
 export const ButtonOptions = DefineMap.extend({
-    backIconNameClass: 'string',
-    refreshIconNameClass: 'string',
-    submitIconNameClass: 'string'
+    back: { Type: IconNameOption },
+    refresh: { Type: IconNameOption },
+    remove: { Type: RemoveButtonOptions },
+    submit: { Type: IconNameOption }
 });
 
 export const TableOptions = DefineMap.extend({
@@ -23,13 +44,23 @@ export const Options = DefineMap.extend({
     form: { Type: FormOptions }
 });
 
-let options = options = new Options({
+let options = new Options({
     iconClass: 'fa',
     iconSpacingClass: 'pr-2',
     button: {
-        backIconNameClass: 'fa-chevron-left',
-        refreshIconNameClass: 'fa-refresh',
-        submitIconNameClass: 'fa-play '
+        back: {
+            iconNameClass: 'fa-chevron-left'
+        },
+        refresh: {
+            iconNameClass: 'fa-refresh'
+        },
+        remove: {
+            iconNameClass: 'fa-times',
+            i18n: {}
+        },
+        submit: {
+            iconNameClass: 'fa-play'
+        },
     },
     table: {
         tableClass: 'table-responsive table-sm table-dark'

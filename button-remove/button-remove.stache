@@ -1,0 +1,3 @@
+﻿<button class="btn" on:click="_click(scope.event)" disabled:from="disabled">
+    <i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}" aria-hidden="true"></i>{{text}}
+</button>

@@ -69,6 +69,7 @@ export default DefineMap.extend({
     },
     text: {
         type: 'string',
+        value: '',
         get: function (value) {
             return i18n.value(value);
         }
