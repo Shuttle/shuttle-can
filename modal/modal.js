@@ -22,6 +22,12 @@ export const ViewModel = ComponentViewModel.extend({
             return i18n.value(value);
         }
     },
+    hasPrimary: {
+        type: 'boolean',
+        get: function(){
+            return !!this.primaryText;
+        }
+    },
     primaryText: {
         type: 'string',
         value: '',
@@ -45,6 +51,7 @@ export const ViewModel = ComponentViewModel.extend({
     },
     message: { type: 'string', value: '' },
     hasMessage: {
+        type: 'boolean',
         get: function() {
             return !!this.message;
         }
