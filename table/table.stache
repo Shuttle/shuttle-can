@@ -1,4 +1,4 @@
-<div class="{{containerClass}}">
+<div class="">
   {{#if shouldShowEmptyMessage}}
   <div class="alert alert-info" role="alert">{{emptyMessage}}</div>
   {{else}}

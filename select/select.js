@@ -20,7 +20,7 @@ const OptionList = DefineList.extend({
 
 export const ViewModel = ComponentViewModel.extend({
     options: {
-        Value: OptionList
+        Type: OptionList
     },
     value: {
         type: 'string',

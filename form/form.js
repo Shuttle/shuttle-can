@@ -2,6 +2,7 @@
 import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './form.stache!';
 import i18n from '../infrastructure/i18n';
+import options from "../infrastructure/options";
 
 export const ViewModel = ComponentViewModel.extend({
     title: {
@@ -10,6 +11,10 @@ export const ViewModel = ComponentViewModel.extend({
         get: function(title) {
             return i18n.value(title);
         }
+    },
+    sizeClass: {
+        type: 'string',
+        value: ''
     }
 });
 

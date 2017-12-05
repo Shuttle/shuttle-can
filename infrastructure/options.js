@@ -63,7 +63,7 @@ let options = new Options({
         },
     },
     table: {
-        tableClass: 'table-responsive table-sm table-dark'
+        tableClass: 'table-responsive'
     },
     form: {
         elementClass: 'form-group'

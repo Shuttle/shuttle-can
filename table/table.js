@@ -35,6 +35,8 @@ export const ViewModel = ComponentViewModel.extend({
         }
     },
     tableClass: {
+        type: 'string',
+        value: '',
         get: function (value) {
             return value || options.table.tableClass;
         }
@@ -47,6 +49,8 @@ export const ViewModel = ComponentViewModel.extend({
         }
     },
     buttonClass: {
+        type: 'string',
+        value: '',
         get: function (value) {
             return value || options.table.buttonClass;
         }
@@ -55,7 +59,7 @@ export const ViewModel = ComponentViewModel.extend({
         Value: ColumnList
     },
     rows: {
-        Value: DefineList
+        Type: DefineList
     },
     shouldShowEmptyMessage: {
         get: function () {
