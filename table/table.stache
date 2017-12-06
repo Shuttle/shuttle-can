@@ -1,4 +1,4 @@
-<div class="">
+<div class="{{containerClass}}">
   {{#if shouldShowEmptyMessage}}
   <div class="alert alert-info" role="alert">{{emptyMessage}}</div>
   {{else}}
@@ -19,10 +19,17 @@
           <td data-title="{{columnTitle}}">
             {{#switch columnType}}
               {{#case 'button'}}
-                <cs-button context:from="../getButtonContext(../., .)" on:click="buttonClick" argument:from="../." text:from="buttonTitle" element-class="btn-default btn-xs {{buttonClass}}" />
+                <cs-button
+                        context:from="../../button.getContext(../., .)"
+                        click:from="@../../button.click(../., .)"
+                        text:from="button.text"
+                        elementClass:from="../../getButtonClass()"
+                        iconClass:from="button.iconClass" />
+                        iconNameClass:from="button.iconNameClass"
+                        disabled:from="../../getButtonDisabled(../., .)" />
               {{/case}}
               {{#case 'remove-button'}}
-                <cs-button-remove {context}="getButtonContext(../., .)" on:click="buttonClick" argument:from="../." text="remove" element-class="btn-xs" />
+                <cs-button-remove context:from="../../getButtonContext(../., .)" on:click="buttonClick" argument:from="../." text="remove" element-class="btn-xs" />
               {{/case}}
               {{#case 'view'}}
               {{../getView(../., .}}

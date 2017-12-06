@@ -7,20 +7,34 @@ import view from './table.stache!';
 import i18n from '../infrastructure/i18n';
 import click from '../infrastructure/click';
 import options from '../infrastructure/options';
+import ButtonViewModel from '../button/';
+
+export const ButtonColumnMap = ButtonViewModel.extend({
+    disabledContextAttribute: {
+        type: 'string',
+        value: ''
+    }
+});
+
 
 export const ColumnMap = DefineMap.extend({
     columnTitle: {
         type: 'string',
-        value: ''
+        value: '(column)'
     },
     buttonContext: {
         type: 'any'
     },
-    textTemplate: {
+    viewTemplate: {
         type: 'any'
     },
     attributeName: {
-        type: 'string'
+        type: 'string',
+        value: ''
+    },
+    button: {
+        Type: ButtonColumnMap,
+        value: {}
     }
 });
 
@@ -45,14 +59,22 @@ export const ViewModel = ComponentViewModel.extend({
         type: 'string',
         value: '',
         get: function (value) {
-            return value || options.table.containerClass;
+            return value || options.table.containerClass || '';
         }
+    },
+    button: {
+
     },
     buttonClass: {
         type: 'string',
         value: '',
         get: function (value) {
             return value || options.table.buttonClass;
+        }
+    },
+    getButtonClass: {
+        get: function () {
+            return 'btn-default btn-xs ' + this.buttonClass;
         }
     },
     columns: {
@@ -71,6 +93,16 @@ export const ViewModel = ComponentViewModel.extend({
             this.rowClick(row);
         } else {
             click.on(row);
+        }
+    },
+    getButtonDisabled(row, column) {
+        var disabledContextAttribute;
+        if (!!column.disabledContextAttribute) {
+            disabledContextAttribute = this.getContext(row, column)[column.disabledContextAttribute];
+
+            return typeof(disabledContextAttribute) === 'function' ? disabledContextAttribute() : disabledContextAttribute;
+        } else {
+            return false;
         }
     },
     getContext(row, column) {

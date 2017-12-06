@@ -21,53 +21,75 @@ export const RemoveButtonOptions = IconNameOption.extend({
 });
 
 export const ButtonOptions = DefineMap.extend({
-    back: { Type: IconNameOption },
-    refresh: { Type: IconNameOption },
-    remove: { Type: RemoveButtonOptions },
-    submit: { Type: IconNameOption }
+    back: {
+        Type: IconNameOption,
+        value: {
+            iconNameClass: 'fa-chevron-left'
+        }
+    },
+    refresh: {
+        Type: IconNameOption,
+        value: {
+            iconNameClass: 'fa-refresh'
+        }
+    },
+    remove: {
+        Type: RemoveButtonOptions,
+        value: {
+            iconNameClass: 'fa-times',
+            i18n: {}
+        }
+    },
+    submit: {
+        Type: IconNameOption,
+        value: {
+            iconNameClass: 'fa-arrow-circle-right fa-lg'
+        }
+    }
 });
 
 export const TableOptions = DefineMap.extend({
-    containerClass: 'string',
-    tableClass: 'string',
-    buttonClass: 'string'
+    containerClass: {
+        type: 'string',
+        value: ''
+    },
+    tableClass: {
+        type: 'string',
+        value: 'table-responsive'
+    },
+    buttonClass: {
+        type: 'string',
+        value: ''
+    }
 });
 
 export const FormOptions = DefineMap.extend({
-    elementClass: 'string'
+    elementClass: {
+        type: 'string',
+        value: 'form-group'
+    }
 });
 
 export const Options = DefineMap.extend({
-    iconClass: 'string',
-    iconSpacingClass: 'string',
+    iconClass: {
+        type: 'string',
+        value: 'fa'
+    },
+    iconSpacingClass: {
+        type: 'string',
+        value: 'pr-2'
+    },
     button: { Type: ButtonOptions },
-    form: { Type: FormOptions }
-});
-
-let options = new Options({
-    iconClass: 'fa',
-    iconSpacingClass: 'pr-2',
-    button: {
-        back: {
-            iconNameClass: 'fa-chevron-left'
-        },
-        refresh: {
-            iconNameClass: 'fa-refresh'
-        },
-        remove: {
-            iconNameClass: 'fa-times',
-            i18n: {}
-        },
-        submit: {
-            iconNameClass: 'fa-play'
-        },
+    form: {
+        Type: FormOptions,
+        value: {}
     },
     table: {
-        tableClass: 'table-responsive'
-    },
-    form: {
-        elementClass: 'form-group'
+        Type: TableOptions,
+        value: {}
     }
 });
+
+let options = new Options({});
 
 export default options;

@@ -2,7 +2,7 @@
     {{#case "dropdown"}}
         <div class="btn-group" disabled:from="disabled">
             <button type="button" class="btn {{elementClass}} {{visibilityClass}} dropdown-toggle"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:bind="disabled">
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:from="disabled">
                 {{#if iconNameClass}}<i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}"
                                         aria-hidden="true"></i>{{/if}}{{text}}<span
                     class="caret"></span>
@@ -20,7 +20,7 @@
     {{/case}}
     {{#default}}
         <button type:from="type" class="btn {{elementClass}} {{visibilityClass}}" on:click="_click(scope.event)"
-                disabled:bind="disabled">
+                disabled:from="disabled">
             {{#if iconNameClass}}<i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}"
                                     aria-hidden="true"></i>{{/if}}{{text}}
         </button>
