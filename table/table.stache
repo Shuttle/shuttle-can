@@ -1,48 +1,31 @@
 <div class="{{containerClass}}">
-  {{#if shouldShowEmptyMessage}}
-  <div class="alert alert-info" role="alert">{{emptyMessage}}</div>
-  {{else}}
-  <table class="table {{tableClass}}">
-    <thead>
-      <tr>
-        {{#each columns}}
-          <th class="{{../getColumnClass (.)}}">
-            {{../getColumnTitle (.)}}
-          </th>
-        {{/each}}
-        </tr>
-    </thead>
-    <tbody>
-      {{#each rows}}
-      <tr class="{{../getRowClass (.)}}" on:click="../_rowClick(.)">
-        {{#each ../columns}}
-          <td data-title="{{columnTitle}}">
-            {{#switch columnType}}
-              {{#case 'button'}}
-                <cs-button
-                        context:from="../../button.getContext(../., .)"
-                        click:from="@../../button.click(../., .)"
-                        text:from="button.text"
-                        elementClass:from="../../getButtonClass()"
-                        iconClass:from="button.iconClass" />
-                        iconNameClass:from="button.iconNameClass"
-                        disabled:from="../../getButtonDisabled(../., .)" />
-              {{/case}}
-              {{#case 'remove-button'}}
-                <cs-button-remove context:from="../../getButtonContext(../., .)" on:click="buttonClick" argument:from="../." text="remove" element-class="btn-xs" />
-              {{/case}}
-              {{#case 'view'}}
-              {{../getView(../., .}}
-              {{/case}}
-              {{#default}}
-              {{../getColumnValue(../., .)}}
-              {{/default}}
-            {{/switch}}
-          </td>
-        {{/each}}
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
-  {{/if}}
+    {{#if shouldShowEmptyMessage}}
+        <div class="alert alert-info" role="alert">{{emptyMessage}}</div>
+    {{else}}
+        <table class="table {{tableClass}}">
+            <thead>
+            <tr>
+                {{#each columns}}
+                    <th class="{{../getColumnClass (.)}}">
+                        {{../getColumnTitle (.)}}
+                    </th>
+                {{/each}}
+            </tr>
+            </thead>
+            <tbody>
+            {{#each rows}}
+                <tr class="{{../getRowClass (.)}}" on:click="../_rowClick(.)">
+                    {{#each ../columns}}
+                        <td data-title="{{columnTitle}}">
+                                {{../getView(../., .}}
+                            {{else}}
+                                {{../getColumnValue(../., .)}}
+                            {{/if}}
+                        </td>
+                    {{/each}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
 </div>

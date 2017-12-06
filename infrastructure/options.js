@@ -43,7 +43,7 @@ export const ButtonOptions = DefineMap.extend({
     submit: {
         Type: IconNameOption,
         value: {
-            iconNameClass: 'fa-arrow-circle-right fa-lg'
+            iconNameClass: 'fa-arrow-circle-right'
         }
     }
 });
@@ -79,7 +79,10 @@ export const Options = DefineMap.extend({
         type: 'string',
         value: 'pr-2'
     },
-    button: { Type: ButtonOptions },
+    button: {
+        Type: ButtonOptions,
+        value: {}
+    },
     form: {
         Type: FormOptions,
         value: {}

@@ -1,40 +1,24 @@
 import Component from 'can-component';
 import ComponentViewModel from '../infrastructure/component-view-model';
-import DefineMap from 'can-define/map/';
 import DefineList from 'can-define/list/';
 import stache from 'can-stache/';
 import view from './table.stache!';
 import i18n from '../infrastructure/i18n';
 import click from '../infrastructure/click';
 import options from '../infrastructure/options';
-import ButtonViewModel from '../button/';
 
-export const ButtonColumnMap = ButtonViewModel.extend({
-    disabledContextAttribute: {
-        type: 'string',
-        value: ''
-    }
-});
-
-
-export const ColumnMap = DefineMap.extend({
+export const ColumnMap = ComponentViewModel.extend({
     columnTitle: {
         type: 'string',
         value: '(column)'
     },
-    buttonContext: {
+    hasView: {
+        get: function(){
+            return !!this.view;
+        }
+    },
+    view: {
         type: 'any'
-    },
-    viewTemplate: {
-        type: 'any'
-    },
-    attributeName: {
-        type: 'string',
-        value: ''
-    },
-    button: {
-        Type: ButtonColumnMap,
-        value: {}
     }
 });
 
@@ -60,21 +44,6 @@ export const ViewModel = ComponentViewModel.extend({
         value: '',
         get: function (value) {
             return value || options.table.containerClass || '';
-        }
-    },
-    button: {
-
-    },
-    buttonClass: {
-        type: 'string',
-        value: '',
-        get: function (value) {
-            return value || options.table.buttonClass;
-        }
-    },
-    getButtonClass: {
-        get: function () {
-            return 'btn-default btn-xs ' + this.buttonClass;
         }
     },
     columns: {
@@ -120,11 +89,7 @@ export const ViewModel = ComponentViewModel.extend({
     },
     getColumnValue(row, column) {
         if (!column.attributeName) {
-            if (!column.columnType) {
-                throw new Error('The column requires an \'attributeName\'');
-            } else {
-                throw new Error(`The column has an unhandled \'columnType\' of \'${column.columnType}\'.  The default behaviour when no \'columnType\' is specified is to display an attribute but no \'attributeName\' has been specified either.`);
-            }
+            throw new Error('The column requires an \'attributeName\'');
         }
 
         const value = row[column.attributeName];
