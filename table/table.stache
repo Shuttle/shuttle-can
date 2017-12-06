@@ -17,6 +17,7 @@
                 <tr class="{{../getRowClass (.)}}" on:click="../_rowClick(.)">
                     {{#each ../columns}}
                         <td data-title="{{columnTitle}}">
+                            {{#if hasView}}
                                 {{../getView(../., .}}
                             {{else}}
                                 {{../getColumnValue(../., .)}}
