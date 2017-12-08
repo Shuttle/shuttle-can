@@ -2,6 +2,7 @@ import DefineMap from 'can-define/map/';
 import DefineList from 'can-define/list/';
 import Component from 'can-component';
 import view from './nav-dropdown.stache';
+import i18n from '../infrastructure/i18n';
 
 export const DropdownMap = DefineMap.extend({
     href: {
@@ -10,10 +11,10 @@ export const DropdownMap = DefineMap.extend({
     },
     text: {
         type: 'string',
-        value: ''
-    },
-    items: {
-        Value: DropdownList
+        value: '',
+        get: function (value) {
+            return i18n.value(value);
+        }
     }
 });
 
@@ -22,7 +23,10 @@ export const DropdownList = DefineList.extend({
 });
 
 var ViewModel = DefineMap.extend({
-    items: {
+    map: {
+        Value: DropdownMap
+    },
+    list: {
         Value: DropdownList
     }
 });
