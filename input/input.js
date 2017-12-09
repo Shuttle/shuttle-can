@@ -18,7 +18,7 @@ export const ViewModel = ComponentViewModel.extend({
     },
     focus: {
         type: 'boolean',
-        value: true
+        value: false
     },
     value: {
         type: 'string',

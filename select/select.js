@@ -3,7 +3,7 @@ import ComponentViewModel from '../infrastructure/component-view-model';
 import DefineList from 'can-define/list/';
 import view from './select.stache!';
 
-const OptionMap = ComponentViewModel.extend({
+export const OptionMap = ComponentViewModel.extend({
     value: {
         type: 'string',
         value: ''
@@ -14,7 +14,7 @@ const OptionMap = ComponentViewModel.extend({
     }
 });
 
-const OptionList = DefineList.extend({
+export const OptionList = DefineList.extend({
     '#': OptionMap
 });
 

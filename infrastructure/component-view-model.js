@@ -1,8 +1,20 @@
 import DefineMap from 'can-define/map/';
+import DefineList from 'can-define/list/';
 import options from './options';
 import security from './security';
 import click from './click';
 import i18n from './i18n';
+
+export const Error = ComponentViewModel.extend({
+    message: {
+        type: 'string',
+        value: ''
+    },
+    related: {
+        Type: DefineList,
+        value: []
+    }
+});
 
 export default DefineMap.extend({
     checked: {
