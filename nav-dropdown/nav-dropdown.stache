@@ -1,17 +1,17 @@
-{{#if(list)}}
+{{#if(href)}}
+<li class="nav-item">
+    <a class="nav-link" href:from="href">{{text}}</a>
+</li>
+{{else}}
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
        aria-haspopup="true" aria-expanded="false">
-        {{map.text}}
+        {{text}}
     </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 {{#each(list)}}
     <a class="dropdown-item" href="{{href}}">{{text}}</a>
 {{/each}}
 </div>
-</li>
-{{else}}
-<li class="nav-item">
-    <a class="nav-link" href:from="map.href">{{map.text}}</a>
 </li>
 {{/if}}

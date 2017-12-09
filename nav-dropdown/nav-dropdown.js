@@ -23,11 +23,29 @@ export const DropdownList = DefineList.extend({
 });
 
 var ViewModel = DefineMap.extend({
-    map: {
-        Value: DropdownMap
+    href: {
+        type: 'string',
+        value: '',
+        set: function () {
+            if (!!this.list && !!this.list.length) {
+                throw new Error('Cannot set \'href\' when a \'list\' has been set.');
+            }
+        }
+    },
+    text: {
+        type: 'string',
+        value: '',
+        get: function (value) {
+            return i18n.value(value);
+        }
     },
     list: {
-        Value: DropdownList
+        Value: DropdownList,
+        set: function () {
+            if (!!this.href) {
+                throw new Error('Cannot set \'list\' when a \'href\' has been set.');
+            }
+        }
     }
 });
 
