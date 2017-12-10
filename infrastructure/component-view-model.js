@@ -4,8 +4,9 @@ import options from './options';
 import security from './security';
 import click from './click';
 import i18n from './i18n';
+import each from 'can-util/js/each/';
 
-export const Error = ComponentViewModel.extend({
+export const Error = DefineMap.extend({
     message: {
         type: 'string',
         value: ''
@@ -28,9 +29,34 @@ export default DefineMap.extend({
         type: 'string',
         value: ''
     },
-    validationMessage: {
+    errorAttribute: {
         type: 'string',
         value: ''
+    },
+    errors: {
+        Type: DefineList,
+        '#': Error
+    },
+    validationMessage: {
+        type: 'string',
+        value: '',
+        get(value) {
+            var self = this;
+            var message = undefined;
+
+            if (this.errors) {
+                each(this.errors, function (error) {
+                    if (error.related.indexOf(self.errorAttribute) > -1) {
+                        message = error.message;
+                        return false;
+                    }
+
+                    return true;
+                });
+            }
+
+            return message || value;
+        }
     },
     working: {
         type: 'boolean'
@@ -100,6 +126,13 @@ export default DefineMap.extend({
     required: {
         type: 'boolean',
         value: false
+    },
+    hasErrors: function () {
+        if (!this.errors) {
+            return false;
+        }
+
+        return !!this.errors();
     },
     _click: function (ev) {
         ev.stopPropagation();
