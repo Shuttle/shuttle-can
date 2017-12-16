@@ -1,5 +1,4 @@
 import options from './infrastructure/options.js';
-import './infrastructure/guard.js';
 import './infrastructure/security.js';
 import './infrastructure/click.js';
 import './infrastructure/i18n.js';
