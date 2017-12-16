@@ -12,6 +12,10 @@ let security = {
             return;
         }
 
+        if (!adapter.hasPermission || typeof(adapter.hasPermission) !== 'function') {
+            throw new Error('The `security` adapter has to have a `hasPermission` function that returns whether the given permission is accessible (e.g. `adapter.hasPermission(permissionName)`).')
+        }
+
         this._adapter = adapter;
     },
 
