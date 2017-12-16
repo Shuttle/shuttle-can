@@ -1,4 +1,4 @@
-﻿import guard from '../infrastructure/guard';
+﻿import guard from 'shuttle-guard';
 
 var click = {
     on: function(viewModel, ev) {

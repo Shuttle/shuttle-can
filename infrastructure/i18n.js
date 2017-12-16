@@ -11,6 +11,10 @@ let i18n = {
         this._adapter = _default;
         return;
       }
+
+      if (!adapter.value || typeof(adapter.value !== 'function')) {
+          throw new Error('The `i18n` adapter has to have a `value` function that returns the value for a given `key` and optional `options` (e.g. `adapter.value(key, options)`).')
+      }
       
       this._adapter = adapter;
     },

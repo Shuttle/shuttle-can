@@ -1,11 +1,11 @@
 {
   "name": "shuttle-canstrap",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "CanJS components using Bootstrap v4",
   "main": "shuttle-canstrap.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shuttle/shuttle-canstrap.git"
+    "url": "git+https://github.com/shuttle-npm/shuttle-canstrap.git"
   },
   "scripts": {
     "sync-samples": "node .\\node_modules\\sync-glob\\bin\\sync-glob.js --watch \"**/*\" \"!node_modules/**/*\" ..\\shuttle-canstrap-samples\\node_modules\\shuttle-canstrap\\"
@@ -18,9 +18,9 @@
   "author": "Eben Roux",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Shuttle/shuttle-canstrap/issues"
+    "url": "https://github.com/shuttle-npm/shuttle-canstrap/issues"
   },
-  "homepage": "https://github.com/Shuttle/shuttle-canstrap#readme",
+  "homepage": "https://github.com/shuttle-npm/shuttle-canstrap#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "can-component": "^3.3.7",
@@ -34,6 +34,7 @@
     "can-stache-bindings": "^3.11.5",
     "font-awesome": "^4.7.0",
     "popper.js": "^1.13.0",
+    "shuttle-guard": "^1.0.0",
     "steal": "^1.6.2",
     "steal-css": "^1.3.1",
     "tether": "^1.4.3"
