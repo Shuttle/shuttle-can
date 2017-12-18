@@ -24,8 +24,11 @@ export const ViewModel = ComponentViewModel.extend({
         ev.stopPropagation();
 
         if (!!options.button.remove.confirmation) {
-            options.button.remove.confirmation.call(self, function removeCallback() {
-                click.on(self);
+            options.button.remove.confirmation.call(self, {
+                message: message,
+                primaryClick: function () {
+                    click.on(self);
+                }
             });
             useDefault = false;
         }
