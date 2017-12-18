@@ -55,7 +55,7 @@ export const TableOptions = DefineMap.extend({
     },
     tableClass: {
         type: 'string',
-        value: 'table-responsive'
+        value: ''
     },
     buttonClass: {
         type: 'string',
