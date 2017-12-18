@@ -6,9 +6,6 @@ import options from '../infrastructure/options';
 import click from '../infrastructure/click';
 
 export const ViewModel = ComponentViewModel.extend({
-    confirmation: function () {
-        window.history.back();
-    },
     iconNameClass: {
         type: 'string',
         value: '',

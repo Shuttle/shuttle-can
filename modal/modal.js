@@ -10,53 +10,50 @@ export const ViewModel = ComponentViewModel.extend({
     },
     modalType: {
         type: 'string',
-        value: 'fade',
-        get: function(value) {
-            return value;
-        }
+        value: 'fade'
     },
     title: {
         type: 'string',
         value: '',
-        get: function(value) {
+        get: function (value) {
             return i18n.value(value);
         }
     },
     hasPrimary: {
         type: 'boolean',
-        get: function(){
+        get: function () {
             return !!this.primaryText;
         }
     },
     primaryText: {
         type: 'string',
         value: '',
-        get: function(value) {
+        get: function (value) {
             return i18n.value(value);
         }
     },
     dismissText: {
         type: 'string',
         value: '',
-        get: function(value) {
+        get: function (value) {
             return i18n.value(value);
         }
     },
     textType: {
         type: 'string',
-        value: 'primary',
-        get: function(value) {
-            return value;
-        }
+        value: 'primary'
     },
-    message: { type: 'string', value: '' },
+    message: {
+        type: 'string',
+        value: ''
+    },
     hasMessage: {
         type: 'boolean',
-        get: function() {
+        get: function () {
             return !!this.message;
         }
     },
-    _primaryClick: function() {
+    _primaryClick: function () {
         const modalElement = $('#' + this.modalId);
 
         if (modalElement) {
