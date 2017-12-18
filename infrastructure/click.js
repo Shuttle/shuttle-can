@@ -7,8 +7,9 @@ var click = {
         const click = viewModel.click;
 
         if (!click) {
-            throw new Error('No \'click\' method has been defined on the logged view model.');
+            console.log('The following view model has no \'click\' method:');
             console.log(viewModel);
+            throw new Error('No \'click\' method has been defined.');
             return;
         }
 
