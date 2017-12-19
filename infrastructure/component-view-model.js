@@ -7,6 +7,9 @@ import each from 'can-util/js/each/';
 import { ErrorList } from "./validation";
 
 export default DefineMap.extend({
+    click: {
+      type: '*'
+    },
     checked: {
         type: 'boolean'
     },
