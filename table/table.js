@@ -12,12 +12,12 @@ export const ColumnMap = ComponentViewModel.extend({
         type: 'string',
         value: '(column)'
     },
-    hasView: {
+    hasStache: {
         get: function(){
-            return !!this.view;
+            return !!this.stache;
         }
     },
-    view: {
+    stache: {
         type: 'any'
     }
 });
@@ -47,7 +47,8 @@ export const ViewModel = ComponentViewModel.extend({
         }
     },
     columns: {
-        Value: ColumnList
+        Type: ColumnList,
+        value: []
     },
     rows: {
         Type: DefineList
@@ -97,10 +98,10 @@ export const ViewModel = ComponentViewModel.extend({
         return typeof(value) === 'function' ? value(column.attributeName) : value;
     },
     getView(row, column) {
-        let stacheTemplate = column.view;
+        let stacheTemplate = column.stache;
 
         if (!stacheTemplate) {
-            throw new Error('Specify a view for the column.');
+            throw new Error('Specify a \'stache\' for the column.');
         }
 
         return stache(stacheTemplate)(row);
