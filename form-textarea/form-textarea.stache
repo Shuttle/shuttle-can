@@ -1,5 +1,5 @@
-﻿<cs-form-group validationMessage:from="validationMessage" elementClass:from="formGroupClass">
+﻿<cs-form-group validationMessage:from="validationMessage" elementClass:from="formGroupClass" visible:from="visible">
     <cs-label label:from="label" required:from="required"/>
-    <textarea value:bind="value" class="form-control {{elementClass}} {{visibilityClass}}" placeholder="{{placeholder}}"
+    <textarea value:bind="value" class="form-control {{elementClass}}" placeholder="{{placeholder}}"
               focused:from="focus" rows:from="rows" cols:from="columns"/>
 </cs-form-group>

@@ -1,9 +1,2 @@
-﻿{{#switch type}}
-	{{#case "checkbox"}}
-		<input type:from="type" checked:bind="checked"/>
-	{{/case}}
-	{{#default}}
-		<input type:from="type" value:bind="value" class="form-control {{elementClass}}" placeholder:from="placeholder" focused:from="focus" />
-	{{/default}}
-{{/switch}}
-
+﻿<input type:from="type" value:bind="value" class="form-control {{elementClass}}" placeholder:from="placeholder"
+       focused:from="focus"/>

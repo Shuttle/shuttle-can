@@ -126,9 +126,7 @@ export default DefineMap.extend({
         return !!this.errors();
     },
     _click: function (ev) {
-        ev.stopPropagation();
-
-        return click.on(this);
+        return click.on(this, ev);
     }
 });
 

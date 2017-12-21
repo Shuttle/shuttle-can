@@ -8,12 +8,38 @@ import click from '../infrastructure/click';
 import options from '../infrastructure/options';
 
 export const ColumnMap = ComponentViewModel.extend({
+    viewModel: {
+        type: '*'
+    },
     columnTitle: {
         type: 'string',
-        value: '(column)'
+        value: '(column)',
+        get(value) {
+            if (!!this.columnStache) {
+                return stache(this.columnStache)(this.viewModel);
+            } else {
+                return i18n.value(value || '');
+            }
+        }
+    },
+    columnStache: {
+        type: 'string',
+        value: ''
+    },
+    columnClass: {
+        type: 'string',
+        value: ''
+    },
+    headerClass: {
+        type: 'string',
+        value: ''
+    },
+    dataClass: {
+        type: 'string',
+        value: ''
     },
     hasStache: {
-        get: function(){
+        get: function () {
             return !!this.stache;
         }
     },
@@ -27,6 +53,9 @@ export const ColumnList = DefineList.extend({
 });
 
 export const ViewModel = ComponentViewModel.extend({
+    rowClick: {
+        type: '*'
+    },
     emptyMessage: {
         get: function () {
             return i18n.value(this.emptyMessage || 'table-empty-message');
@@ -59,34 +88,11 @@ export const ViewModel = ComponentViewModel.extend({
         }
     },
     _rowClick: function (row) {
-        if (this.rowClick) {
-            this.rowClick(row);
-        } else {
+        if (!!row.click) {
             click.on(row);
+        } else if (!!this.rowClick && typeof(this.rowClick === 'function')) {
+            this.rowClick(row);
         }
-    },
-    getButtonDisabled(row, column) {
-        var disabledContextAttribute;
-        if (!!column.disabledContextAttribute) {
-            disabledContextAttribute = this.getContext(row, column)[column.disabledContextAttribute];
-
-            return typeof(disabledContextAttribute) === 'function' ? disabledContextAttribute() : disabledContextAttribute;
-        } else {
-            return false;
-        }
-    },
-    getContext(row, column) {
-        return column.context || row;
-    },
-    getColumnTitle(column) {
-        if (!!column.textTemplate) {
-            return stache(column.columnTitleTemplate)(column);
-        } else {
-            return i18n.value(column.columnTitle || '');
-        }
-    },
-    getColumnClass(column) {
-        return column.columnClass || '';
     },
     getColumnValue(row, column) {
         if (!column.attributeName) {

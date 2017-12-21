@@ -1,4 +1,5 @@
 import options from './infrastructure/options.js';
+
 import './infrastructure/security.js';
 import './infrastructure/click.js';
 import './infrastructure/i18n.js';
@@ -12,6 +13,7 @@ import './button-submit/button-submit.js';
 import './checkbox/checkbox.js';
 import './fetching/fetching.js';
 import './form/form.js';
+import './form-checkbox/form-checkbox.js';
 import './form-group/form-group.js';
 import './form-input/form-input.js';
 import './form-select/form-select.js';

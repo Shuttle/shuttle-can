@@ -1,7 +1,7 @@
 ﻿import guard from 'shuttle-guard';
 
 var click = {
-    on: function(viewModel, ev) {
+    on: function (viewModel, ev) {
         guard.againstUndefined(viewModel, 'viewModel');
 
         const click = viewModel.click;
@@ -26,13 +26,18 @@ var click = {
             }
         }
 
-        clickHandler.call(context, viewModel.argument);
-
         if (!!ev) {
+            if (!ev.stopPropagation || typeof(ev.stopPropagation) !== 'function'
+                ||
+                !ev.preventDefault || typeof(ev.preventDefault) !== 'function') {
+                throw new Error('The event argument \'ev\' passed to \'click\' does not appear to be an event object.');
+            }
+
             ev.stopPropagation();
+            ev.preventDefault();
         }
 
-        return false;
+        return clickHandler.call(context, viewModel.argument) || false;
     }
 };
 

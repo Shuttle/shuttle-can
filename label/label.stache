@@ -1,3 +1,4 @@
 ﻿<label class="control-label">
-  {{label}}{{#if required}}<i class="fa fa-asterisk" aria-hidden="true"></i>{{/if}}
+    <content></content>
+    {{label}}{{#if required}}<i class="fa fa-asterisk" aria-hidden="true"></i>{{/if}}
 </label>

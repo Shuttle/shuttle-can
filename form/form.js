@@ -11,10 +11,6 @@ export const ViewModel = ComponentViewModel.extend({
         get: function(title) {
             return i18n.value(title);
         }
-    },
-    sizeClass: {
-        type: 'string',
-        value: ''
     }
 });
 

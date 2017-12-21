@@ -1,4 +1,4 @@
-﻿<div class="form-group {{elementClass}}">
+﻿<div class="form-group {{elementClass}} {{visibilityClass}}">
     <content/>
     <cs-validation message:from="validationMessage" />
 </div>

@@ -1,4 +1,4 @@
-﻿<cs-form-group validationMessage:from="validationMessage" elementClass:from="formGroupClass">
+﻿<cs-form-group validationMessage:from="validationMessage" elementClass:from="formGroupClass" visible:from="visible">
 	<cs-label label:from="label" required:from="required" />
-    <cs-input focus:from="focus" value:bind="value" checked:bind="checked" type:from="type" elementClass:from="elementClass"/>
+    <cs-input focus:from="focus" value:bind="value" elementClass:from="elementClass" type:from="type"/>
 </cs-form-group>
