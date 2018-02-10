@@ -3,17 +3,14 @@ import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './input.stache!';
 
 export const ViewModel = ComponentViewModel.extend({
-    placeholder: {
+    type: {
         type: 'string',
-        value: ''
+        default: 'input'
     },
-    focus: {
-        type: 'boolean',
-        value: false
-    },
-    value: {
-        type: 'string',
-        value: ''
+    inputClass: {
+        get(){
+            return `form-control ${this.elementClass}`;
+        }
     }
 });
 
