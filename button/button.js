@@ -6,7 +6,7 @@ import ComponentViewModel from '../infrastructure/component-view-model';
 export const ActionMap = ComponentViewModel.extend({
     isSeparator: {
         type: 'boolean',
-        value: false
+        default: false
     }
 });
 
@@ -15,19 +15,24 @@ export const ActionList = DefineList.extend({
 });
 
 export const ViewModel = ComponentViewModel.extend({
-    buttonType: {
-        get: function() {
-            return (this.actions && this.actions.length > 0)
-                       ? 'dropdown'
-                       : 'button';
+    hasActions: {
+        get() {
+            return (this.actions && this.actions.length > 0);
         }
     },
-    type: {
-        get: function(type) {
-            return type || 'button';
+    actions: {
+        Type: ActionList
+    },
+    buttonClass: {
+        get(){
+            return `btn ${this.hasActions ? 'dropdown-toggle' : ''} ${this.elementClass} ${this.visibilityClass}`;
         }
     },
-    actions: {Type: ActionList},
+    buttonIconClass: {
+        get(){
+            return `${this.iconClass} ${this.iconNameClass}${!!this.text ? ' ' + this.iconSpacingClass : ''}`;
+        }
+    }
 });
 
 export default Component.extend({

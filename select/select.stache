@@ -1,5 +1,5 @@
-﻿<select value:bind="value" class="form-control {{elementClass}}">
+﻿<select value:bind="value" class:from="selectClass">
 	{{#each options}}
-        <option value='{{value}}'>{{label}}</option>
+        <option value:from='value'>{{label}}</option>
 	{{/each}}
 </select>

@@ -5,7 +5,7 @@ import view from './validation.stache!';
 export const ViewModel = ComponentViewModel.extend({
     message: {
         type: 'string',
-        value: ''
+        default: ''
     }
 });
 

@@ -1,2 +1,2 @@
-﻿<i on:click="click(scope.event)" class="fa {{#if checked}}{{checkedClass}}{{else}}{{uncheckedClass}}{{/if}}" aria-hidden="true"></i>
+﻿<i on:click="click(scope.event)" class:from="checkboxClass" aria-hidden="true"></i>
 

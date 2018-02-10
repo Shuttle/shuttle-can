@@ -4,11 +4,11 @@ import DefineList from 'can-define/list/';
 export const ErrorMap = DefineMap.extend({
     message: {
         type: 'string',
-        value: ''
+        default: ''
     },
     related: {
         Type: DefineList,
-        value: []
+        default: []
     }
 });
 

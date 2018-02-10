@@ -1,5 +1,3 @@
-﻿<button type="submit" class="btn {{elementClass}} {{visibilityClass}}" on:click="_click(scope.event)"
-        disabled:bind="disabled">
-    {{#if iconNameClass}}<i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}"
-                            aria-hidden="true"></i>{{/if}}{{text}}
+﻿<button type="submit" class:from="buttonClass" on:click="_click(scope.event)" disabled:bind="disabled">
+    {{#if iconNameClass}}<i class:from="buttonIconClass" aria-hidden="true"></i>{{/if}}{{text}}
 </button>

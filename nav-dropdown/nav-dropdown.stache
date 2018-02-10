@@ -10,7 +10,7 @@
     </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 {{#each(list)}}
-    <a class="dropdown-item" href="{{href}}">{{text}}</a>
+    <a class="dropdown-item" href:from="href">{{text}}</a>
 {{/each}}
 </div>
 </li>

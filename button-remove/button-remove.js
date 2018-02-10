@@ -8,7 +8,7 @@ import click from '../infrastructure/click';
 export const ViewModel = ComponentViewModel.extend({
     iconNameClass: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return value || options.button.remove.iconNameClass;
         }

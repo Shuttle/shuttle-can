@@ -1,2 +1,2 @@
-﻿<input type:from="type" value:bind="value" class="form-control {{elementClass}}" placeholder:from="placeholder"
+﻿<input type:from="type" value:bind="value" class:from="inputClass" placeholder:from="placeholder"
        focused:from="focus"/>

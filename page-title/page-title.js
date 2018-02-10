@@ -6,11 +6,11 @@ import i18n from '../infrastructure/i18n';
 export const ViewModel = DefineMap.extend({
     localize: {
         type: 'boolean',
-        value: true
+        default: true
     },
     title: {
         type: 'string',
-        value: '',
+        default: '',
         get: function(value) {
             return this.localize ? i18n.value(value) : value;
         }

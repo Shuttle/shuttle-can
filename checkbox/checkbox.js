@@ -5,18 +5,20 @@ import view from './checkbox.stache!';
 export const ViewModel = ComponentViewModel.extend({
     checkedClass: {
       type: 'string',
-      value: 'fa-check-square-o'
+        default: 'fa-check-square-o'
     },
-
     uncheckedClass: {
       type: 'string',
-      value: 'fa-square-o'
+        default: 'fa-square-o'
     },
-
     checked: {
-        value: false
+        default: false
     },
-
+    checkboxClass: {
+        get(){
+            return this.iconClass + ' ' + (!!this.checked ? this.checkedClass : this.uncheckedClass);
+        }
+    },
     click: function() {
         this.checked = !this.checked;
     }

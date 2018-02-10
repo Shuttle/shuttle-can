@@ -1,28 +1,22 @@
-﻿{{#switch buttonType}}
-    {{#case "dropdown"}}
-        <div class="btn-group" disabled:from="disabled">
-            <button type="button" class="btn {{elementClass}} {{visibilityClass}} dropdown-toggle"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:from="disabled">
-                {{#if iconNameClass}}<i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}"
-                                        aria-hidden="true"></i>{{/if}}{{text}}<span
-                    class="caret"></span>
-            </button>
-            <div class="dropdown-menu">
-                {{#each actions}}
-                    {{#if isSeparator}}
-                        <div class="dropdown-divider"></div>
-                    {{else}}
-                        <a class="dropdown-item" href="#" on:click="click()">{{text}}</a>
-                    {{/if}}
-                {{/each}}
-            </div>
-        </div>
-    {{/case}}
-    {{#default}}
-        <button type:from="type" class="btn {{elementClass}} {{visibilityClass}}" on:click="_click(scope.event)"
-                disabled:from="disabled">
-            {{#if iconNameClass}}<i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}"
-                                    aria-hidden="true"></i>{{/if}}{{text}}
+﻿{{#if hasActions}}
+    <div class="btn-group" disabled:from="disabled">
+        <button type="button" class:from="buttonClass"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:from="disabled">
+            {{#if iconNameClass}}<i class:from="buttonIconClass" aria-hidden="true"></i>{{/if}}{{text}}<span
+                class="caret"></span>
         </button>
-    {{/default}}
-{{/switch}}
+        <div class="dropdown-menu">
+            {{#each actions}}
+                {{#if isSeparator}}
+                    <div class="dropdown-divider"></div>
+                {{else}}
+                    <a class="dropdown-item" href="#" on:click="click()">{{text}}</a>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+{{else}}
+    <button type="button" class:from="buttonClass" on:click="_click(scope.event)" disabled:from="disabled">
+        {{#if iconNameClass}}<i class:from="buttonIconClass" aria-hidden="true"></i>{{/if}}{{text}}
+    </button>
+{{/if}}

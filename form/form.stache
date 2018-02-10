@@ -1,7 +1,5 @@
-﻿<can-import from="./form.css!"/>
-
-<div class="cs-form {{elementClass}} {{visibilityClass}}">
-    <form>
+﻿<div class="cs-form {{elementClass}} {{visibilityClass}}">
+    <form onsubmit="return false;">
         {{#if title}}
         <div class="cs-form-heading">
             <h2 class="cs-form-title">{{title}}</h2>

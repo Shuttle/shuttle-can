@@ -1,12 +1,11 @@
-<div class="modal {{modalType}}" id="{{modalId}}" tabindex="-1" role="dialog" aria-labelledby="{{modalId}}-title">
+<div class:from="modalClass" id:from="modalId" tabindex="-1" role="dialog" aria-labelledby:from="modalTitleId">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-{{textType}}" id="{{modalId}}-title">{{title}}</h5>
+                <h5 class="modal-title text:from-textType" id:from="modalTitleId">{{title}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="fa fa-times-circle-o" aria-hidden="true"></i>
-                    <i class="{{iconClass}} {{iconNameClass}}{{#if text}} {{iconSpacingClass}}{{/if}}"
-                       aria-hidden="true"></i>
+                    <i class:from="dismissButtonClass" aria-hidden="true"></i>
                 </button>
             </div>
             <div class="modal-body">

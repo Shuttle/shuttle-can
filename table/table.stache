@@ -14,13 +14,13 @@
             </thead>
             <tbody>
             {{#each(rows)}}
-                <tr class="row {{../getRowClass (.)}}" on:click="../_rowClick(.)">
+                <tr class="row {{scope.root.getRowClass (.)}}" on:click="scope.root._rowClick(.)">
                     {{#each(../columns)}}
                         <td data-title="{{columnTitle}}" class="{{columnClass}} {{dataClass}}">
-                            {{#if hasStache}}
-                                {{../getView(../., .}}
+                            {{#if(hasStache)}}
+                                {{scope.root.getView(../., .}}
                             {{else}}
-                                {{../getColumnValue(../., .)}}
+                                {{scope.root.getColumnValue(../., .)}}
                             {{/if}}
                         </td>
                     {{/each}}

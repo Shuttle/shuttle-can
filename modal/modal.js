@@ -10,11 +10,16 @@ export const ViewModel = ComponentViewModel.extend({
     },
     modalType: {
         type: 'string',
-        value: 'fade'
+        default: 'fade'
+    },
+    modalClass: {
+        get() {
+            return 'modal ' + this.modalType;
+        }
     },
     title: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return i18n.value(value);
         }
@@ -27,30 +32,40 @@ export const ViewModel = ComponentViewModel.extend({
     },
     primaryText: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return i18n.value(value);
         }
     },
     dismissText: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return i18n.value(value);
         }
     },
+    dismissButtonClass: {
+        get(){
+            return this.iconClass + ' ' + this.iconNameClass + (!!this.text ? ' ' + this.iconSpacingClass : '');
+        }
+    },
     textType: {
         type: 'string',
-        value: 'primary'
+        default: 'primary'
     },
     message: {
         type: 'string',
-        value: ''
+        default: ''
     },
     hasMessage: {
         type: 'boolean',
         get: function () {
             return !!this.message;
+        }
+    },
+    modalTitleId: {
+        get() {
+            return this.modalId + '-title'
         }
     },
     _primaryClick: function () {

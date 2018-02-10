@@ -7,11 +7,11 @@ export const IconNameOption = DefineMap.extend({
 export const RemoveButtonI18NOptions = DefineMap.extend({
     removeItemConfirmation: {
         type: 'string',
-        value: 'removeItemConfirmation'
+        default: 'removeItemConfirmation'
     },
     removeItemConfirmationNamed: {
         type: 'string',
-        value: 'removeItemConfirmationNamed'
+        default: 'removeItemConfirmationNamed'
     }
 });
 
@@ -23,26 +23,26 @@ export const RemoveButtonOptions = IconNameOption.extend({
 export const ButtonOptions = DefineMap.extend({
     back: {
         Type: IconNameOption,
-        value: {
+        default: {
             iconNameClass: 'fa-chevron-left'
         }
     },
     refresh: {
         Type: IconNameOption,
-        value: {
+        default: {
             iconNameClass: 'fa-refresh'
         }
     },
     remove: {
         Type: RemoveButtonOptions,
-        value: {
+        default: {
             iconNameClass: 'fa-times',
             i18n: {}
         }
     },
     submit: {
         Type: IconNameOption,
-        value: {
+        default: {
             iconNameClass: 'fa-arrow-circle-right'
         }
     }
@@ -51,45 +51,45 @@ export const ButtonOptions = DefineMap.extend({
 export const TableOptions = DefineMap.extend({
     containerClass: {
         type: 'string',
-        value: ''
+        default: ''
     },
     tableClass: {
         type: 'string',
-        value: ''
+        default: ''
     },
     buttonClass: {
         type: 'string',
-        value: ''
+        default: ''
     }
 });
 
 export const FormOptions = DefineMap.extend({
     elementClass: {
         type: 'string',
-        value: 'form-group'
+        default: 'form-group'
     }
 });
 
 export const Options = DefineMap.extend({
     iconClass: {
         type: 'string',
-        value: 'fa'
+        default: 'fa'
     },
     iconSpacingClass: {
         type: 'string',
-        value: 'pr-2'
+        default: 'pr-2'
     },
     button: {
         Type: ButtonOptions,
-        value: {}
+        default: {}
     },
     form: {
         Type: FormOptions,
-        value: {}
+        default: {}
     },
     table: {
         Type: TableOptions,
-        value: {}
+        default: {}
     }
 });
 

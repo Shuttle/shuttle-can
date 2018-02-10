@@ -6,11 +6,11 @@ import view from './select.stache!';
 export const OptionMap = ComponentViewModel.extend({
     value: {
         type: 'string',
-        value: ''
+        default: ''
     },
     label: {
         type: 'string',
-        value: ''
+        default: ''
     }
 });
 
@@ -24,7 +24,12 @@ export const ViewModel = ComponentViewModel.extend({
     },
     value: {
         type: 'string',
-        value: ''
+        default: ''
+    },
+    selectClass: {
+        get() {
+            return `form-control ${this.elementClass}`;
+        }
     }
 });
 

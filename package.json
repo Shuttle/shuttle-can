@@ -1,6 +1,6 @@
 {
   "name": "shuttle-canstrap",
-  "version": "1.0.32",
+  "version": "1.0.34",
   "description": "CanJS components using Bootstrap v4",
   "main": "shuttle-canstrap.js",
   "repository": {
@@ -30,7 +30,7 @@
     "can-route": "^4.0.1",
     "can-route-pushstate": "^4.0.1",
     "can-set": "^1.5.1",
-    "can-stache": "^4.0.2",
+    "can-stache": "^4.0.3",
     "can-stache-bindings": "^4.0.5",
     "font-awesome": "^4.7.0",
     "popper.js": "^1.13.0",

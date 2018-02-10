@@ -6,7 +6,7 @@ import i18n from '../infrastructure/i18n';
 export const ViewModel = ComponentViewModel.extend({
   title: {
       type: 'string',
-      value: '',
+      default: '',
       get: function(value) {
           return i18n.value('fetching', { name: i18n.value(value)});
       }

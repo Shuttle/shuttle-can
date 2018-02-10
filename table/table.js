@@ -13,7 +13,7 @@ export const ColumnMap = ComponentViewModel.extend({
     },
     columnTitle: {
         type: 'string',
-        value: '(column)',
+        default: '(column)',
         get(value) {
             if (!!this.columnStache) {
                 return stache(this.columnStache)(this.viewModel);
@@ -24,19 +24,19 @@ export const ColumnMap = ComponentViewModel.extend({
     },
     columnStache: {
         type: 'string',
-        value: ''
+        default: ''
     },
     columnClass: {
         type: 'string',
-        value: ''
+        default: ''
     },
     headerClass: {
         type: 'string',
-        value: ''
+        default: ''
     },
     dataClass: {
         type: 'string',
-        value: ''
+        default: ''
     },
     hasStache: {
         get: function () {
@@ -63,21 +63,21 @@ export const ViewModel = ComponentViewModel.extend({
     },
     tableClass: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return value || options.table.tableClass;
         }
     },
     containerClass: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return value || options.table.containerClass || '';
         }
     },
     columns: {
         Type: ColumnList,
-        value: []
+        default: []
     },
     rows: {
         Type: DefineList

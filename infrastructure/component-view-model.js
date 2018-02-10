@@ -7,6 +7,14 @@ import each from 'can-util/js/each/';
 import { ErrorList } from "./validation";
 
 export default DefineMap.extend({
+    placeholder: {
+        type: 'string',
+        default: ''
+    },
+    focus: {
+        type: 'boolean',
+        default: false
+    },
     click: {
       type: '*'
     },
@@ -15,22 +23,22 @@ export default DefineMap.extend({
     },
     value: {
         type: '*',
-        value: ''
+        default: ''
     },
     label: {
         type: 'string',
-        value: ''
+        default: ''
     },
     errorAttribute: {
         type: 'string',
-        value: ''
+        default: ''
     },
     errors: {
         Type: ErrorList,
     },
     validationMessage: {
         type: 'string',
-        value: '',
+        default: '',
         get(value) {
             var self = this;
             var message = undefined;
@@ -54,14 +62,14 @@ export default DefineMap.extend({
     },
     permission: {
         type: 'string',
-        value: ''
+        default: ''
     },
     context: {
         type: '*'
     },
     elementClass: {
         type: 'string',
-        value: ''
+        default: ''
     },
     visibilityClass: {
         get: function () {
@@ -72,14 +80,14 @@ export default DefineMap.extend({
     },
     iconClass: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return value || options.iconClass || 'fa';
         }
     },
     iconNameClass: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return value || '';
         }
@@ -98,7 +106,7 @@ export default DefineMap.extend({
     },
     text: {
         type: 'string',
-        value: '',
+        default: '',
         get: function (value) {
             return i18n.value(value);
         }
@@ -116,7 +124,7 @@ export default DefineMap.extend({
     },
     required: {
         type: 'boolean',
-        value: false
+        default: false
     },
     hasErrors: function () {
         if (!this.errors) {

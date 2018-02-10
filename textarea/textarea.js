@@ -5,15 +5,20 @@ import view from './textarea.stache!';
 export const ViewModel = ComponentViewModel.extend({
     rows: {
         type: 'number',
-        value: 3
+        default: 3
     },
     columns: {
         type: 'number',
-        value: 80
+        default: 80
     },
     value: {
         type: 'string',
-        value: ''
+        default: ''
+    },
+    textareaClass: {
+        get(){
+            return `form-control ${this.elementClass} ${this.visibilityClass}`;
+        }
     }
 });
 

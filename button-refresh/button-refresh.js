@@ -6,9 +6,19 @@ import options from '../infrastructure/options';
 export const ViewModel = ComponentViewModel.extend({
     iconNameClass: {
         type: 'string',
-        value: '',
+        default: '',
         get: function(value){
             return value || options.button.refresh.iconNameClass;
+        }
+    },
+    buttonClass: {
+        get(){
+            return `btn ${this.elementClass} ${this.visibilityClass}`;
+        }
+    },
+    buttonIconClass: {
+        get(){
+            return `${this.iconClass} ${this.iconNameClass}${(!!this.text ? ' ' + this.iconSpacingClass : '')}`;
         }
     }
 });

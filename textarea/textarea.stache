@@ -1,2 +1,2 @@
-﻿<textarea value:bind="value" class="form-control {{elementClass}} {{visibilityClass}}" placeholder="{{placeholder}}"
+﻿<textarea value:bind="value" class:from="textareaClass" placeholder:from="placeholder"
           focused:from="focus" rows:from="rows" cols:from="columns"/>

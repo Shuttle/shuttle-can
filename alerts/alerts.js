@@ -6,9 +6,9 @@ import each from 'can-util/js/each/';
 import stache from 'can-stache/';
 
 export const ViewModel = DefineMap.extend({
-    messages: { Value: DefineList },
+    messages: { Default: DefineList },
 
-    _key: { type: 'number', value: 1 },
+    _key: { type: 'number', default: 1 },
 
     init: function(){
         this._removeExpiredAlerts();
