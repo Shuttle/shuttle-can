@@ -8,7 +8,7 @@ export const ViewModel = ComponentViewModel.extend({
       type: 'string',
       default: '',
       get: function(value) {
-          return i18n.value('fetching', { name: i18n.value(value)});
+          return i18n.value(value);
       }
   }
 });
