@@ -26,10 +26,12 @@ var ViewModel = DefineMap.extend({
     href: {
         type: 'string',
         default: '',
-        set: function () {
+        set(value) {
             if (!!this.list && !!this.list.length) {
                 throw new Error('Cannot set \'href\' when a \'list\' has been set.');
             }
+
+            return value;
         }
     },
     text: {
@@ -41,10 +43,12 @@ var ViewModel = DefineMap.extend({
     },
     list: {
         Default: DropdownList,
-        set: function () {
-            if (!!this.href) {
+        set(value) {
+            if (!!value.length && !!this.href) {
                 throw new Error('Cannot set \'list\' when a \'href\' has been set.');
             }
+
+            return value;
         }
     }
 });
