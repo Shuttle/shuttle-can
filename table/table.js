@@ -84,7 +84,7 @@ export const ViewModel = ComponentViewModel.extend({
     },
     shouldShowEmptyMessage: {
         get: function () {
-            return this.rows.length === 0 && !!this.emptyMessage;
+            return !!this.rows && this.rows.length === 0 && !!this.emptyMessage;
         }
     },
     _rowClick: function (row) {
