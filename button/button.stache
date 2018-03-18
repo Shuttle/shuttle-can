@@ -6,7 +6,7 @@
                 class="caret"></span>
         </button>
         <div class="dropdown-menu">
-            {{#each actions}}
+            {{#each(actions)}}
                 {{#if isSeparator}}
                     <div class="dropdown-divider"></div>
                 {{else}}

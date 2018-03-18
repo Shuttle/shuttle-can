@@ -1,4 +1,4 @@
-{{#each messages}}
+{{#each(messages)}}
     <div class="alert alert-{{type}} alert-dismissible" role="alert">
         <button type="button" class="close" aria-label="Close" data-dismiss="alert" aria-label="Close"
                 on:click="destroy()">
