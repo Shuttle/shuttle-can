@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                {{#if hasMessage}}
+                {{#if(hasMessage)}}
                     {{message}}
                 {{else}}
                     <content/>
@@ -17,7 +17,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{dismissText}}</button>
-                {{#if hasPrimary}}
+                {{#if(hasPrimary)}}
                     <button type="button" class="btn btn-primary" on:click="_primaryClick()">{{primaryText}}</button>
                 {{/if}}
             </div>

@@ -12,6 +12,7 @@ export const ViewModel = ComponentViewModel.extend({
         default: 'fa-square-o'
     },
     checked: {
+        type: 'boolean',
         default: false
     },
     checkboxClass: {

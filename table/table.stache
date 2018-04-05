@@ -1,5 +1,5 @@
 <div class="{{containerClass}}">
-    {{#if shouldShowEmptyMessage}}
+    {{#if(shouldShowEmptyMessage)}}
         <div class="alert alert-info" role="alert">{{emptyMessage}}</div>
     {{else}}
         <table class="table {{tableClass}}">

@@ -1,0 +1,16 @@
+﻿{{collapsed}}
+<div class="card">
+    <div class="card-header {{elementClass}}" id="collapse-{{collapseId}}-header" aria-expanded="true"
+         aria-controls="{{collapseId}}" on:click="@click()">
+        <h5 class="mb-0">
+            {{text}}
+        </h5>
+    </div>
+
+        <div id="{{collapseId}}" class="collapse show"
+             aria-labelledby="{{collapseId}}-header" {{#if(accordionId)}}data-parent="#{{accordionId}}"{{/if}}>
+    <div class="card-body">
+        <content/>
+    </div>
+</div>
+</div>

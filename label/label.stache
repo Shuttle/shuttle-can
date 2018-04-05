@@ -1,4 +1,4 @@
-﻿<label class="control-label">
+﻿<label class="control-label" on:click="@click(scope.event)">
     <content></content>
-    {{label}}{{#if required}}<i class="fa fa-asterisk" aria-hidden="true"></i>{{/if}}
+    {{label}}{{#if(required)}}<i class="fa fa-asterisk" aria-hidden="true"></i>{{/if}}
 </label>

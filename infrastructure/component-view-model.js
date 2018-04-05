@@ -4,7 +4,7 @@ import security from './security';
 import click from './click';
 import i18n from './i18n';
 import each from 'can-util/js/each/';
-import { ErrorList } from "./validation";
+import { ErrorList } from './validation';
 
 export default DefineMap.extend({
     placeholder: {
@@ -27,7 +27,9 @@ export default DefineMap.extend({
     },
     label: {
         type: 'string',
-        default: ''
+        get: function(value) {
+            return i18n.value(value);
+        }
     },
     errorAttribute: {
         type: 'string',
@@ -113,7 +115,7 @@ export default DefineMap.extend({
     },
     disabled: {
         get: function (value) {
-            var disabled = value || false || this.working;
+            var disabled = !!value || !!this.working;
 
             if (this.permission && !disabled) {
                 disabled = !security.hasPermission(this.permission);
