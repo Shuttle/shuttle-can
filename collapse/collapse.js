@@ -31,7 +31,7 @@ export const ViewModel = ComponentViewModel.extend({
         type: 'boolean',
         default: false,
         set(value) {
-            $('#' + this.collapseId).collapse(!!value ? 'show' : 'hide');
+            $('#' + this.collapseId).collapse(!!value ? 'hide' : 'show');
 
             return value;
         }

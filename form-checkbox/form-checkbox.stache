@@ -1,4 +1,4 @@
 ﻿<cs-form-group validationMessage:from="validationMessage" elementClass:from="formGroupClass" visible:from="visible">
     <cs-checkbox focus:from="focus" checked:bind="checked" elementClass:from="elementClass" />
-    <cs-label label:from="label" required:from="required" click:from="@click(scope.event)"/>
+    <cs-label label:from="label" required:from="required" click:from="@click"/>
 </cs-form-group>

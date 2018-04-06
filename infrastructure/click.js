@@ -37,7 +37,7 @@ var click = {
             ev.preventDefault();
         }
 
-        return clickHandler.call(context, viewModel.argument) || false;
+        return clickHandler.call(context, ev) || false;
     }
 };
 
