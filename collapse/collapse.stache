@@ -1,17 +1,16 @@
-﻿{{collapsed}}
-<div class="card">
-    <div class="card-header {{elementClass}}" id="collapse-{{collapseId}}-header" aria-expanded="true"
-         aria-controls="{{collapseId}}" on:click="click()">
+﻿<div class="card">
+    <div class="card-header {{elementClass}}" id="{{collapseId}}-header" data-toggle="collapse"
+         data-target="#{{collapseId}}" aria-expanded="true" aria-controls="{{collapseId}}">
         <h5 class="mb-0">
             {{text}}
             <i class:from="collapseIconClass" aria-hidden="true"></i>
         </h5>
     </div>
 
-        <div id="{{collapseId}}" class="collapse show"
-             aria-labelledby="{{collapseId}}-header" {{#if(accordionId)}}data-parent="#{{accordionId}}"{{/if}}>
-    <div class="card-body">
-        <content/>
+    <div id="{{collapseId}}" class="collapse {{#if(accordionId)}}hide{{else}}show{{/if}}"
+         aria-labelledby="{{collapseId}}-header" {{#if(accordionId)}}data-parent="#{{accordionId}}"{{/if}}>
+        <div class="card-body">
+            <content/>
+        </div>
     </div>
-</div>
 </div>

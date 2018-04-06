@@ -19,6 +19,12 @@ export const ViewModel = ComponentViewModel.extend({
     accordionId: {
         type: 'string'
     },
+    hasAccordionId: {
+        type: 'boolean',
+        get() {
+            return !!this.accordionId;
+        }
+    },
     expandedIconClass: {
         type: 'string',
         default: 'fa-chevron-down'
@@ -29,11 +35,8 @@ export const ViewModel = ComponentViewModel.extend({
     },
     collapsed: {
         type: 'boolean',
-        default: false,
-        set(value) {
-            $('#' + this.collapseId).collapse(!!value ? 'hide' : 'show');
-
-            return value;
+        default: function(){
+            return !!this.accordionId;
         }
     },
     collapseIconClass: {
@@ -41,8 +44,16 @@ export const ViewModel = ComponentViewModel.extend({
             return 'float-right ' + this.iconClass + ' ' + (!!this.collapsed ? this.collapsedIconClass : this.expandedIconClass);
         }
     },
-    click: function () {
-        this.collapsed = !this.collapsed;
+    connectedCallback(){
+        var self = this;
+        var el = $('#' + this.collapseId);
+
+        el.on('hidden.bs.collapse', function () {
+            self.collapsed = true;
+        });
+        el.on('shown.bs.collapse', function () {
+            self.collapsed = false;
+        });
     }
 });
 
