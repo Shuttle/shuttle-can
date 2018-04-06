@@ -4,6 +4,7 @@
          aria-controls="{{collapseId}}" on:click="click()">
         <h5 class="mb-0">
             {{text}}
+            <i class:from="collapseIconClass" aria-hidden="true"></i>
         </h5>
     </div>
 

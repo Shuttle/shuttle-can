@@ -3,11 +3,11 @@ import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './checkbox.stache!';
 
 export const ViewModel = ComponentViewModel.extend({
-    checkedClass: {
+    checkedIconClass: {
       type: 'string',
         default: 'fa-check-square-o'
     },
-    uncheckedClass: {
+    uncheckedIconClass: {
       type: 'string',
         default: 'fa-square-o'
     },
@@ -15,9 +15,9 @@ export const ViewModel = ComponentViewModel.extend({
         type: 'boolean',
         default: false
     },
-    checkboxClass: {
+    checkboxIconClass: {
         get(){
-            return this.iconClass + ' ' + (!!this.checked ? this.checkedClass : this.uncheckedClass);
+            return this.iconClass + ' ' + (!!this.checked ? this.checkedIconClass : this.uncheckedIconClass);
         }
     },
     click: function() {

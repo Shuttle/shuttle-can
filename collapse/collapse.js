@@ -38,7 +38,7 @@ export const ViewModel = ComponentViewModel.extend({
     },
     collapseIconClass: {
         get() {
-            return this.iconClass + ' ' + (!!this.collapsed ? this.collapsedIconClass : this.expandedIconClass);
+            return 'float-right ' + this.iconClass + ' ' + (!!this.collapsed ? this.collapsedIconClass : this.expandedIconClass);
         }
     },
     click: function () {

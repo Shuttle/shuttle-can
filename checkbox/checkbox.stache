@@ -1,2 +1,2 @@
-﻿<i on:click="_click(scope.event)" class:from="checkboxClass" aria-hidden="true"></i>
+﻿<i on:click="_click(scope.event)" class:from="checkboxIconClass" aria-hidden="true"></i>
 
