@@ -8,11 +8,6 @@ export const ViewModel = ComponentViewModel.extend({
     init() {
         this.collapseId = 'collapse-' + nextId().toString();
     },
-
-    text: {
-        type: 'string',
-        default: 'Collapse Header'
-    },
     collapseId: {
         type: 'string'
     },
@@ -35,7 +30,7 @@ export const ViewModel = ComponentViewModel.extend({
     },
     collapsed: {
         type: 'boolean',
-        default: function(){
+        default: function () {
             return !!this.accordionId;
         }
     },
@@ -44,7 +39,7 @@ export const ViewModel = ComponentViewModel.extend({
             return 'float-right ' + this.iconClass + ' ' + (!!this.collapsed ? this.collapsedIconClass : this.expandedIconClass);
         }
     },
-    connectedCallback(){
+    connectedCallback() {
         var self = this;
         var el = $('#' + this.collapseId);
 

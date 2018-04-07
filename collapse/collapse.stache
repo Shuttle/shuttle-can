@@ -1,5 +1,5 @@
-﻿<div class="card">
-    <div class="card-header {{elementClass}}" id="{{collapseId}}-header" data-toggle="collapse"
+﻿<div class="card {{elementClass}}">
+    <div class="card-header" id="{{collapseId}}-header" data-toggle="collapse"
          data-target="#{{collapseId}}" aria-expanded="true" aria-controls="{{collapseId}}">
         <h5 class="mb-0">
             {{text}}
@@ -7,7 +7,7 @@
         </h5>
     </div>
 
-    <div id="{{collapseId}}" class="collapse {{#if(accordionId)}}hide{{else}}show{{/if}}"
+    <div id="{{collapseId}}" class="collapse {{#if(collapsed)}}hide{{else}}show{{/if}}"
          aria-labelledby="{{collapseId}}-header" {{#if(accordionId)}}data-parent="#{{accordionId}}"{{/if}}>
         <div class="card-body">
             <content/>
