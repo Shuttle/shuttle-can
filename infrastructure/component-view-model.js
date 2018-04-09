@@ -16,7 +16,7 @@ export default DefineMap.extend({
         default: false
     },
     click: {
-      type: '*'
+      type: 'observable'
     },
     checked: {
         type: 'boolean'
