@@ -9,7 +9,10 @@ import { ErrorList } from './validation';
 export default DefineMap.extend({
     placeholder: {
         type: 'string',
-        default: ''
+        default: '',
+        get: function(value) {
+            return i18n.value(value);
+        }
     },
     focus: {
         type: 'boolean',
