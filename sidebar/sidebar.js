@@ -84,6 +84,24 @@ var ViewModel = ComponentViewModel.extend({
     },
     list: {
         Type: ItemList
+    },
+    connectedCallback() {
+        if (!this.togglerId) {
+            return;
+        }
+
+        var toggler = $('#' + this.togglerId);
+        var sidebar = $('#' + this.id);
+
+        if (!toggler.length || !sidebar.length) {
+            return;
+        }
+
+        $(window).resize(function () {
+            if (!toggler.is(':visible') && !sidebar.is(':visible')) {
+                toggler.click();
+            }
+        });
     }
 });
 
