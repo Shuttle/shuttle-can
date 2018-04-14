@@ -1,4 +1,4 @@
-<div class="cs-sidebar list-group border-0 text-center text-md-left" id:from="id">
+<div class="cs-sidebar list-group border-0 text-left" id:from="id">
 {{#each(list)}}
     <cs-sidebar-item href:from="href" text:from="text" list:from="list" parentId:from="../id"/>
 {{/each}}
