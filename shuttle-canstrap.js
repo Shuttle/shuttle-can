@@ -1,5 +1,6 @@
 import options from './infrastructure/options.js';
 
+import './canstrap.css';
 import './infrastructure/security.js';
 import './infrastructure/click.js';
 import './infrastructure/i18n.js';
@@ -25,6 +26,8 @@ import './modal/modal.js';
 import './nav-dropdown/nav-dropdown.js';
 import './page-title/page-title.js';
 import './select/select.js';
+import './sidebar/sidebar.js';
+import './sidebar/sidebar-item.js';
 import './table/table.js';
 import './textarea/textarea.js';
 import './validation/validation.js';

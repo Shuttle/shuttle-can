@@ -1,0 +1,13 @@
+{{#if(href)}}
+    <a href:from="href" class="list-group-item">{{text}}</a>
+{{else}}
+    <a href="#{{id}}" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false">
+        <span>{{text}}</span>
+        <i class:from="collapseIconClass" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id:from="id" data-parent:from="parentId">
+    {{#each(list)}}
+        <cs-sidebar-item href:from="href" text:from="text" list:from="list" parentId:from="id" />
+    {{/each}}
+    </div>
+{{/if}}

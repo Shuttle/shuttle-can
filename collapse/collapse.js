@@ -22,11 +22,11 @@ export const ViewModel = ComponentViewModel.extend({
     },
     expandedIconClass: {
         type: 'string',
-        default: 'fa-chevron-down'
+        default: 'fa-chevron-right'
     },
     collapsedIconClass: {
         type: 'string',
-        default: 'fa-chevron-right'
+        default: 'fa-chevron-down'
     },
     collapsed: {
         type: 'boolean',
