@@ -1,6 +1,6 @@
 {
   "name": "shuttle-canstrap",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "description": "CanJS components using Bootstrap v4",
   "main": "shuttle-canstrap.js",
   "repository": {
