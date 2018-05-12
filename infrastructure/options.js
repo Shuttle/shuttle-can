@@ -1,6 +1,13 @@
 import DefineMap from 'can-define/map/';
 
-export const IconNameOption = DefineMap.extend({
+export const DateTimeOptions = DefineMap.extend({
+    datetimeClass: {
+        type: 'string',
+        default: 'datetimepicker-input'
+    }
+});
+
+export const IconNameOptions = DefineMap.extend({
     iconNameClass: 'string'
 });
 
@@ -15,20 +22,20 @@ export const RemoveButtonI18NOptions = DefineMap.extend({
     }
 });
 
-export const RemoveButtonOptions = IconNameOption.extend({
+export const RemoveButtonOptions = IconNameOptions.extend({
     confirmation: { type: '*' },
     i18n: { Type: RemoveButtonI18NOptions }
 });
 
 export const ButtonOptions = DefineMap.extend({
     back: {
-        Type: IconNameOption,
+        Type: IconNameOptions,
         default: {
             iconNameClass: 'fa-chevron-left'
         }
     },
     refresh: {
-        Type: IconNameOption,
+        Type: IconNameOptions,
         default: {
             iconNameClass: 'fa-refresh'
         }
@@ -41,7 +48,7 @@ export const ButtonOptions = DefineMap.extend({
         }
     },
     submit: {
-        Type: IconNameOption,
+        Type: IconNameOptions,
         default: {
             iconNameClass: 'fa-arrow-circle-right'
         }
@@ -90,6 +97,9 @@ export const Options = DefineMap.extend({
     table: {
         Type: TableOptions,
         default: {}
+    },
+    datetime: {
+        Default: DateTimeOptions
     }
 });
 

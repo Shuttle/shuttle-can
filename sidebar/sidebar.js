@@ -1,4 +1,3 @@
-import DefineMap from 'can-define/map/';
 import DefineList from 'can-define/list/';
 import Component from 'can-component';
 import view from './sidebar.stache';
