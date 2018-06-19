@@ -31,7 +31,8 @@ export const ItemMap = ComponentViewModel.extend({
         }
     },
     list: {
-        Default: ItemList,
+        Type: ItemList,
+        default: [],
         set(value) {
             if (!!value.length && !!this.href) {
                 throw new Error('Cannot set \'list\' when a \'href\' has been set.');
