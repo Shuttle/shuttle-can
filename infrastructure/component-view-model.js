@@ -76,6 +76,10 @@ export default DefineMap.extend({
         type: 'string',
         default: ''
     },
+    visible: {
+        type: 'boolean',
+        default: true
+    },
     visibilityClass: {
         get: function () {
             var visible = this.visible;
@@ -104,10 +108,7 @@ export default DefineMap.extend({
         }
     },
     formGroupClass: {
-        type: 'string',
-        get: function (value) {
-            return value || options.iconSpacingClass;
-        }
+        type: 'string'
     },
     text: {
         type: 'string',

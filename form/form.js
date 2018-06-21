@@ -8,8 +8,14 @@ export const ViewModel = ComponentViewModel.extend({
     title: {
         type: 'string',
         default: '',
-        get: function(title) {
+        get: function (title) {
             return i18n.value(title);
+        }
+    },
+    elementClass: {
+        type: 'string',
+        get: function (value) {
+            return value || options.form.elementClass;
         }
     }
 });

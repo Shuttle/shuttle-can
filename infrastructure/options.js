@@ -72,6 +72,12 @@ export const TableOptions = DefineMap.extend({
 
 export const FormOptions = DefineMap.extend({
     elementClass: {
+        type: 'string'
+    }
+});
+
+export const FormGroupOptions = DefineMap.extend({
+    elementClass: {
         type: 'string',
         default: 'form-group'
     }
@@ -91,6 +97,10 @@ export const Options = DefineMap.extend({
         default: {}
     },
     form: {
+        Type: FormOptions,
+        default: {}
+    },
+    formGroup: {
         Type: FormOptions,
         default: {}
     },
