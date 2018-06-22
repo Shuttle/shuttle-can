@@ -4,6 +4,18 @@ export const DateTimeOptions = DefineMap.extend({
     datetimeClass: {
         type: 'string',
         default: 'datetimepicker-input'
+    },
+    format: {
+        type: 'string',
+        default: 'DD/MM/YYYY HH:mm'
+    },
+    dateFormat: {
+        type: 'string',
+        default: 'DD/MM/YYYY'
+    },
+    timeFormat: {
+        type: 'string',
+        default: 'HH:mm'
     }
 });
 
