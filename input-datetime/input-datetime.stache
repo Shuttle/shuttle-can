@@ -1,0 +1,4 @@
+﻿<div class="position-relative {{containerClass}}">
+    <input id:from="id" value:bind="text" class:from="inputClass" placeholder:from="placeholder"
+           focused:from="focus" data-toggle="datetimepicker" data-target="#{{id}}"/>
+</div>

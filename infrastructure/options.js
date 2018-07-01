@@ -16,7 +16,11 @@ export const DateTimeOptions = DefineMap.extend({
     timeFormat: {
         type: 'string',
         default: 'HH:mm'
-    }
+    },
+    showFormat: {
+        type: 'boolean',
+        default: true
+    },
 });
 
 export const IconNameOptions = DefineMap.extend({

@@ -1,0 +1,5 @@
+<cs-form-group validationMessage:from="validationMessage" elementClass:from="formGroupClass" visible:from="visible">
+    <cs-label label:from="label" required:from="required"/>
+    <cs-input-datetime focus:from="focus" value:bind="value" elementClass:from="elementClass" type:from="type"
+                       minDate:from="minDate" maxDate:from="maxDate"/>
+</cs-form-group>
