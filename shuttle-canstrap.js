@@ -5,6 +5,7 @@ import './infrastructure/security.js';
 import './infrastructure/click.js';
 import './infrastructure/i18n.js';
 import './alerts/alerts.js';
+import './autocomplete/autocomplete.js';
 import './button/button.js';
 import './button-back/button-back.js';
 import './button-group/button-group.js';

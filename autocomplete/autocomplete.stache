@@ -1,0 +1,16 @@
+<input type="text" value:bind="text" on:input="search(scope.element)"
+       class="form-control dropdown-toggle {{elementClass}}"
+       data-toggle="dropdown" placeholder:from="placeholder" aria-haspopup="true"/>
+<ul class="dropdown-menu" aria-expanded="false">
+{{#if searchPromise.isResolved}}
+    {{#each(searchPromise.value)}}
+    <li>
+        <a class="dropdown-item" href="#" on:click="../select(.)">{{scope.vm.getText(.)}}</a>
+    </li>
+{{/each}}
+{{else}}
+    <li>
+        <a class="dropdown-item" href="#">{{loadingText}}</a>
+    </li>
+{{/if}}
+</ul>

@@ -90,7 +90,7 @@ export const ViewModel = ComponentViewModel.extend({
     _rowClick: function (row) {
         if (!!row.click) {
             click.on(row);
-        } else if (!!this.rowClick && typeof(this.rowClick === 'function')) {
+        } else if (!!this.rowClick && typeof(this.rowClick) === 'function') {
             this.rowClick(row);
         }
     },
