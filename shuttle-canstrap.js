@@ -16,6 +16,7 @@ import './checkbox/checkbox.js';
 import './collapse/collapse.js';
 import './fetching/fetching.js';
 import './form/form.js';
+import './form-autocomplete/form-autocomplete.js';
 import './form-checkbox/form-checkbox.js';
 import './form-group/form-group.js';
 import './form-input/form-input.js';

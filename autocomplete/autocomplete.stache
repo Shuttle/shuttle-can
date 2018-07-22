@@ -3,11 +3,17 @@
        data-toggle="dropdown" placeholder:from="placeholder" aria-haspopup="true"/>
 <ul class="dropdown-menu" aria-expanded="false">
 {{#if searchPromise.isResolved}}
-    {{#each(searchPromise.value)}}
-    <li>
-        <a class="dropdown-item" href="#" on:click="../select(.)">{{scope.vm.getText(.)}}</a>
-    </li>
-{{/each}}
+    {{#if(searchPromise.value.length)}}
+        {{#each(searchPromise.value)}}
+        <li>
+            <a class="dropdown-item" href="#" on:click="../select(.)">{{scope.vm.getText(.)}}</a>
+        </li>
+        {{/each}}
+    {{else}}
+        <li>
+            <a class="dropdown-item" href="#">{{emptyText}}</a>
+        </li>
+    {{/if}}
 {{else}}
     <li>
         <a class="dropdown-item" href="#">{{loadingText}}</a>

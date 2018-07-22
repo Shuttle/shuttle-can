@@ -27,8 +27,35 @@ export const ViewModel = ComponentViewModel.extend({
 		return (typeof (text) === 'function') ? text() : text;
 	},
 
+	queryParameters: {
+		type: '*',
+		get(value) {
+			var result = (typeof(value) === 'function') ? value() : value;
+
+			return (typeof(result) === 'string') ? eval('(' + result + ')') : result;
+		}
+	},
+
+	data: {
+		type: '*',
+		get(value) {
+			var result = (typeof(value) === 'function') ? value() : value;
+
+			return (typeof(result) === 'string') ? eval('(' + result + ')') : result;
+		}
+	},
+
 	loadingText: {
 		type: 'string',
+		default: 'autocomplete-loading',
+		get(value){
+			return i18n.value(value);
+		}
+	},
+
+	emptyText: {
+		type: 'string',
+		default: 'autocomplete-empty',
 		get(value){
 			return i18n.value(value);
 		}
@@ -43,9 +70,14 @@ export const ViewModel = ComponentViewModel.extend({
 		default: undefined
 	},
 
-	searchMethod: {
+	method: {
 		type:'string',
-		default: 'get'
+		default: 'get',
+		set(value){
+			guard.againstUndefined(value, 'value');
+
+			return value.toLowerCase() === 'get' ? 'get' : 'post';
+		}
 	},
 
 	searchAttribute: {
@@ -76,12 +108,24 @@ export const ViewModel = ComponentViewModel.extend({
 
 	get searchPromise() {
 		const self = this;
+		var isGET = this.method.toLowerCase() === 'get';
 		var promise;
-		var o = {};
+		var data;
+		var parameters;
 
-		o[this.searchAttribute] = encodeURIComponent(this.searchValue);
+		if (!this.searchValue){
+			return Promise.resolve([]);
+		}
 
-		promise = this.searchMethod.toLowerCase() === 'get' ? this._api.list(o) : this._api.post(o);
+		parameters = this.parameters || {};
+		parameters[this.searchAttribute] = encodeURIComponent(this.searchValue);
+
+		if (!isGET) {
+			data = this.data || {};
+			data[this.searchAttribute] = encodeURIComponent(this.searchValue);
+		}
+
+		promise = isGET ? this._api.list(parameters) : this._api.post(data, parameters);
 
 		if (!!this.mappingCallback){
 			promise.then(function(response){
@@ -89,7 +133,7 @@ export const ViewModel = ComponentViewModel.extend({
 
 				each(response, function(item){
 					result.push(self.mappingFunction.call(this, item));
-				})
+				});
 
 				return result;
 			})
