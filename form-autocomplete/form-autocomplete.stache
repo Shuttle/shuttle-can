@@ -1,4 +1,6 @@
 <cs-form-group validationMessage:from="validationMessage" elementClass:from="formGroupClass" visible:from="visible">
-    <cs-label label:from="label" required:from="required" />
-    <cs-autocomplete this:from="." />
+    <cs-label label:from="label" required:from="required"/>
+    <cs-autocomplete parameters:from="parameters" mapper:from="mapper" loadingText:from="loadingText"
+                     emptyText:from="emptyText" map:to="map" method:from="method" searchAttribute:from="searchAttribute"
+                     textAttribute:from="textAttribute" endpoint:from="endpoint" searchValue:bind="searchValue"/>
 </cs-form-group>

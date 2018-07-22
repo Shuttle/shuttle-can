@@ -1,5 +1,6 @@
 import Component from 'can-component/';
 import DefineMap from 'can-define/map/';
+import DefineList from 'can-define/list/';
 import view from './autocomplete.stache!';
 import Api from 'shuttle-can-api';
 import each from 'can-util/js/each/';
@@ -56,14 +57,14 @@ export const ViewModel = ComponentViewModel.extend({
 		Type: DefineMap
 	},
 
-	mappingFunction: {
+	mapper: {
 		type: 'compute',
 		default: undefined
 	},
 
 	method: {
 		type:'string',
-		default: 'get',
+		default: 'post',
 		set(value){
 			guard.againstUndefined(value, 'value');
 
@@ -110,21 +111,28 @@ export const ViewModel = ComponentViewModel.extend({
 		parameters = this.parameters || {};
 		parameters[this.searchAttribute] = encodeURIComponent(this.searchValue);
 
-		promise = this._api.list(parameters, { post: this.method.toLowerCase() === 'post'});
+		return this._api.list(parameters, { post: this.method.toLowerCase() === 'post'})
+			.then(function(response){
+				if (!self.mapper){
+					return response;
+				}
 
-		if (!!this.mappingCallback){
-			promise.then(function(response){
 				var result = new DefineList();
 
 				each(response, function(item){
-					result.push(self.mappingFunction.call(this, item));
+					guard.againstUndefined(item, 'item');
+
+					var mapped = self.mapper.call(self, item);
+
+					if (!mapped){
+						throw new Error('The mapper returned an undefined object.');
+					}
+
+					result.push(mapped);
 				});
 
 				return result;
-			})
-		}
-
-		return promise;
+			});
 	},
 
 	search: function (el) {
