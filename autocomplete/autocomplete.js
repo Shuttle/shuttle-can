@@ -27,16 +27,7 @@ export const ViewModel = ComponentViewModel.extend({
 		return (typeof (text) === 'function') ? text() : text;
 	},
 
-	queryParameters: {
-		type: '*',
-		get(value) {
-			var result = (typeof(value) === 'function') ? value() : value;
-
-			return (typeof(result) === 'string') ? eval('(' + result + ')') : result;
-		}
-	},
-
-	data: {
+	parameters: {
 		type: '*',
 		get(value) {
 			var result = (typeof(value) === 'function') ? value() : value;
@@ -76,7 +67,7 @@ export const ViewModel = ComponentViewModel.extend({
 		set(value){
 			guard.againstUndefined(value, 'value');
 
-			return value.toLowerCase() === 'get' ? 'get' : 'post';
+			return value.toLowerCase() === 'post' ? 'post' : 'get';
 		}
 	},
 
@@ -108,7 +99,6 @@ export const ViewModel = ComponentViewModel.extend({
 
 	get searchPromise() {
 		const self = this;
-		var isGET = this.method.toLowerCase() === 'get';
 		var promise;
 		var data;
 		var parameters;
@@ -120,12 +110,7 @@ export const ViewModel = ComponentViewModel.extend({
 		parameters = this.parameters || {};
 		parameters[this.searchAttribute] = encodeURIComponent(this.searchValue);
 
-		if (!isGET) {
-			data = this.data || {};
-			data[this.searchAttribute] = encodeURIComponent(this.searchValue);
-		}
-
-		promise = isGET ? this._api.list(parameters) : this._api.post(data, parameters);
+		promise = this._api.list(parameters, { post: this.method.toLowerCase() === 'post'});
 
 		if (!!this.mappingCallback){
 			promise.then(function(response){
