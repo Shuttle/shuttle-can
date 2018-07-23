@@ -21,7 +21,7 @@ export const ViewModel = ComponentViewModel.extend({
 
 		var text = map[this.textAttribute];
 
-		if (text == undefined){
+		if (text == undefined) {
 			return `['undefined' returned from 'textAttribute' with name '${this.textAttribute}']`;
 		}
 
@@ -40,7 +40,7 @@ export const ViewModel = ComponentViewModel.extend({
 	loadingText: {
 		type: 'string',
 		default: 'autocomplete-loading',
-		get(value){
+		get(value) {
 			return i18n.value(value);
 		}
 	},
@@ -48,7 +48,7 @@ export const ViewModel = ComponentViewModel.extend({
 	emptyText: {
 		type: 'string',
 		default: 'autocomplete-empty',
-		get(value){
+		get(value) {
 			return i18n.value(value);
 		}
 	},
@@ -63,9 +63,9 @@ export const ViewModel = ComponentViewModel.extend({
 	},
 
 	method: {
-		type:'string',
+		type: 'string',
 		default: 'post',
-		set(value){
+		set(value) {
 			guard.againstUndefined(value, 'value');
 
 			return value.toLowerCase() === 'post' ? 'post' : 'get';
@@ -73,12 +73,12 @@ export const ViewModel = ComponentViewModel.extend({
 	},
 
 	searchAttribute: {
-		type:'string',
+		type: 'string',
 		default: 'search'
 	},
 
 	textAttribute: {
-		type:'string',
+		type: 'string',
 		default: 'text'
 	},
 
@@ -104,27 +104,27 @@ export const ViewModel = ComponentViewModel.extend({
 		var data;
 		var parameters;
 
-		if (!this.searchValue){
+		if (!this.searchValue) {
 			return Promise.resolve([]);
 		}
 
 		parameters = this.parameters || {};
 		parameters[this.searchAttribute] = encodeURIComponent(this.searchValue);
 
-		return this._api.list(parameters, { post: this.method.toLowerCase() === 'post'})
-			.then(function(response){
-				if (!self.mapper){
+		return this._api.list(parameters, {post: this.method.toLowerCase() === 'post'})
+			.then(function (response) {
+				if (!self.mapper) {
 					return response;
 				}
 
 				var result = new DefineList();
 
-				each(response, function(item){
+				each(response, function (item) {
 					guard.againstUndefined(item, 'item');
 
 					var mapped = self.mapper.call(self, item);
 
-					if (!mapped){
+					if (!mapped) {
 						throw new Error('The mapper returned an undefined object.');
 					}
 
@@ -138,12 +138,41 @@ export const ViewModel = ComponentViewModel.extend({
 	search: function (el) {
 		this.searchValue = el.value;
 
-		$(el).dropdown();
+		if (this.dropdownState !== 'show' &&
+			this.dropdownState !== 'shown') {
+			$(el).dropdown('toggle');
+		}
 	},
 
 	select: function (map) {
 		this.map = map;
 		this.text = this.getText(map);
+	},
+
+	dropdownState: {
+		type: 'string',
+		default: 'hidden'
+	},
+
+	connectedCallback(el) {
+		const self = this;
+		const input = $(el);
+
+		input.on('show.bs.dropdown', function () {
+			self.dropdownState = 'show';
+		});
+
+		input.on('shown.bs.dropdown', function () {
+			self.dropdownState = 'shown';
+		});
+
+		input.on('hide.bs.dropdown', function () {
+			self.dropdownState = 'hide';
+		});
+
+		input.on('hidden.bs.dropdown', function () {
+			self.dropdownState = 'hidden';
+		});
 	}
 });
 
