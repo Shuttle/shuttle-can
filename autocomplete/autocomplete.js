@@ -17,7 +17,9 @@ export const ViewModel = ComponentViewModel.extend({
 	},
 
 	getText(map) {
-		guard.againstUndefined(map, 'map');
+		if (!map){
+			return '';
+		}
 
 		var text = map[this.textAttribute];
 
@@ -54,7 +56,14 @@ export const ViewModel = ComponentViewModel.extend({
 	},
 
 	map: {
-		Type: DefineMap
+		Type: DefineMap,
+		set(value) {
+			if (!!value) {
+				this.text = this.getText(value);
+
+				return value;
+			}
+		}
 	},
 
 	mapper: {
@@ -136,7 +145,10 @@ export const ViewModel = ComponentViewModel.extend({
 	},
 
 	search: function (el) {
-		this.searchValue = el.value;
+		if (this.searchValue != el.value) {
+			this.searchValue = el.value;
+			this.map = undefined;
+		}
 
 		if (this.dropdownState !== 'show' &&
 			this.dropdownState !== 'shown') {
@@ -146,7 +158,6 @@ export const ViewModel = ComponentViewModel.extend({
 
 	select: function (map) {
 		this.map = map;
-		this.text = this.getText(map);
 	},
 
 	dropdownState: {
