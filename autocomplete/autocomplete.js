@@ -158,6 +158,7 @@ export const ViewModel = ComponentViewModel.extend({
 
 	select: function (map) {
 		this.map = map;
+		this.searchValue = this.getText(map);
 	},
 
 	dropdownState: {
