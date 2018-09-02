@@ -7,7 +7,11 @@
             <tr class="row">
                 {{#each(columns)}}
                     <th class="{{columnClass}} {{headerClass}}">
+                    {{#if(hasColumnStache)}}
+                        {{scope.vm.getColumnView(., scope.vm}}
+                    {{else}}
                         {{columnTitle}}
+                    {{/if}}
                     </th>
                 {{/each}}
             </tr>

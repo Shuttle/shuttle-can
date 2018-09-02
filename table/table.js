@@ -15,16 +15,16 @@ export const ColumnMap = ComponentViewModel.extend({
         type: 'string',
         default: '(column)',
         get(value) {
-            if (!!this.columnStache) {
-                return stache(this.columnStache)(this.viewModel);
-            } else {
-                return i18n.value(value || '');
-            }
+            return i18n.value(value || '');
         }
     },
     columnStache: {
-        type: 'string',
-        default: ''
+        type: 'any'
+    },
+    hasColumnStache: {
+        get: function () {
+            return !!this.columnStache;
+        }
     },
     columnClass: {
         type: 'string',
@@ -38,13 +38,13 @@ export const ColumnMap = ComponentViewModel.extend({
         type: 'string',
         default: ''
     },
+    stache: {
+        type: 'any'
+    },
     hasStache: {
         get: function () {
             return !!this.stache;
         }
-    },
-    stache: {
-        type: 'any'
     }
 });
 
@@ -110,7 +110,16 @@ export const ViewModel = ComponentViewModel.extend({
             throw new Error('Specify a \'stache\' for the column.');
         }
 
-        return stache(stacheTemplate)(row);
+        return stache(stacheTemplate)(row.data || row);
+    },
+    getColumnView(column, vm) {
+        let stacheTemplate = column.columnStache;
+
+        if (!stacheTemplate) {
+            throw new Error('Specify a \'columnStache\' for the column.');
+        }
+
+        return stache(stacheTemplate)(column.data || vm);
     },
     getRowClass(row) {
         return row['rowClass'];

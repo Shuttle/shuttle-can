@@ -159,17 +159,13 @@ export const ViewModel = ComponentViewModel.extend({
         el.datetimepicker(name, value);
     },
     connectedCallback: function () {
-        return;
-
-        // will re-enable tempus dominus once it works error-free
-
         var self = this;
         var el = $('#' + this.id);
 
         try {
             el.datetimepicker({format: this.format});
             el.on("change.datetimepicker", function (e) {
-                self.value = e.date.toDate();
+                self.value = !!e.date ? e.date.toDate() : undefined;
             });
         }
         catch (e) {
