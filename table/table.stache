@@ -7,8 +7,8 @@
             <tr class="row">
                 {{#each(columns)}}
                     <th class="{{columnClass}} {{headerClass}}">
-                    {{#if(hasColumnStache)}}
-                        {{scope.vm.getColumnView(., scope.vm}}
+                    {{#if(hasHeaderView)}}
+                        {{scope.vm.getHeaderView(., scope.vm}}
                     {{else}}
                         {{columnTitle}}
                     {{/if}}
@@ -21,7 +21,7 @@
                 <tr class="row {{scope.vm.getRowClass (.)}}" on:click="scope.vm._rowClick(.)">
                     {{#each(../columns)}}
                         <td data-title="{{columnTitle}}" class="{{columnClass}} {{dataClass}}">
-                            {{#if(hasStache)}}
+                            {{#if(hasView)}}
                                 {{scope.vm.getView(../., .}}
                             {{else}}
                                 {{scope.vm.getColumnValue(../., .)}}

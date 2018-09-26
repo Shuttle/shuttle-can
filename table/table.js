@@ -8,9 +8,6 @@ import click from '../infrastructure/click';
 import options from '../infrastructure/options';
 
 export const ColumnMap = ComponentViewModel.extend({
-    viewModel: {
-        type: '*'
-    },
     columnTitle: {
         type: 'string',
         default: '(column)',
@@ -18,12 +15,22 @@ export const ColumnMap = ComponentViewModel.extend({
             return i18n.value(value || '');
         }
     },
-    columnStache: {
+    headerStache: {
         type: 'any'
     },
-    hasColumnStache: {
+    headerView: {
+        type: 'any',
+        set(value){
+            if (typeof(value) !== 'function'){
+                throw new Error('Attribute "headerView" must be a function that returns a view instance.');
+            }
+
+            return value;
+        }
+    },
+    hasHeaderView: {
         get: function () {
-            return !!this.columnStache;
+            return !!this.headerView || !!this.headerStache;
         }
     },
     columnClass: {
@@ -41,9 +48,19 @@ export const ColumnMap = ComponentViewModel.extend({
     stache: {
         type: 'any'
     },
-    hasStache: {
+    view: {
+        type: 'any',
+        set(value){
+            if (typeof(value) !== 'function'){
+                throw new Error('Attribute "view" must be a function that returns a view instance.');
+            }
+
+            return value;
+        }
+    },
+    hasView: {
         get: function () {
-            return !!this.stache;
+            return !!this.view || !!this.stache;
         }
     }
 });
@@ -104,19 +121,27 @@ export const ViewModel = ComponentViewModel.extend({
         return typeof(value) === 'function' ? value(column.attributeName) : value;
     },
     getView(row, column) {
+        if (column.view) {
+            return column.view(row, column);
+        }
+
         let stacheTemplate = column.stache;
 
         if (!stacheTemplate) {
-            throw new Error('Specify a \'stache\' for the column.');
+            throw new Error('Specify a \'stache\' or \'view\' for the column.');
         }
 
         return stache(stacheTemplate)(row.data || row);
     },
-    getColumnView(column, vm) {
-        let stacheTemplate = column.columnStache;
+    getHeaderView(column, vm) {
+        if (!!column.headerView){
+            return column.headerView(column, vm);
+        }
+
+        let stacheTemplate = column.headerStache;
 
         if (!stacheTemplate) {
-            throw new Error('Specify a \'columnStache\' for the column.');
+            throw new Error('Specify a \'headerStache\' or \'headerView\' for the column.');
         }
 
         return stache(stacheTemplate)(column.data || vm);
