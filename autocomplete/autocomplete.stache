@@ -6,17 +6,17 @@
     {{#if(searchPromise.value.length)}}
         {{#each(searchPromise.value)}}
         <li>
-            <a class="dropdown-item" href="#" on:click="../select(.)">{{scope.vm.getText(.)}}</a>
+            <a class="dropdown-item" on:click="../select(.)">{{scope.vm.getText(.)}}</a>
         </li>
         {{/each}}
     {{else}}
         <li>
-            <a class="dropdown-item" href="#">{{emptyText}}</a>
+            <a class="dropdown-item">{{emptyText}}</a>
         </li>
     {{/if}}
 {{else}}
     <li>
-        <a class="dropdown-item" href="#">{{loadingText}}</a>
+        <a class="dropdown-item">{{loadingText}}</a>
     </li>
 {{/if}}
 </ul>

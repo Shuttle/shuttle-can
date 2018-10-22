@@ -5,8 +5,35 @@ import view from './alerts.stache!';
 import each from 'can-util/js/each/';
 import stache from 'can-stache/';
 
+export const AlertMap = DefineMap.extend({
+    message: {
+        type: 'any'
+    },
+    type: {
+        type: 'string'
+    },
+    mode: {
+        type: 'string'
+    },
+    key: {
+        type: 'string'
+    },
+    name: {
+        type: 'string'
+    },
+    expiryDate: {
+        type: 'date'
+    }
+});
+
+export const AlertList = DefineList.extend({
+    '#': AlertMap
+})
+
 export const ViewModel = DefineMap.extend({
-    messages: { Default: DefineList },
+    messages: {
+        Default: AlertList
+    },
 
     _key: { type: 'number', default: 1 },
 
@@ -67,17 +94,14 @@ export const ViewModel = DefineMap.extend({
 
         expiryDate.setSeconds(expiryDate.getSeconds() + 10);
 
-        const message = {
+        const message =  new AlertMap({
             message: stache.safeString(options.message),
             type: type,
             mode: mode,
             key: key,
             name: options.name,
-            expiryDate: expiryDate,
-            destroy: function() {
-                self.remove({ key: key });
-            }
-        };
+            expiryDate: expiryDate
+        });
 
         this.messages.push(message);
 
@@ -90,7 +114,7 @@ export const ViewModel = DefineMap.extend({
 
         each(this.messages, function(item) {
             if (item.expiryDate && item.expiryDate < date) {
-                item.destroy();
+                self.remove({key: item.key});
             }
         });
 

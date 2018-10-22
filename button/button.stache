@@ -10,7 +10,7 @@
                 {{#if(isSeparator)}}
                     <div class="dropdown-divider"></div>
                 {{else}}
-                    <a class="dropdown-item" href="#" on:click="click()">{{text}}</a>
+                    <a class="dropdown-item" on:click="click()">{{text}}</a>
                 {{/if}}
             {{/each}}
         </div>

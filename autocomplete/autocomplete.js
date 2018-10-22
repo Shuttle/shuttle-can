@@ -9,187 +9,189 @@ import guard from 'shuttle-guard';
 import i18n from '../infrastructure/i18n';
 
 export const ViewModel = ComponentViewModel.extend({
-	_api: {},
+    _api: {},
 
-	text: {
-		type: 'string',
-		default: ''
-	},
+    text: {
+        type: 'string',
+        default: ''
+    },
 
-	getText(map) {
-		if (!map){
-			return '';
-		}
+    getText (map) {
+        if (!map) {
+            return '';
+        }
 
-		var text = map[this.textAttribute];
+        var text = map[this.textAttribute];
 
-		if (text == undefined) {
-			return `['undefined' returned from 'textAttribute' with name '${this.textAttribute}']`;
-		}
+        if (text == undefined) {
+            return `['undefined' returned from 'textAttribute' with name '${this.textAttribute}']`;
+        }
 
-		return (typeof (text) === 'function') ? text() : text;
-	},
+        return (typeof (text) === 'function') ? text() : text;
+    },
 
-	parameters: {
-		type: '*',
-		get(value) {
-			var result = (typeof(value) === 'function') ? value() : value;
+    parameters: {
+        type: '*',
+        get (value) {
+            var result = (typeof(value) === 'function') ? value() : value;
 
-			return (typeof(result) === 'string') ? eval('(' + result + ')') : result;
-		}
-	},
+            return (typeof(result) === 'string') ? eval('(' + result + ')') : result;
+        }
+    },
 
-	loadingText: {
-		type: 'string',
-		default: 'autocomplete-loading',
-		get(value) {
-			return i18n.value(value);
-		}
-	},
+    loadingText: {
+        type: 'string',
+        default: 'autocomplete-loading',
+        get (value) {
+            return i18n.value(value);
+        }
+    },
 
-	emptyText: {
-		type: 'string',
-		default: 'autocomplete-empty',
-		get(value) {
-			return i18n.value(value);
-		}
-	},
+    emptyText: {
+        type: 'string',
+        default: 'autocomplete-empty',
+        get (value) {
+            return i18n.value(value);
+        }
+    },
 
-	map: {
-		Type: DefineMap,
-		set(value) {
-			if (!!value) {
-				this.text = this.getText(value);
+    map: {
+        Type: DefineMap,
+        set (value) {
+            if (!!value) {
+                this.text = this.getText(value);
 
-				return value;
-			}
-		}
-	},
+                return value;
+            } else {
+                this.text = '';
+            }
+        }
+    },
 
-	mapper: {
-		type: 'compute',
-		default: undefined
-	},
+    mapper: {
+        type: 'compute',
+        default: undefined
+    },
 
-	method: {
-		type: 'string',
-		default: 'post',
-		set(value) {
-			guard.againstUndefined(value, 'value');
+    method: {
+        type: 'string',
+        default: 'post',
+        set (value) {
+            guard.againstUndefined(value, 'value');
 
-			return value.toLowerCase() === 'post' ? 'post' : 'get';
-		}
-	},
+            return value.toLowerCase() === 'post' ? 'post' : 'get';
+        }
+    },
 
-	searchAttribute: {
-		type: 'string',
-		default: 'search'
-	},
+    searchAttribute: {
+        type: 'string',
+        default: 'search'
+    },
 
-	textAttribute: {
-		type: 'string',
-		default: 'text'
-	},
+    textAttribute: {
+        type: 'string',
+        default: 'text'
+    },
 
-	endpoint: {
-		type: 'string',
-		set(value) {
-			guard.againstUndefined(value, 'value')
+    endpoint: {
+        type: 'string',
+        set (value) {
+            guard.againstUndefined(value, 'value');
 
-			this._api = new Api({endpoint: value});
+            this._api = new Api({endpoint: value});
 
-			return value;
-		}
-	},
+            return value;
+        }
+    },
 
-	searchValue: {
-		type: 'string',
-		default: ''
-	},
+    searchValue: {
+        type: 'string',
+        default: ''
+    },
 
-	get searchPromise() {
-		const self = this;
-		var promise;
-		var data;
-		var parameters;
+    get searchPromise () {
+        const self = this;
+        var promise;
+        var data;
+        var parameters;
 
-		if (!this.searchValue) {
-			return Promise.resolve([]);
-		}
+        if (!this.searchValue) {
+            return Promise.resolve([]);
+        }
 
-		parameters = this.parameters || {};
-		parameters[this.searchAttribute] = encodeURIComponent(this.searchValue);
+        parameters = this.parameters || {};
+        parameters[this.searchAttribute] = encodeURIComponent(this.searchValue);
 
-		return this._api.list(parameters, {post: this.method.toLowerCase() === 'post'})
-			.then(function (response) {
-				if (!self.mapper) {
-					return response;
-				}
+        return this._api.list(parameters, {post: this.method.toLowerCase() === 'post'})
+            .then(function (response) {
+                if (!self.mapper) {
+                    return response;
+                }
 
-				var result = new DefineList();
+                var result = new DefineList();
 
-				each(response, function (item) {
-					guard.againstUndefined(item, 'item');
+                each(response, function (item) {
+                    guard.againstUndefined(item, 'item');
 
-					var mapped = self.mapper.call(self, item);
+                    var mapped = self.mapper.call(self, item);
 
-					if (!mapped) {
-						throw new Error('The mapper returned an undefined object.');
-					}
+                    if (!mapped) {
+                        throw new Error('The mapper returned an undefined object.');
+                    }
 
-					result.push(mapped);
-				});
+                    result.push(mapped);
+                });
 
-				return result;
-			});
-	},
+                return result;
+            });
+    },
 
-	search: function (el) {
-		if (this.searchValue != el.value) {
-			this.searchValue = el.value;
-			this.map = undefined;
-		}
+    search: function (el) {
+        if (this.searchValue != el.value) {
+            this.searchValue = el.value;
+            this.map = undefined;
+        }
 
-		if (this.dropdownState !== 'show' &&
-			this.dropdownState !== 'shown') {
-			$(el).dropdown('toggle');
-		}
-	},
+        if (this.dropdownState !== 'show' &&
+            this.dropdownState !== 'shown') {
+            $(el).dropdown('toggle');
+        }
+    },
 
-	select: function (map) {
-		this.map = map;
-		this.searchValue = this.getText(map);
-	},
+    select: function (map) {
+        this.map = map;
+        this.searchValue = this.getText(map);
+    },
 
-	dropdownState: {
-		type: 'string',
-		default: 'hidden'
-	},
+    dropdownState: {
+        type: 'string',
+        default: 'hidden'
+    },
 
-	connectedCallback(el) {
-		const self = this;
-		const input = $(el);
+    connectedCallback (el) {
+        const self = this;
+        const input = $(el);
 
-		input.on('show.bs.dropdown', function () {
-			self.dropdownState = 'show';
-		});
+        input.on('show.bs.dropdown', function () {
+            self.dropdownState = 'show';
+        });
 
-		input.on('shown.bs.dropdown', function () {
-			self.dropdownState = 'shown';
-		});
+        input.on('shown.bs.dropdown', function () {
+            self.dropdownState = 'shown';
+        });
 
-		input.on('hide.bs.dropdown', function () {
-			self.dropdownState = 'hide';
-		});
+        input.on('hide.bs.dropdown', function () {
+            self.dropdownState = 'hide';
+        });
 
-		input.on('hidden.bs.dropdown', function () {
-			self.dropdownState = 'hidden';
-		});
-	}
+        input.on('hidden.bs.dropdown', function () {
+            self.dropdownState = 'hidden';
+        });
+    }
 });
 
 export default Component.extend({
-	tag: 'cs-autocomplete',
-	ViewModel,
-	view
+    tag: 'cs-autocomplete',
+    ViewModel,
+    view
 });
