@@ -23,6 +23,9 @@ export const ViewModel = ComponentViewModel.extend({
     actions: {
         Type: ActionList
     },
+    elementClass: {
+        default: 'btn-primary'
+    },
     buttonClass: {
         get(){
             return `btn ${this.hasActions ? 'dropdown-toggle' : ''} ${this.elementClass} ${this.visibilityClass}`;

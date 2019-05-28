@@ -11,6 +11,9 @@ export const ViewModel = ComponentViewModel.extend({
             return value || options.button.refresh.iconNameClass;
         }
     },
+    elementClass: {
+        default: 'btn-primary'
+    },
     buttonClass: {
         get(){
             return `btn ${this.elementClass} ${this.visibilityClass}`;

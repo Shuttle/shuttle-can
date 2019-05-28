@@ -4,6 +4,9 @@ import options from '../infrastructure/options';
 import view from './button-submit.stache!';
 
 export const ViewModel = ComponentViewModel.extend({
+    elementClass: {
+        default: 'btn-primary'
+    },
     iconNameClass: {
         type: 'string',
         default: '',

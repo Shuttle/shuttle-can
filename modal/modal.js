@@ -3,6 +3,7 @@ import Component from 'can-component';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './modal.stache!';
 import i18n from '../infrastructure/i18n';
+import options from "../infrastructure/options";
 
 export const ViewModel = ComponentViewModel.extend({
     primaryClick: {
@@ -44,9 +45,23 @@ export const ViewModel = ComponentViewModel.extend({
             return i18n.value(value);
         }
     },
+    dismissButtonIconClass: {
+        type: 'string',
+        default: '',
+        get: function(value){
+            return value || this.iconClass;
+        }
+    },
+    dismissButtonIconNameClass: {
+        type: 'string',
+        default: '',
+        get: function(value){
+            return value || options.button.close.iconNameClass;
+        }
+    },
     dismissButtonClass: {
         get(){
-            return this.iconClass + ' ' + this.iconNameClass + (!!this.text ? ' ' + this.iconSpacingClass : '');
+            return this.dismissButtonIconClass + ' ' + this.dismissButtonIconNameClass + (!!this.text ? ' ' + this.iconSpacingClass : '');
         }
     },
     textType: {

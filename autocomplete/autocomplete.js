@@ -1,9 +1,6 @@
-import Component from 'can-component/';
-import DefineMap from 'can-define/map/';
-import DefineList from 'can-define/list/';
+import { Component, DefineMap, DefineList, Reflect } from 'can';
 import view from './autocomplete.stache!';
 import Api from 'shuttle-can-api';
-import each from 'can-util/js/each/';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import guard from 'shuttle-guard';
 import i18n from '../infrastructure/i18n';
@@ -130,7 +127,7 @@ export const ViewModel = ComponentViewModel.extend({
 
                 var result = new DefineList();
 
-                each(response, function (item) {
+                Reflect.each(response, function (item) {
                     guard.againstUndefined(item, 'item');
 
                     var mapped = self.mapper.call(self, item);

@@ -5,11 +5,11 @@ import view from './checkbox.stache!';
 export const ViewModel = ComponentViewModel.extend({
     checkedIconClass: {
       type: 'string',
-        default: 'fa-check-square-o'
+        default: 'fa-check-square'
     },
     uncheckedIconClass: {
       type: 'string',
-        default: 'fa-square-o'
+        default: 'fa-square'
     },
     checked: {
         type: 'boolean',

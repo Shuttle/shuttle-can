@@ -6,6 +6,9 @@ import options from '../infrastructure/options';
 import click from '../infrastructure/click';
 
 export const ViewModel = ComponentViewModel.extend({
+    elementClass: {
+        default: 'btn-primary'
+    },
     iconNameClass: {
         type: 'string',
         default: '',

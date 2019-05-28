@@ -3,14 +3,14 @@ import options from './options';
 import security from './security';
 import click from './click';
 import i18n from './i18n';
-import each from 'can-util/js/each/';
-import { ErrorList } from './validation';
+import {Reflect} from 'can';
+import {ErrorList} from './validation';
 
 export default DefineMap.extend({
     placeholder: {
         type: 'string',
         default: '',
-        get: function(value) {
+        get: function (value) {
             return i18n.value(value);
         }
     },
@@ -19,7 +19,7 @@ export default DefineMap.extend({
         default: false
     },
     click: {
-      type: 'observable'
+        type: 'observable'
     },
     checked: {
         type: 'boolean'
@@ -30,7 +30,7 @@ export default DefineMap.extend({
     },
     label: {
         type: 'string',
-        get: function(value) {
+        get: function (value) {
             return i18n.value(value);
         }
     },
@@ -49,7 +49,7 @@ export default DefineMap.extend({
             var message = undefined;
 
             if (this.errors) {
-                each(this.errors, function (error) {
+                Reflect.each(this.errors, function (error) {
                     if (error.related.indexOf(self.errorAttribute) > -1) {
                         message = error.message;
                         return false;

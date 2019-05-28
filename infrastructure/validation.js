@@ -7,8 +7,7 @@ export const ErrorMap = DefineMap.extend({
         default: ''
     },
     related: {
-        Type: DefineList,
-        default: []
+        Default: DefineList
     }
 });
 

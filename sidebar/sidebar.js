@@ -1,5 +1,4 @@
-import DefineList from 'can-define/list/';
-import Component from 'can-component';
+import { Component, DefineList } from 'can';
 import view from './sidebar.stache';
 import i18n from '../infrastructure/i18n';
 import nextId from '../infrastructure/id-generator';
@@ -31,8 +30,7 @@ export const ItemMap = ComponentViewModel.extend({
         }
     },
     list: {
-        Type: ItemList,
-        default: [],
+        Default: ItemList,
         set(value) {
             if (!!value.length && !!this.href) {
                 throw new Error('Cannot set \'list\' when a \'href\' has been set.');

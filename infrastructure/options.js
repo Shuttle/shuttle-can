@@ -39,34 +39,50 @@ export const RemoveButtonI18NOptions = DefineMap.extend({
 });
 
 export const RemoveButtonOptions = IconNameOptions.extend({
-    confirmation: { type: '*' },
-    i18n: { Type: RemoveButtonI18NOptions }
+    confirmation: {type: '*'},
+    i18n: {
+        Default: RemoveButtonI18NOptions
+    }
 });
 
 export const ButtonOptions = DefineMap.extend({
     back: {
         Type: IconNameOptions,
-        default: {
-            iconNameClass: 'fa-chevron-left'
+        default: function () {
+            return {
+                iconNameClass: 'fa-chevron-left'
+            };
+        }
+    },
+    close: {
+        Type: IconNameOptions,
+        default: function () {
+            return {
+                iconNameClass: 'fa-times-circle'
+            };
         }
     },
     refresh: {
         Type: IconNameOptions,
-        default: {
-            iconNameClass: 'fa-refresh'
+        default: function () {
+            return {
+                iconNameClass: 'fa-sync'
+            };
         }
     },
     remove: {
         Type: RemoveButtonOptions,
-        default: {
-            iconNameClass: 'fa-times',
-            i18n: {}
+        default: function () {
+            return {
+                iconNameClass: 'fa-times',
+                i18n: {}
+            };
         }
     },
     submit: {
         Type: IconNameOptions,
-        default: {
-            iconNameClass: 'fa-arrow-circle-right'
+        default: function () {
+            return {iconNameClass: 'fa-arrow-circle-right'};
         }
     }
 });
@@ -102,27 +118,23 @@ export const FormGroupOptions = DefineMap.extend({
 export const Options = DefineMap.extend({
     iconClass: {
         type: 'string',
-        default: 'fa'
+        default: 'fas'
     },
     iconSpacingClass: {
         type: 'string',
         default: 'pr-2'
     },
     button: {
-        Type: ButtonOptions,
-        default: {}
+        Default: ButtonOptions
     },
     form: {
-        Type: FormOptions,
-        default: {}
+        Default: FormOptions
     },
     formGroup: {
-        Type: FormOptions,
-        default: {}
+        Default: FormOptions
     },
     table: {
-        Type: TableOptions,
-        default: {}
+        Default: TableOptions
     },
     datetime: {
         Default: DateTimeOptions

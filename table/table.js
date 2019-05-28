@@ -93,8 +93,7 @@ export const ViewModel = ComponentViewModel.extend({
         }
     },
     columns: {
-        Type: ColumnList,
-        default: []
+        Default: ColumnList
     },
     rows: {
         Type: DefineList

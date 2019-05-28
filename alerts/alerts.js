@@ -1,11 +1,8 @@
-import Component from 'can-component';
-import DefineMap from 'can-define/map/';
-import DefineList from 'can-define/list/';
+import {Component, DefineMap, DefineList, Reflect} from 'can';
 import view from './alerts.stache!';
-import each from 'can-util/js/each/';
 import stache from 'can-stache/';
 
-export const AlertMap = DefineMap.extend({
+export const MessageMap = DefineMap.extend({
     message: {
         type: 'any'
     },
@@ -26,22 +23,18 @@ export const AlertMap = DefineMap.extend({
     }
 });
 
-export const AlertList = DefineList.extend({
-    '#': AlertMap
+export const MessageList = DefineList.extend({
+    '#': MessageMap,
 })
 
-export const ViewModel = DefineMap.extend({
+export const Alerts = DefineMap.extend({
+    _key: {type: 'number', default: 1},
+
     messages: {
-        Default: AlertList
+        Default: MessageList
     },
 
-    _key: { type: 'number', default: 1 },
-
-    init: function(){
-        this._removeExpiredAlerts();
-    },
-
-    show: function(options) {
+    add: function (options) {
         if (!options || !options.message) {
             return;
         }
@@ -53,16 +46,16 @@ export const ViewModel = DefineMap.extend({
         this._push(options);
     },
 
-    clear: function() {
+    clear: function () {
         this.messages = new DefineList();
     },
 
-    remove: function(options) {
+    remove: function (options) {
         if (!options || (!options.key && !options.name && !options.type)) {
             return;
         }
 
-        this.messages = this.messages.filter(function(item) {
+        this.messages = this.messages.filter(function (item) {
             var keep = true;
 
             if (options.key) {
@@ -81,7 +74,7 @@ export const ViewModel = DefineMap.extend({
         });
     },
 
-    _push: function(options, mode) {
+    _push: function (options, mode) {
         var key = this._key + 1;
         var self = this;
         var expiryDate = new Date();
@@ -94,7 +87,7 @@ export const ViewModel = DefineMap.extend({
 
         expiryDate.setSeconds(expiryDate.getSeconds() + 10);
 
-        const message =  new AlertMap({
+        const message = new MessageMap({
             message: stache.safeString(options.message),
             type: type,
             mode: mode,
@@ -106,15 +99,31 @@ export const ViewModel = DefineMap.extend({
         this.messages.push(message);
 
         this._key = key;
+    }
+})
+
+export const ViewModel = DefineMap.extend({
+    alerts: {
+        Default: Alerts
     },
 
-    _removeExpiredAlerts: function() {
+    init: function () {
+        this._removeExpiredAlerts();
+    },
+
+    _removeExpiredAlerts: function () {
         var self = this;
         var date = new Date();
 
-        each(this.messages, function(item) {
-            if (item.expiryDate && item.expiryDate < date) {
-                self.remove({key: item.key});
+        if (!this.alerts ||
+            !this.alerts.remove) {
+            return;
+        }
+
+        Reflect.each(this.alerts.messages, function (item) {
+            if (item.expiryDate &&
+                item.expiryDate < date) {
+                self.alerts.remove({key: item.key});
             }
         });
 
@@ -124,10 +133,8 @@ export const ViewModel = DefineMap.extend({
     }
 });
 
-export const alerts = new ViewModel();
-
 export default Component.extend({
     tag: 'cs-alerts',
     view,
-    viewModel: alerts
+    ViewModel
 });
