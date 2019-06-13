@@ -1,6 +1,5 @@
-import Component from 'can-component';
+import {DefineList,Component} from 'can';
 import ComponentViewModel from '../infrastructure/component-view-model';
-import DefineList from 'can-define/list/';
 import stache from 'can-stache/';
 import view from './table.stache!';
 import i18n from '../infrastructure/i18n';
@@ -93,7 +92,7 @@ export const ViewModel = ComponentViewModel.extend({
         }
     },
     columns: {
-        Default: ColumnList
+        Type: ColumnList
     },
     rows: {
         Type: DefineList

@@ -1,5 +1,4 @@
-﻿import Component from 'can-component';
-import DefineList from 'can-define/list/';
+﻿import {DefineList,Component} from 'can';
 import view from './button.stache!';
 import ComponentViewModel from '../infrastructure/component-view-model';
 

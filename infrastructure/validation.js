@@ -1,5 +1,4 @@
-import DefineMap from 'can-define/map/';
-import DefineList from 'can-define/list/';
+import {DefineMap,DefineList} from 'can';
 
 export const ErrorMap = DefineMap.extend({
     message: {

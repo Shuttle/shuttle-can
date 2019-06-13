@@ -1,5 +1,4 @@
-﻿import Component from 'can-component';
-import DefineMap from 'can-define/map/';
+﻿import {DefineMap,Component} from 'can';
 import view from './page-title.stache!';
 import i18n from '../infrastructure/i18n';
 

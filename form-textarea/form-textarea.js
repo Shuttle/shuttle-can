@@ -1,4 +1,4 @@
-﻿import Component from 'can-component';
+﻿import {Component} from 'can';
 import {ViewModel} from '../textarea/';
 import view from './form-textarea.stache!';
 

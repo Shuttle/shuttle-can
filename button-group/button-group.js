@@ -1,6 +1,4 @@
-﻿import DefineMap from 'can-define/map/';
-import DefineList from 'can-define/list/';
-import Component from 'can-component';
+﻿import {DefineMap,DefineList,Component} from 'can';
 import view from './button-group.stache!';
 import ComponentViewModel from '../infrastructure/component-view-model';
 

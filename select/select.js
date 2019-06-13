@@ -1,6 +1,5 @@
-﻿import Component from 'can-component';
+﻿import {DefineList,Component} from 'can';
 import ComponentViewModel from '../infrastructure/component-view-model';
-import DefineList from 'can-define/list/';
 import view from './select.stache!';
 
 export const OptionMap = ComponentViewModel.extend({

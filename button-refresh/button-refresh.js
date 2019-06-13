@@ -1,4 +1,4 @@
-﻿import Component from 'can-component';
+﻿import {Component} from 'can';
 import view from './button-refresh.stache!';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import options from '../infrastructure/options';

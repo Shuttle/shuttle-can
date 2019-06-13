@@ -1,4 +1,4 @@
-﻿import Component from 'can-component';
+﻿import {Component} from 'can';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import options from '../infrastructure/options';
 import view from './button-back.stache!';

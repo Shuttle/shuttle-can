@@ -1,4 +1,4 @@
-import Component from 'can-component';
+import {Component} from 'can';
 import view from './collapse.stache!';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import nextId from '../infrastructure/id-generator';

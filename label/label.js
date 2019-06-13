@@ -1,4 +1,4 @@
-﻿import Component from 'can-component';
+﻿import {Component} from 'can';
 import view from './label.stache!';
 import ComponentViewModel from '../infrastructure/component-view-model';
 

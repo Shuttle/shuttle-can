@@ -1,4 +1,4 @@
-import DefineMap from 'can-define/map/';
+import {DefineMap} from 'can';
 import options from './options';
 import security from './security';
 import click from './click';

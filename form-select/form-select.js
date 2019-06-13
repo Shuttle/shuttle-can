@@ -1,4 +1,4 @@
-﻿import Component from 'can-component';
+﻿import {Component} from 'can';
 import {ViewModel} from '../select/';
 import view from './form-select.stache!';
 

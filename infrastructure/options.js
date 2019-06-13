@@ -1,4 +1,4 @@
-import DefineMap from 'can-define/map/';
+import {DefineMap} from 'can';
 
 export const DateTimeOptions = DefineMap.extend({
     datetimeClass: {
@@ -74,8 +74,7 @@ export const ButtonOptions = DefineMap.extend({
         Type: RemoveButtonOptions,
         default: function () {
             return {
-                iconNameClass: 'fa-times',
-                i18n: {}
+                iconNameClass: 'fa-times'
             };
         }
     },

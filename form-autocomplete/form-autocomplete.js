@@ -1,4 +1,4 @@
-import Component from 'can-component/';
+import {Component} from 'can';
 import { ViewModel as AutocompleteViewModel } from '../autocomplete/'
 import view from './form-autocomplete.stache!';
 

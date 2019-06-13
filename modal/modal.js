@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Component from 'can-component';
+import {Component} from 'can';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './modal.stache!';
 import i18n from '../infrastructure/i18n';

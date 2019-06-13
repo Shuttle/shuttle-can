@@ -1,4 +1,4 @@
-import Component from 'can-component';
+import {Component} from 'can';
 import {ItemMap} from './sidebar';
 import view from './sidebar-item.stache';
 

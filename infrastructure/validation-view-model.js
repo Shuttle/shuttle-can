@@ -1,4 +1,4 @@
-import DefineMap from 'can-define/map/';
+import {DefineMap} from 'can';
 
 export default DefineMap.extend({
     hasErrors: function () {

@@ -1,4 +1,4 @@
-﻿import Component from 'can-component';
+﻿import {Component} from 'can';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './input-datetime.stache!';
 import nextId from "../infrastructure/id-generator";

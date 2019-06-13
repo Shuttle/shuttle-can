@@ -1,4 +1,4 @@
-﻿import Component from 'can-component';
+﻿import {Component} from 'can';
 import view from './button-remove.stache!';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import i18n from '../infrastructure/i18n';
