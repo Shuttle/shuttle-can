@@ -1,4 +1,4 @@
-﻿import {DefineList,Component} from 'can';
+﻿import {DefineList,Component, set} from 'can';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './select.stache!';
 
@@ -20,10 +20,6 @@ export const OptionList = DefineList.extend({
 export const ViewModel = ComponentViewModel.extend({
     options: {
         Type: OptionList
-    },
-    value: {
-        type: 'string',
-        default: ''
     },
     selectClass: {
         get() {

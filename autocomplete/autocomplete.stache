@@ -4,11 +4,11 @@
 <ul class="dropdown-menu" aria-expanded="false">
 {{#if searchPromise.isResolved}}
     {{#if(searchPromise.value.length)}}
-        {{#each(searchPromise.value)}}
+        {{#for(entry of searchPromise.value)}}
         <li>
-            <a class="dropdown-item" on:click="../select(.)">{{scope.vm.getText(.)}}</a>
+            <a class="dropdown-item" on:click="select(entry)">{{scope.vm.getText(entry)}}</a>
         </li>
-        {{/each}}
+        {{/for}}
     {{else}}
         <li>
             <a class="dropdown-item">{{emptyText}}</a>

@@ -5,31 +5,31 @@
         <table class="table {{tableClass}}">
             <thead>
             <tr class="row">
-                {{#each(columns)}}
-                    <th class="{{columnClass}} {{headerClass}}">
-                    {{#if(hasHeaderView)}}
-                        {{scope.vm.getHeaderView(., scope.vm}}
+                {{#for(column of columns)}}
+                    <th class="{{column.columnClass}} {{column.headerClass}}">
+                    {{#if(column.hasHeaderView)}}
+                        {{scope.vm.getHeaderView(column, scope.vm}}
                     {{else}}
-                        {{columnTitle}}
+                        {{column.columnTitle}}
                     {{/if}}
                     </th>
-                {{/each}}
+                {{/for}}
             </tr>
             </thead>
             <tbody>
-            {{#each(rows)}}
-                <tr class="row {{scope.vm.getRowClass (.)}}" on:click="scope.vm._rowClick(.)">
-                    {{#each(../columns)}}
-                        <td data-title="{{columnTitle}}" class="{{columnClass}} {{dataClass}}">
-                            {{#if(hasView)}}
-                                {{scope.vm.getView(../., .}}
+            {{#for(row of rows)}}
+                <tr class="row {{scope.vm.getRowClass (row)}}" on:click="scope.vm._rowClick(row)">
+                    {{#for(column of scope.vm.columns)}}
+                        <td data-title="{{column.columnTitle}}" class="{{column.columnClass}} {{column.dataClass}}">
+                            {{#if(column.hasView)}}
+                                {{scope.vm.getView(row, column}}
                             {{else}}
-                                {{scope.vm.getColumnValue(../., .)}}
+                                {{scope.vm.getColumnValue(row, column)}}
                             {{/if}}
                         </td>
-                    {{/each}}
+                    {{/for}}
                 </tr>
-            {{/each}}
+            {{/for}}
             </tbody>
         </table>
     {{/if}}

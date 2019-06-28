@@ -1,26 +1,22 @@
-﻿import {Component} from 'can';
+﻿import { Component } from 'can';
 import ComponentViewModel from '../infrastructure/component-view-model';
 import view from './checkbox.stache!';
 
 export const ViewModel = ComponentViewModel.extend({
     checkedIconClass: {
-      type: 'string',
+        type: 'string',
         default: 'fa-check-square'
     },
     uncheckedIconClass: {
-      type: 'string',
+        type: 'string',
         default: 'fa-square'
     },
-    checked: {
-        type: 'boolean',
-        default: false
-    },
     checkboxIconClass: {
-        get(){
+        get() {
             return this.iconClass + ' ' + (!!this.checked ? this.checkedIconClass : this.uncheckedIconClass);
         }
     },
-    click: function() {
+    click: function () {
         this.checked = !this.checked;
     }
 });

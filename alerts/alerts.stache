@@ -1,9 +1,9 @@
-{{#each(alerts.messages)}}
-    <div class="alert alert-{{type}} alert-dismissible" role="alert">
+{{#for(alert of alerts.messages)}}
+    <div class="alert alert-{{alert.type}} alert-dismissible" role="alert">
         <button type="button" class="close" aria-label="Close" data-dismiss="alert" aria-label="Close"
-                on:click="scope.vm.alerts.remove(.)">
+                on:click="scope.vm.alerts.remove(alert)">
             <span aria-hidden="true">&times;</span>
         </button>
-        {{message}}
+        {{alert.message}}
     </div>
-{{/each}}
+{{/for}}

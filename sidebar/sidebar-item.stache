@@ -6,8 +6,8 @@
         <i class:from="collapseIconClass" aria-hidden="true"></i>
     </a>
     <div class="collapse" id:from="id" data-parent:from="parentId">
-    {{#each(list)}}
-        <cs-sidebar-item href:from="href" text:from="text" list:from="list" parentId:from="id" />
-    {{/each}}
+    {{#for(item of list)}}
+        <cs-sidebar-item href:from="item.href" text:from="item.text" list:from="item.list" parentId:from="id" />
+    {{/for}}
     </div>
 {{/if}}

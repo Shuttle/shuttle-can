@@ -1,5 +1,5 @@
 ﻿<select value:bind="value" class:from="selectClass">
-	{{#each(options)}}
-        <option value:from='value'>{{label}}</option>
-	{{/each}}
+	{{#for(option of options)}}
+        <option value:from='option.value'>{{option.label}}</option>
+	{{/for}}
 </select>

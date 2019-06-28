@@ -1,10 +1,10 @@
-import {DefineMap} from 'can';
+import { DefineMap } from 'can';
 import options from './options';
 import security from './security';
 import click from './click';
 import i18n from './i18n';
-import {Reflect} from 'can';
-import {ErrorList} from './validation';
+import { Reflect } from 'can';
+import { ErrorList } from './validation';
 
 export default DefineMap.extend({
     placeholder: {
@@ -25,8 +25,7 @@ export default DefineMap.extend({
         type: 'boolean'
     },
     value: {
-        type: '*',
-        default: ''
+        type: '*'
     },
     label: {
         type: 'string',
@@ -118,7 +117,7 @@ export default DefineMap.extend({
         }
     },
     disabled: {
-        get: function (value) {
+        get(value) {
             var disabled = !!value || !!this.working;
 
             if (this.permission && !disabled) {
@@ -127,6 +126,15 @@ export default DefineMap.extend({
 
             return disabled;
         }
+    },
+    isDisabled() {
+        var result = this.disabled || !!this.working;
+
+        if (this.permission && !result) {
+            result = !security.hasPermission(this.permission);
+        }
+
+        return result;
     },
     required: {
         type: 'boolean',

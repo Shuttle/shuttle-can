@@ -9,9 +9,9 @@
         {{text}}
     </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-{{#each(list)}}
-    <a class="dropdown-item" href:from="href">{{text}}</a>
-{{/each}}
+{{#for(item of list)}}
+    <a class="dropdown-item" href:from="item.href">{{item.text}}</a>
+{{/for}}
 </div>
 </li>
 {{/if}}
