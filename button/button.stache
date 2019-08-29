@@ -1,7 +1,7 @@
 ﻿{{#if(hasActions)}}
-    <div class="btn-group" disabled:from="disabled">
+    <div class="btn-group" disabled:from="isDisabled()">
         <button type="button" class:from="buttonClass"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:from="disabled">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled:from="isDisabled()">
             {{#if(iconNameClass)}}<i class:from="buttonIconClass" aria-hidden="true"></i>{{/if}}{{text}}<span
                 class="caret"></span>
         </button>
@@ -10,13 +10,13 @@
                 {{#if(action.isSeparator)}}
                     <div class="dropdown-divider"></div>
                 {{else}}
-                    <a class="dropdown-item" on:click="action.click()">{{text}}</a>
+                    <a class="dropdown-item" on:click="action.click()" href="#">{{action.text}}</a>
                 {{/if}}
             {{/for}}
         </div>
     </div>
 {{else}}
-    <button type="button" class:from="buttonClass" on:click="_click(scope.event)" disabled:from="disabled">
+    <button type="button" class:from="buttonClass" on:click="_click(scope.event)" disabled:from="isDisabled()">
         {{#if(iconNameClass)}}<i class:from="buttonIconClass" aria-hidden="true"></i>{{/if}}{{text}}
     </button>
 {{/if}}
